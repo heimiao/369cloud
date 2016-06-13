@@ -1,0 +1,123 @@
+ [@node var="rootNode" nodeid="79"]
+ [@node var="selfnode" nodeid="self"] 
+ [@node var="parent" nodeid="parent"] 
+<div class="top_nav">
+	<div class="nav_bg"></div>
+	<div class="nav_main">
+		<div class="p_btn left">
+			<a href="javascript:;">
+				<img src="${staticUrl}/images/static/img_new/navigation.png" alt="" class="btn_imgSrc">
+			</a>
+		</div>
+		<a class="logo logo left" href="${root_address}${rootNode.NODEURL}">
+			<img src="${staticUrl}/images/static/img_new/logo.png" class="pcPad_logo"/>
+			<img src="${staticUrl}/images/static/img_new/wap_logo.png" class="phone_logo"/>
+		</a>
+		<nav class="right m-nav J_nav">
+			<ul class="ulList">
+			[@nodeList nodeid="sub-${rootNode.NODEID}" var="topnav" ignore="105"] 
+			[#list topnav as item]   
+				[#if item.nodeid=="81" || item.nodeid=="113"]
+						<li class="dropdown [#if item.nodeid==selfnode.NODEID]active[/#if] [#if item.nodeid=='113']i_test_hide[/#if]">
+						<a  class="dropdown-toggle">${item.nodename}</a>
+						<ul class="dropdown-menu [#if item.nodeid=='81']icon_dropdown[/#if]">
+							[#if item.nodeid=="81"]
+									[@nodeList nodeid="sub-${item.nodeid}" var="childTopNav"] 
+									[#list childTopNav as childItem]
+										[@dataList nodeid="${childItem.nodeid}" var="childNav" num="1"] 
+										[#list childNav as childcont]
+												<li class="pc_pad effecttLi">
+													<a href="${childcont.address}">
+														[#if childItem.nodeid=="85"]
+															<img src="${staticUrl}/images/static/img_new/toos.png"  class="default_img"/>
+															<img src="${staticUrl}/images/static/img_new/navigation_icon _pre_tool.png" class="active_img"/>
+														[/#if]
+														[#if childItem.nodeid=="83"]
+															<img src="${staticUrl}/images/static/img_new/document.png" class="default_img"/>
+															<img src="${staticUrl}/images/static/img_new/navigation_icon _pre_center.png" class="active_img"/>
+														[/#if]
+														[#if childItem.nodeid=="87"]
+															<img src="${staticUrl}/images/static/img_new/community.png" class="default_img"/>
+															<img src="${staticUrl}/images/static/img_new/navigation_icon _pre_community (1).png" class="active_img"/>
+														[/#if]
+														<dl>
+															<dt>${childcont.name}</dt>
+															<dd>${childcont.miaoshu}</dd>
+														</dl>
+													</a>
+												</li>  
+												<li class="phone">
+													<a href="${childcont.address}">
+														<span id="">${childcont.name}</span>
+														<img src="${staticUrl}/images/static/img_new/page_btn-enter.png" class="btn-enter" />
+														<img src="${staticUrl}/images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/>
+													</a>
+												</li> 
+										[/#list] 
+										[/@dataList]
+									[/#list]
+									[/@nodeList]
+							[#else]
+						   			[@dataList nodeid="${item.nodeid}" var="childNav"] 
+									[#list childNav as childcont] 
+												<li>
+													<a href="${childcont.address}">
+														<span>${childcont.name}</span>
+														<img src="${staticUrl}/images/static/img_new/page_btn-enter.png" class="btn-enter" />
+														<img src="${staticUrl}/images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/>
+													</a>
+												</li>
+									[/#list] 
+									[/@dataList]
+							[/#if]
+						</ul>
+					</li>
+				[#else]
+					[@dataList nodeid="${item.nodeid}" var="childNav" num="1"] 
+					[#list childNav as childcont]
+					 [#if item.nodeid=='101']
+					 		<li class="stair_nav [#if item.nodeid==selfnode.NODEID]active[/#if] i_hide">
+								<a href="${root_address}${item.NODEURL}">
+									${item.nodename}
+									<img src="${staticUrl}/images/static/img_new/page_btn-enter.png" class="btn-enter" />
+									<img src="${staticUrl}/images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/>
+								</a>
+							</li>
+					 [#else]
+					 		<li class="stair_nav [#if item.nodeid!='97'&item.nodeid!='95'][#if item.nodeid==selfnode.NODEID]active[/#if][/#if] [#if item.nodeid==99]i_hide[/#if]">
+								<a href="${childcont.address}"  [#if childcont.isphone=='是']phone-href='${childcont.phone_address}' pc-href='${childcont.address}'[/#if] [#if item.nodeid=='103']target="_blank"[/#if]>
+									${childcont.name}
+									<img src="${staticUrl}/images/static/img_new/page_btn-enter.png" class="btn-enter" />
+									<img src="${staticUrl}/images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/>
+								</a>
+							</li>
+					  [/#if]
+					[/#list] 
+					[/@dataList]
+				[/#if]  
+			[/#list]
+			[/@nodeList]
+			</ul>
+		</nav>
+		<div class="login_register right">
+			<div class="login" style="display:none;">
+				<a href="javascript:userLogin()">登录</a><a>&nbsp;|&nbsp;</a><a href="javascript:userRegister()" >注册</a>
+			</div> 
+			<div class="user mui-contro" style="display:none;">
+				<a class="" >
+					<img src="${staticUrl}/images/static/img/phone_1_checked.png" /> 
+					<span class="userName">
+						admin
+					</span>
+				</a>
+				<ul class="mui-menulist mui-dwmenu">
+					<li class="i_hide"><a href="${devUrl}/console/applist">控制台</a></li>
+					<li class="i_hide"><a href="${devUrl}/devComp/myshareList">组件管理</a></li>
+					<li class="i_hide"><a href="${passportUrl}">个人中心</a></li>
+					<li ><a href="javascript:userExit()">退出</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+[/@node] [/@node] [/@node]

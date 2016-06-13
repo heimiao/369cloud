@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>控制台首页</title>
+		<link rel="icon" href="//g.369cloud.com/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="http://test-www.369cloud.com/ftp/g/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dev/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dev/app.css" />
+		<!--
+         	 判断ie9的这段js必须放到样式表之下，擅自改动后果自负
+         -->
+		<!--[if lt IE 9]>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/createTag.js"></script>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/respond.min.js"></script>
+		   <link href="http://test-www.369cloud.com/ftp/g/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		   <link href="../../bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+           <script src="../../bootstrap/js/respond.proxy.js"></script>
+	    <![endif]-->
+
+		<!-- 
+        	描述：defer是解决ie8的异步  async是异步加载js
+        -->
+		<script src="../../js/request.js" defer async="true" data-main="../../js/dev/app" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="baseFrame index">
+		<div class="container" style="width:98%;margin:0 auto;">
+			<div class="row">
+				<div class="app_top_nav">
+					<img class="logo" src="../../images/dev/logo.png" />
+					<div class="nav-right right">
+						<div class="loginModle">
+							<div class="login" style="display:none;">
+								<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+								<a href="">注册</a>
+							</div>
+							<div class="userInfo">
+								<div class="urserhead">
+									<img src="../../images/dev/userHead.png" />&nbsp;
+									<a href="javascript:showhide()">我的账户</a>
+									<div class="urserconte" style="display:none;">
+										<div class="">
+											<img src="../../images/dev/userHead.png" />&nbsp;
+											<span>我的账户</span>
+										</div>
+										<div>
+											<a href="applay_index.html">控制台</a>
+										</div>
+										<div>
+											<a href="../myShare/share_store_one.html">我的分享</a>
+										</div>
+										<div>
+											<a href="../userInfo/accountSet_Index.html">账户设置</a>
+										</div>
+										<div>
+											<a href="../userInfo/perCenter_index.html">个人中心</a>
+										</div>
+										<div>
+											<a href="">退出</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="right dev_link">
+						<a href="mailto:">文档中心</a>
+						<a href="mailto:">视频培训</a>
+						<a href="mailto:">社区</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="index_application">
+					<div class="applayHead">
+						<button class="createApbtn left" onclick="createApllay()">创建新应用</button>
+						<span class="right">
+							带*为我参与的应用
+						</span>
+						<div class="clear"></div>
+					</div>
+					<div class="index_list">
+						应用列表
+					</div>
+				</div>
+			</div>
+
+			<div class="row app-row">
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="  index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+											<span class="injoin"><img src="../../images/dev/app/join_icon.png">参与</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="  index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="  index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="panel applist-panel">
+								<section class="appInfo">
+									<div class="index_title">
+										<div>
+											<img src="../../images/dev/app/index_application.png">
+										</div>
+										<div class="index_tit">
+											<span>スーパーロボット大戦</span>
+											<br>
+											<span class="index_time">2015-01-30</span>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<div class="index_yong">
+										<ul>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">今日新增用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+											<li>
+												<div class="big_num">1359</div>
+												<div class="small_mun">本周活跃用户</div>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="index_more">
+							<a href="#">展开更多</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel questionpanel">
+							<section class="question">
+								<h4>常见问题</h4>
+								<article class="index_problem">
+									<ul>
+										<li><a href="#">使用369cloud云平台移动端 的进行手机适配 一般怎么处理?</a></li>
+										<li><a href="#">和应用引擎开发有什么区别</a></li>
+										<li><a href="#">使用369cloud我们自己原先的一些原生的包和程序还能够使用吗</a></li>
+										<li><a href="#">使用369cloud云平台移动端 的进行手机适配 一般怎么处理?</a></li>
+										<li><a href="#">使用369cloud一定要使用平台提供的在线数据库吗？</a></li>
+										<li><a href="#">云学院引擎中的database是指手机端还是云端？</a></li>
+										<li><a href="#">在开发中我将一些图片后缀属性改为png，在平台正式打包时这些图片却没有打包进去？</a></li>
+										<li><a href="#">在ide中我修改icon目录的下的图片，上传平台后打正式包，下载运行后发现ICON没有改变，为什么？</a></li>
+										<li><a href="#">在文档中心的《协议路径》里有关于对内部sd卡的操作，如果接一个外部存储卡是否会出现找不到的现象？</a></li>
+										<li><a href="#">平台是否能格式化min.js这类js文件？</a></li>
+										<li><a href="#">使用369cloud云平台移动端 的进行手机适配 一般怎么处理?</a></li>
+										<li><a href="#">使用369cloud云平台移动端 的进行手机适配 一般怎么处理?</a></li>
+									</ul>
+								</article>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 rightimg">
+					<div class="col-md-12 col-sm-6 divimg">
+						<a href=""><img src="../../images/dev/app/jnjszc.jpg"></a>
+					</div>
+					<div class="col-md-12 col-sm-6 ideDown">
+						<img src="../../images/dev/app/idexz.png">
+						<div class="down_btn">
+							<a href="" alt="window下载">
+								<img src="../../images/dev/app/bt_mac.png" />
+							</a>
+							<a href="" alt="mac下载"> 
+								<img src="../../images/dev/app/bt_win.png" />
+							</a>
+							<span>
+								v1.1.0(259.0M)
+							</span>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6 divimg">
+						<a href=""><img src="../../images/dev/app/idexz.jpg"></a>
+						<span class="ide_v">
+							v2.20303
+						</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

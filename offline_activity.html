@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>线下活动</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="css/style.css" />
+		<!--[if lt IE 9]>
+		   <script src="bootstrap/js/createTag.js"></script>
+		   <script src="bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+	    <script src="js/jquery-1.10.2.min.js"></script>
+	    <script type="text/javascript" src="js/placeholderfriend.js" ></script>
+	    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script>
+	    	$(function(){
+	    		$(" .navBg1 li").hover(function(){
+	    			$(".navBg1 li").removeClass("active");
+	    			$(this).addClass("active");
+	    		})
+	    	})
+	    	$(document).ready(function(){
+				$("#login").click(function(event){
+					$(".modal").css({"display":"block"});
+				});
+				$("#oa_img").click(function(){
+					$(".modal").css({"display":"none"});
+				})
+				$("#button1").click(function(){
+					$(".modal").css({"display":"none"});
+				})
+			})
+	    </script>
+	</head>
+	<body class="offline">
+		<header class="header">
+			<div class="navBg"></div> 
+			<div class="list-btn left">
+				<img src="images/static/img/list_btn.png" />
+			</div>
+			<div class="logo left">
+				<img src="images/static/img/logo.jpg" />
+			</div>
+			<nav class="nav left">
+				<ul>
+					<li><a href="devServce.html">开发者服务</a>
+					</li>
+					<li><a href="moduleStroe.html">组件Store</a>
+					</li>
+					<li><a href="tinyCreate.html">微创业</a>
+					</li>
+					<li><a href="HigherUps.html">创业大咖秀</a>
+					</li>
+					<li><a href="cloudSchool.html">云学院</a>
+					</li>
+					<li><a href="javascript:alert('暂未开放')">社区</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="nav-right right">
+				<div class="loginModle right">
+					<div class="login" style="display:none;">
+						<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="">注册</a>
+					</div>
+					<div class="userInfo">
+						<div class="urserhead">
+							<img src="images/static/img/user_head.png" />&nbsp;
+							<a href="javascript:showhide()">我的账户</a>
+							<div class="urserconte" style="display:none;">
+								<div>
+									<a href="applyPanel/applay_index.html">控制台</a>
+								</div>
+								<div>
+									<a href="myShare/share_store_one.html">我的分享</a>
+								</div>
+								<div>
+									<a href="userInfo/accountSet_Index.html">账户设置</a>
+								</div>
+								<div>
+									<a href="userInfo/perCenter_index.html">个人中心</a>
+								</div>
+								<div>
+									<a href="">退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+			<div class="">
+				<div class="navBg1">
+					<ul class="">
+						<li class="active">
+							<a href="news.html">新闻动态</a>
+						</li>
+						<li class="">
+							<a href="offline_activity.html">线下活动</a>
+						</li>
+						<li class="">
+							<a href=".html">线上活动</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<!--第一行-->
+		 <div class="container oa_mar-t">
+			<div class="a_mar off_activity">
+				<div class="media col-md-5 col-md-offset-1">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8">2015.08至2015.09</span>
+				  </div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			<div class="a_mar">
+				<div class="media col-md-5">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8 oa_mar-t1">2015.08至2015.09</span>
+				</div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div class="container bor_bottom">
+			<div class="col-md-10 col-md-offset-1 a_bottom" style="margin-top:20px;"></div>
+		</div>
+		<!--第二行-->
+			<div class="container oa_mar-t">
+			<div class="a_mar off_activity">
+				<div class="media col-md-5 col-md-offset-1">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8">2015.08至2015.09</span>
+				  </div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			<div class="a_mar">
+				<div class="media col-md-5">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8 oa_mar-t1">2015.08至2015.09</span>
+				</div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			</div>
+		</div>
+		</div>
+		<!--第二行结束-->
+		<div class="container bor_bottom">
+			<div class="col-md-10 col-md-offset-1 a_bottom" style="margin-top:20px;"></div>
+		</div>
+		<!--第三行-->
+			<div class="container oa_mar-t">
+			<div class="a_mar off_activity">
+				<div class="media col-md-5 col-md-offset-1">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8">2015.08至2015.09</span>
+				  </div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			<div class="a_mar">
+				<div class="media col-md-5">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object" src="images/static/img/news1.png" alt="" id="a_img1">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <p class="media-heading a_t-16 oa_mar-t1 oa_head" title="【369Cloud千人招募计划】千万云资源包重磅来袭">【369Cloud千人招募计划】千万云资源包重磅来袭</p>
+				    <div class="a_mar-tb">
+					<img src="images/static/img/offline_activity1.png" class="left">
+					<span class="a_tf8 oa_mar-t1">2015.08至2015.09</span>
+				</div>
+				<div class="a_mar-tb">
+					<img src="images/static/img/offline_activity2.png" class="left">
+					<p class="a_tf8 oa_five">海淀区新中关村大厦508</p>
+				</div>
+				<div class="oa_mar-t1">
+					<input type="button" value="立即参加" class="once" id="login"/>
+				</div>
+			  </div>
+			</div>
+			</div>
+		</div>
+		</div>
+		<!--第三行结束-->
+		<div class="off_activity">
+			<div class="col-md-10 col-md-offset-1 bottom3" style="margin-top:20px;"></div>
+		</div>
+		<div class="page" style="margin-top: 100px;">
+			<ul>
+				<li class="pre"><a href="javascript:void(0)" class="page-checked">&lt;</a>
+				</li>
+				<li><a href="javascript:void(0)" class="page-unchecked">02</a>
+				</li>
+				<li><a href="javascript:void(0)" class="page-checked">03</a>
+				</li>
+				<li><a href="javascript:void(0)" class="page-unchecked">04</a>
+				</li>
+				<li class="next"><a href="javascript:void(0)" class="page-unchecked">&gt;</a>
+				</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<!--弹出层-->
+		<div class="modal in offno" id="modal" style="background: rgba(0,0,0,.5);display: none;padding: 10% 0;">
+		    	<div class="modal-dialog" style="max-width: 550px;">
+		    		<div class="modal-content">
+		    			<div class="modal-header">
+		    				<button type="button" class="close" data-dismiss="modal" id="oa_img">
+		    					<span style="color: #fff;">x</span>
+		    				</button>
+		    				<img src="images/static/img/activity1.png" style="margin-left: 20px;">
+		    				<label style="font-size: 14px;margin-left: 10px;color: #fff;">填写报名信息</label>
+		    			</div>
+		    			<div class="modal-body">
+		    				<form class="form-horizontal">
+		    					<div class="form-group">
+		    						<label class="col-sm-3 control-label">姓名：</label>
+		    						<div class="col-sm-8">
+		    							<input type="text" class="form-control" placeholder="请输入姓名" id="name"/>
+		    							<span style="color: #f00;" id="name1"></span>
+		    						</div>
+		    					</div>
+		    					<div class="form-group">
+		    						<label class="col-sm-3 control-label">联系方式：</label>
+		    						<div class="col-sm-8">
+		    							<input type="text" class="form-control" placeholder="请输入联系方式" id="tel"/><span style="color: #f00;" id="telp"></span>
+		    						</div>
+		    					</div>
+		    					<div class="form-group">
+		    						<label class="col-sm-3 control-label">公司名：</label>
+		    						<div class="col-sm-8">
+		    							<input type="text" class="form-control" placeholder="请输入公司名" id="company"/><span style="color: #f00;" id="company1"></span>
+		    						</div>
+		    					</div>
+		    					<div class="form-group">
+									<label class="col-sm-3 control-label">人数：</label>
+									<div class="text-center col-sm-8">
+									<div class="m_box1 m_box_add1 a_mar-t">
+					                    <div id="c_box1" class="css_box1">
+					                        <div id="btn1">
+					                            <div id="s2">1人</div>
+					                            <div class="point1"></div>
+					                        </div>
+					                        <input type="hidden" name="dictId" id="dictId">
+					                        <ul id="cont1">
+					                        	<li id="cx0" class="box_cont1 box_count_add1">1人</li>
+					                            <li id="cx0" class="box_cont1">2人</li>
+					                            <li id="cx1" class="box_cont1">3人</li>
+					                            <li id="cx2" class="box_cont1">4人</li>
+					                            <li id="cx3" class="box_cont1">5人</li>
+					                            <li id="cx4" class="box_cont1">5+</li>
+					                        </ul>
+					                    </div>
+				                </div>
+		    				</form>
+		    			</div>
+		    			<div class="modal-footer" style="margin-top: 80px;">
+		    				<button type="button" class="btn btn-primary btn-ok ladda-button">
+		    					<span class="ladda-label">确定</span>
+		    				</button>
+		    				<button type="button" class="btn btn-default" id="button1">
+		    					<span class="ladda-label">取消</span>
+		    				</button>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		
+		</div>
+	<script type="text/javascript">
+		/**下拉框的JS**/
+	    $(function(){
+	        var tts = 1;
+	        $("#btn1").click(function(){
+	            if(tts == 1){
+	                $("#cont1>li").slideDown("fast","linear");
+	                $("#c_box1").addClass("out_border1");
+	                $(this).css({"background":"#fff","color":"#000"});
+	                $(".point1").addClass("point_black1");
+	                $("#btn1").css("border","1px solid #fff");
+	                tts = 0;
+	            }else if(tts == 0){
+	                $("#cont1>li").css("display","none");
+	                $("#c_box1").removeClass("out_border1");
+	                $(this).css({"background":"#fc4902","color":"#fff"});
+	                $(".point1").removeClass("point_black1");
+	                $("#btn1").css("border","1px solid #fc4902");
+	                tts = 1;
+	            }
+	        });
+	        $("li[id^='cx']").click(function(){
+	            $("li[id^='cx']").removeClass("box_count_add1");
+	            $("#c_box").removeClass("out_border1");
+	            $(this).addClass("box_count_add1");
+	            $("#s2").text($(this).text());
+	            $("#btn1").css({"background":"#fc4902","color":"#fff","border":"0px"});
+	            $(".point1").removeClass("point_black1");
+	            $("#cont1>li").css("display","none");
+	            tts = 1;
+	        });
+	        /**点击空白让下拉框自动收回**/
+	        (function () {
+	            var flag=false;
+	            /*解除鼠标移动到该下拉区域的点击事件*/
+	            $(".m_box1").hover(function(){
+	                flag=false;
+	                $(document).unbind().click(function(e){
+	                    if(flag){
+	                        $("#cont1 li").css("display","none");
+	                        $("#c_box1").removeClass("out_border1");
+	                        $("#btn1").css({"background":"#fc4902","color":"#fff","border":"0px"});
+	                        $(".point1").removeClass("point_black1");
+	                        $(this).unbind();
+	                        tts = 1;
+	                    }
+	                })
+	                /*绑定鼠标不在该区域下的点击事件*/
+	            },function(){
+	                flag=true;
+	            })
+	        })(window)
+	    });
+	    //验证手姓名不能为空
+	    $("#name").focus(function(){
+	    	var name1=document.getElementById("name1");
+	    	name1.innerHTML="";
+	    })
+	    $("#name").blur(function(){
+	    	var name=document.getElementById("name");
+	    	var name1=document.getElementById("name1");
+	    	var nam=/(?!.*先生.*|.*小姐.*|.*男士.*|.*女士.*|.*太太.*)^([\u4e00-\u9fa5\ ]{2,10})$/ ;
+	    	if(name.value.length==0){
+				    name1.innerHTML="请输入您的姓名";
+			  	    return false; 
+				}else if(!nam.test(name.value)){
+					name1.innerHTML="输入姓名必须为汉字,且不能包含先生、小姐、男士、女士、太太等字";
+				}
+	    })
+	    $("#tel").focus(function(){
+	    	var telp=document.getElementById("telp");
+	    	telp.innerHTML="";
+	    })
+	    $("#tel").blur(function(){
+			var tel  = document.getElementById("tel"); 
+			var telp  = document.getElementById("telp"); 
+			var pattern= /^(13[0-9]|15[0-9]|14[7]|17[6|7|8]|18[0|2|3|5|6|7|8|9])\d{8}$/;//
+			var p1 = /^(([0\+]\d{2,3}-)?(0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/;
+			if(tel.value.length==0){
+					telp.innerHTML="请输入您的联系方式";
+			  	    return false; 
+				}else if(!pattern.test(tel.value)&&!p1.test(tel.value)) {
+				    telp.innerHTML="请输入正确的电话号码"; 
+				   	return false; 
+			  }else{
+					telp.innerHTML="";
+				}
+			})
+	    $("#company").focus(function(){
+	    	var company1=document.getElementById("company1");
+	    	company1.innerHTML="";
+	    })
+	    $("#company").blur(function(){
+	    	var company=document.getElementById("company");
+	    	var company1=document.getElementById("company1");
+	    	if(company.value.length==0){
+				    company1.innerHTML="请输入您的公司名称";
+			  	    return false; 
+				}else{
+					company1.innerHTML="";
+				}
+	    })
+   </script>
+	</body>
+</html>

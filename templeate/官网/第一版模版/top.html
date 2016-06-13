@@ -1,0 +1,116 @@
+[@node var="rootNode" nodeid="35"] 
+[@node var="selfnode" nodeid="self"] 
+[@node var="parent" nodeid="parent"]
+<script type="text/javascript">
+    var phoneBool=true;
+	$(function() { 
+		  [#if selfnode.NODEID==36||selfnode.NODEID==38||selfnode.NODEID==40] 
+		      $(".header").find(".navBg").css({"opacity":0.2,"filter":"alpha(opacity=20);"}); 
+		  [#else]
+		     if($("#addheader").html()==undefined){ 
+			     $(".header").after("<div id='addheader' style='height:74px'></div>");
+			  }  
+			 $(".header").find(".navBg").css({"opacity":0.8,"filter":"alpha(opacity=80);"}); 
+		  [/#if]
+	});
+</script>
+<div class="loginInfo" id="loginInfo"></div>
+<header class="header"  >
+	<div class="navBg"></div>
+	<div class="list-btn left">
+		 <img src="${root_address}/img/list_btn.png" />
+	 </div>
+	<div class="logo left">
+		<a href="${root_address}${rootNode.NODEURL}">
+			<img src="${root_address}/img/logo.png" />
+		</a>
+	</div>
+	<nav class="nav left active-nav" >
+		<ul>
+			[#if selfnode.NODEID!="36"&&selfnode.NODEID!="38"&&selfnode.NODEID!="41"&&selfnode.NODEID!="37"&&selfnode.NODEID!="67"]
+			<li class="cur" style="width:0px:height:0px;padding:0">
+				<a></a>
+			</li>
+			[/#if]  
+			
+			
+			[@nodeList nodeid="sub-${rootNode.NODEID}" var="topnav" ignore="40,43,69"] 
+			[#list topnav as item] 
+						[#if item.nodeid=="42"]
+							 <!--外链-->
+								[@dataList nodeid="${item.nodeid}" var="childNav" num="1"] 
+									[#list childNav as childItem] 
+										 <li><a href="${childItem.address}" target="_blank">${childItem.name}</a></li>
+									[/#list] 
+								[/@dataList] 
+					    [#else]   
+					    
+						 <!--云学院和学习中心和组件商店                     内连-->
+						[#if item.nodeid=="41"|| item.nodeid=="67"|| item.nodeid=="37"]
+								[#if item.nodeid=="67"]
+									    <li class="i_hide [#if item.nodeid==selfnode.NODEID]cur[/#if]">
+												<div class="dropdown">
+													<a>${item.nodename}</a>
+													<div class="dropdown-nav">
+														<img src="${root_address}/img/u812.png" alt="" class="ul-before">
+														<ul class="dropdown-ul">
+															[@dataList nodeid="${item.nodeid}" var="childNav"] 
+														[#list childNav as childItem]
+															<li><a href="${childItem.address}" class="open-menu">${childItem.name}</a></li> 
+															[/#list] 
+							  							[/@dataList]  
+														</ul>
+													</div> 
+												</div>
+									    </li>
+								[#else]
+									[@dataList nodeid="${item.nodeid}" var="childNav" num="1" ] 
+										[#list childNav as childItem]
+										    <li class="[#if item.nodeid==selfnode.NODEID]cur[/#if] [#if item.nodeid==37]i_hide[/#if]"><a href="${childItem.address}">${childItem.name}</a></li>
+										[/#list] 
+							  		 [/@dataList]
+								 [/#if]  
+						 [#else]
+						        <!--其他-->
+						        [#if item.nodeid==selfnode.NODEID]
+								<li class="cur [#if item.nodeid==40]i_hide[/#if]"><a href="${root_address}${item.NODEURL}">${item.nodename}</a></li>
+								[#else]
+								<li class="[#if item.nodeid==40]i_hide[/#if]"><a href="${root_address}${item.NODEURL}">${item.nodename}</a></li>
+								[/#if]  
+						 [/#if]  
+			       [/#if]  
+			[/#list] 
+			[/@nodeList] 
+		</ul>
+		<div class="curBg"></div>
+	</nav>
+	<div class="nav-right right">
+		<div class="loginModle right">
+			<div class="login">
+				<a href="javascript:userLogin()">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="javascript:userRegister()">注册</a>
+			</div>
+			<div class="userInfo" style="display:none;">
+				<div class="urserhead">
+					<img src="${root_address}/img/user_head.png" style="width:20px;height:20px;" />&nbsp;
+					<a href="javascript:showhide()">我的账户</a>
+					<div class="urserconte" style="display:none;">
+						<div>
+							<a href="${devUrl}/console/applist">控制台</a>
+						</div>
+						<div>
+							<a href="${devUrl}/devComp/myshareList">组件管理</a>
+						</div>
+						<div>
+							<a href="${passportUrl}">个人中心</a>
+						</div>
+						<div>
+							<a href="javascript:userExit()">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header> 
+[/@node] [/@node] [/@node]

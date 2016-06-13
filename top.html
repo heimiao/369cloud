@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>头部导航</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+		<link rel="stylesheet" href="css/nav.css" />
+		<!--[if lt IE 9]>
+		   <script src="bootstrap/js/createTag.js"></script>
+		   <script src="bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/top.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".p_btn").click(function() {
+					if ($(".m-nav").is(":hidden")) {
+						$('.btn_imgSrc').attr("src", $('.btn_imgSrc').attr("src").replace(/navigation/, "page_btn-close"));
+					} else {
+						$('.btn_imgSrc').attr("src", $('.btn_imgSrc').attr("src").replace(/page_btn-close/, "navigation"));
+					}
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="top_nav">
+			<div class="nav_bg"></div>
+			<div class="nav_main">
+				<div class="p_btn left">
+					<a href="javascript:;">
+						<img src="images/static/img_new/navigation.png" alt="" class="btn_imgSrc">
+					</a>
+				</div>
+				<a class="logo left" href="">
+					<img src="images/static/img_new/logo.png" class="pcPad_logo" />
+					<img src="images/static/img_new/wap_logo.png" class="phone_logo" />
+				</a>
+
+				<nav class="right m-nav">
+					<ul class="ulList">
+						<li class="stair_nav"><a href="#">云开发
+						<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+						<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a></li>
+						<li class="active stair_nav"><a href="#about">云后端
+						<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+						<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a></li>
+						<li class="stair_nav"><a href="#contact">云主机
+						<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+						<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle"> 研发支持 </a>
+							<ul class="dropdown-menu icon_dropdown">
+								<li class="pc_pad firstLi effecttLi">
+									<a href="#">
+										<img src="images/static/img_new/toos.png" class="default_img" />
+										<img src="images/static/img_new/navigation_icon _pre_tool.png" class="active_img" />
+										<dl>
+											<dt>开发工具</dt>
+											<dd>利用它我们可以极大的提高开发效率</dd>
+										</dl>
+									</a>
+								</li>
+								<li class="pc_pad effecttLi">
+									<a href="#"><img src="images/static/img_new/document.png" class="default_img" />
+										<img src="images/static/img_new/navigation_icon _pre_center.png" class="active_img" />
+										<dl>
+											<dt>文档中心</dt>
+											<dd>利用它我们可以极大的提高开发效率</dd>
+										</dl>
+									</a>
+								</li>
+								<li class="pc_pad effecttLi">
+									<a href="#">
+										<img src="images/static/img_new/community.png" class="default_img" />
+										<img src="images/static/img_new/navigation_icon _pre_community (1).png" class="active_img" />
+										<dl>
+											<dt>社区</dt>
+											<dd>利用它我们可以极大的提高开发效率</dd>
+										</dl>
+									</a>
+								</li>
+								<li class="phone">
+									<a href="#"><span id=""> 开发工具 </span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+									<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+								<li class="phone">
+									<a href="#"><span id=""> 文档中心 </span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+									<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+								<li class="phone">
+									<a href="#"><span id=""> 社区 </span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+									<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">学习中心 </a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">
+										<span id="">在线学习</span>
+										<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+										<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter" />
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span id="">在下培训</span>
+										<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+										<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter" />
+									</a>
+								</li>
+								<li><a href="#"><span id="">知识库</span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+								<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+								<li><a href="#"><span id="">中心介绍</span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+								<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+								<li><a href="#"><span id="">学习记录</span><img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+								<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a>
+								</li>
+							</ul>
+						</li>
+						<li class="i_hide"><a href="#contact">组件商店</a></li>
+						<li class="stair_nav"><a href="#contact">众包
+						<img src="images/static/img_new/page_btn-enter.png" class="btn-enter" />
+						<img src="images/static/img_new/page_btn_pre-enter.png" class="btn_pre-enter"/></a></li>
+					</ul>
+				</nav>
+				<div class="login_register right">
+					<div class="login" style="display:block;">
+						<a href="">登录</a>&nbsp;<a>|</a>&nbsp;
+						<a href="">注册</a>
+					</div>
+					<div class="user mui-contro" style="display:none;">
+						<a href="">
+							<img src="images/static/img/phone_1_checked.png" /> admin
+						</a>
+						<ul class="mui-menulist mui-dwmenu">
+							<li><a href="#">控制台</a></li>
+							<li><a href="#">组件管理</a></li>
+							<li><a href="#">个人中心</a></li>
+							<li><a href="#">退出</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

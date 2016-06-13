@@ -1,0 +1,506 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>编译</title>
+		<link rel="icon" href="//g.369cloud.com/images/favicon.ico" type="image/x-icon">
+		<!--<link rel="stylesheet" type="text/css" href="//g.369cloud.com/bootstrap/css/bootstrap.css" /> -->
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dev/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dev/app.css" />
+		<!--
+         	 判断ie9的这段js必须放到样式表之下，擅自改动后果自负
+         -->
+		<!--[if lt IE 9]>
+		   <script src="../../bootstrap/js/createTag.js" type="text/javascript" charset="utf-8"></script>
+           <script src="../../bootstrap/js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+	    <![endif]-->
+		<!-- 
+        	描述：defer是解决ie8的异步  async是异步加载js
+        -->
+	</head>
+
+	<body class="baseFrame app_body">
+		<div class="dev-main">
+			<div class="leftMenu ">
+				<div class="menuTop">
+					<a href="">
+						<img class="min_logo" src="//g.369cloud.com/images/dev/min_logo.png" />
+						<img class="logo" src="//g.369cloud.com/images/dev/logo.png" />
+					</a>
+					<div class="sel_wrap">
+						<label></label>
+						<select class="select" name="" id="c_city">
+							<option value="0">app</option>
+							<option value="1">测试环境测试环境测试环境</option>
+						</select>
+					</div>
+				</div>
+				<aside class="menu_info">
+					<div class="scrollmenu" id="scrollmenu">
+						<nav>
+							<div class="menu_title">
+								<h3 class="h3_title">应用开发 </h3>
+								<h3 class="min_h3_title">APP</h3>
+								<img src="//g.369cloud.com/images/dev/open_icon.png" />
+							</div>
+							<ul>
+								<li class="checked">
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//g.369cloud.com/images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</aside>
+			</div>
+			<div class="rightCont">
+				<div class="dev_container">
+					<!--
+                    	 编译头部
+                    -->
+					<div class="app_top_nav">
+						<img src="//g.369cloud.com/images/dev/leftMenu_btn.png" />
+						<div class="nav-right right">
+							<div class="loginModle">
+								<div class="login" style="display:none;">
+									<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="">注册</a>
+								</div>
+								<div class="userInfo">
+									<div class="urserhead">
+										<img src="//g.369cloud.com/images/dev/userHead.png" />&nbsp;
+										<a href="javascript:showhide()">我的账户</a>
+										<div class="urserconte" style="display:none;">
+											<div class="">
+												<img src="//g.369cloud.com/images/dev/userHead.png" />&nbsp;
+												<span>我的账户</span>
+											</div>
+											<div>
+												<a href="applay_index.html">控制台</a>
+											</div>
+											<div>
+												<a href="../myShare/share_store_one.html">我的分享</a>
+											</div>
+											<div>
+												<a href="../userInfo/accountSet_Index.html">账户设置</a>
+											</div>
+											<div>
+												<a href="../userInfo/perCenter_index.html">个人中心</a>
+											</div>
+											<div>
+												<a href="">退出</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right dev_link">
+							<a href="mailto:">文档中心</a>
+							<a href="mailto:">视频培训</a>
+							<a href="mailto:">社区</a>
+						</div>
+					</div>
+					<!--  编译内容部分  -->
+					<div class="dev_panel line-tfive">
+						<h4>选择平台</h4>
+						<a href="" class="right">编译记录</a>
+					</div>
+					<!-- 选择引擎  -->
+					<div class="dev_panel">
+						<form class="data-table">
+							<div class="table-row">
+								<label class="table-cell">应用引擎：</label>
+								<div class="table-cell max-twoh">
+									<div class="sel_wrap ">
+										<label></label>
+										<select class="select" name="" id="c_city">
+											<option value="0">app</option>
+											<option value="1">测试环境测试环境测试环境</option>
+										</select>
+									</div>
+								</div>
+								<div class="table-cell"> <span class="helpInfo ">
+										提示信息
+									</span></div>
+							</div>
+							<div class="table-row">
+								<label class="table-cell">选择平台：</label>
+								<div class="table-cell">
+									<span class="changeapp left">
+										<div class="left">
+										   <img src="//g.369cloud.com/images/dev/app/ios_icon.png" />&nbsp;IOS
+										</div>
+										<div class="ckbox left">
+										  <input type="checkbox" />
+										 </div>
+									</span>
+									<span class="changeapp left">
+									 	<div class="left">
+										    <img src="//g.369cloud.com/images/dev/app/android_icon.png" />&nbsp;Android
+										</div>
+										<div class="ckbox left">
+										      <input type="checkbox" />
+										 </div> 
+									 </span>
+
+								</div>
+								<div class="table-cell">
+									<span class="helpInfo ">
+										提示信息
+									</span></div>
+							</div>
+						</form>
+					</div>
+					<!-- 是否加密  -->
+					<div class="dev_panel">
+						<form class="data-table">
+							<div class="table-row">
+								<div class="table-cell">
+									<span class="changeapp">
+										<div class="left">
+										   <img src="//g.369cloud.com/images/dev/app/ios_icon.png" />&nbsp;启动代码加密
+										</div>
+										<div class="ckbox left">
+										  <input type="checkbox" />
+										 </div>
+									</span>
+								</div>
+								<div class="table-cell"><span class="helpInfo ">
+										启用后将对项目中的HTML、JavaScript代码进行加密处理
+									</span></div>
+							</div>
+							<div class="table-row">
+								<div class="table-cell">
+									<span class="changeapp">
+										<div class="left">
+										   <img src="//g.369cloud.com/images/dev/app/ios_icon.png" />&nbsp;启动硬盘加速
+										</div>
+										<div class="ckbox left">
+										  <input type="checkbox" />
+										 </div>
+									</span>
+								</div>
+								<div class="table-cell"></div>
+							</div>
+						</form>
+					</div>
+					<!--  编译内容部分  -->
+					<div class="dev_panel">
+						<form class="data-table">
+							<div class="table-row">
+								<div class="table-cell">
+									版本号：
+								</div>
+								<div class="table-cell">
+									<div class="compile-vs">
+										<input type="text" required="number" maxlength="2" name="" id="" value="01" />-
+										<input type="text" maxlength="2" name="" id="" value="00" />-
+										<input type="text" maxlength="3" name="" id="" value="000" />
+									</div>
+								</div>
+								<div class="table-cell">
+									<span class="helpInfo">
+										完全的版本号定义：&lt;主版本号&gt;&lt;次版本号&gt;&lt; 修订版本号&gt;
+									</span>
+								</div>
+							</div>
+							<div class="table-row">
+								<div class="table-cell">
+									描述：
+								</div>
+							</div>
+							<div class="table-column">
+								<textarea class="form-control" rows="3" placeholder="500字内比较合适哦！"></textarea>
+							</div>
+							<div class="table-column">
+								<a class="data-btn left" onclick="yinqing()">调用弹框的测试按钮用的时候直接删掉即可</a> <a class="data-btn right" onclick="yinqing2()">云编译</a>
+							</div>
+						</form>
+					</div>
+					<div class="dev_panel line-tfive">
+						<h4>最近编译</h4>
+						<a class="right" id="recentlycompil" href="javascript:void(0)">最近编译</a>
+					</div>
+                      
+                      
+					<div class="unbg-panel" >
+						<div class="col-md-6 left-panel">
+							<div class="panel">
+								<section class="compileLog">
+									<div class="cm_title">
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/android_icon.jpg" />
+											<h4>我的app应用</h4>
+										</div>
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/erweima_icon.jpg" onclick="show_erweima()" class="erweima" />
+										</div>
+									</div>
+									<div class="cm_time ">
+										<div>
+											2015-06-12 12:00
+										</div>
+									</div>
+									<div class="cm_vsion">
+										<div class="left">
+											版本：V1.22.1
+										</div>
+										<div class="right">
+											<img src="" />HAPPY
+										</div>
+									</div>
+									<div class="cm_info">
+										<div class="scroll_cminfo">
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+											<p>我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆</p>
+										</div>
+									</div>
+									<div class="download_bad">
+										<div>
+											<a href=" " class="cm_btn">下载</a>
+										</div>
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/redMinus.png" class="right" />
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-md-6 right-panel">
+							<div class="panel">
+								<section class="compileLog">
+									<div class="cm_title">
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/ios_icon.jpg" />
+											<h4>我的app应用</h4>
+										</div>
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/erweima_icon.jpg" onclick="show_erweima()" class="erweima" />
+										</div>
+									</div>
+									<div class="cm_time ">
+										<div>
+											2015-06-12 12:00
+										</div>
+									</div>
+									<div class="cm_vsion">
+										<div class="left">
+											版本：V1.22.1
+										</div>
+										<div class="right">
+											<img src="" />HAPPY
+										</div>
+									</div>
+									<div class="cm_info">
+										<div class="scroll_cminfo">
+											我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆 我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆我的红阿婆
+										</div>
+									</div>
+									<div class="download_bad">
+										<div>
+											<span>
+											 	 <b>编译失败：</b>SVN同步widget失败
+											 </span>
+										</div>
+										<div>
+											<img src="//g.369cloud.com/images/dev/app/redMinus.png" class="right" />
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<script type="text/javascript">
+			//都放到app.js所配的js文件里边   js不放在页面上的 要不然你是找不到jquery对象
+			function show_erweima() {
+				$('#show_erweima').modal('show');
+			}
+
+			function yinqing2() {
+				$('#stateBox').modal('show');
+			}
+
+			function yinqing() {
+				$('#stateAlert').modal('show');
+			}
+		</script>
+		<!-- 二维码模态框（Modal） -->
+		<div class="modal erweima" id="show_erweima">
+			<div class="modal-dialog my-dialog" style="width:240px">
+				<div class="modal-content">
+					<div class="modal-body module-modal">
+						<div class="close-modal" data-dismiss="modal">×</div>
+						<div style="text-align:center;padding:10px">
+							<img src="//g.369cloud.com/demo/img/daerweima.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.modal -->
+
+		<!-- /.编译模态框 -->
+		<div class="">
+			<div class="modal black_titleModel" id="stateBox" tabindex="-1" role="dialog" aria-labelledby="stateBox" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<h4 class="modal-title" id="stateBox">
+                                                                                       云编译
+                            </h4>
+						</div>
+						<div class="modal-body black-modal-body">
+							<table border="0" class="table" style="display:none;">
+								<tr>
+									<td>
+										<img src="//g.369cloud.com/images/dev/app/android_icon.jpg" />
+									</td>
+									<td>2人排队中，请稍后...</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="//g.369cloud.com/images/dev/app/ios_icon.jpg" />
+									</td>
+									<td>编译失败</td>
+								</tr>
+							</table>
+
+							<table border="0" class="table" style="display:none;">
+								<tr>
+									<td>
+										<img src="//g.369cloud.com/images/dev/app/android_icon.jpg" />
+									</td>
+									<td>正在生成中...</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="//g.369cloud.com/images/dev/app/ios_icon.jpg" />
+									</td>
+									<td>编译完成</td>
+								</tr>
+							</table>
+							<table border="0" class="table" style="width:80%;display:none">
+								<tr>
+									<td>
+										<div class="black-modal-cont">
+											<img src="//g.369cloud.com/images/dev/app/androidBig_icon.png" />
+											<img src="//g.369cloud.com/demo/img/erweima.png" />
+										</div>
+									</td>
+									<td>
+										<div class="black-modal-cont">
+											<img src="//g.369cloud.com/images/dev/app/iosBig_icon.png" />
+											<img src="//g.369cloud.com/demo/img/erweima.png" />
+										</div>
+									</td>
+								</tr>
+							</table>
+							<table border="0" class="table" style="display: ;">
+								<tr>
+									<td>
+										<div class="black-modal-cont">
+											<img src="//g.369cloud.com/images/dev/app/erroAndroidIcon.jpg" />
+											<img src="//g.369cloud.com/demo/img/erweima.png" />
+										</div>
+									</td>
+									<td>
+										<div class="black-modal-cont">
+											<img src="//g.369cloud.com/images/dev/app/erroIosIcon.jpg" />
+											<img src="//g.369cloud.com/demo/img/erweima.png" />
+										</div>
+									</td>
+								</tr>
+							</table>
+							<table border="0" class="table" style="width:80%;display:none">
+								<tr>
+									<td>
+										错误信息： style="BORDER-RIGHT: #999999 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #999999 1px solid; OVERFLOW-Y: auto; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: 12px; OVERFLOW-X: hidden; PADDING-BOTTOM: 3px; BORDER-LEFT: #999999 1px solid; WIDTH:
+										380px; COLOR: #000066; WORD-BREAK: break-all; PADDING-TOP: 3px; BORDER-BOTTOM: #999999 1px solid; FONT-STYLE: normal; FONT-FAMILY: SIMSUN; HEIGHT: 68px"
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="modal-footer black-modal-footer">
+							<button type="button" class="close-btn" data-dismiss="modal">关闭
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- /.modal -->
+		<div class="modal  black_titleModel" id="stateAlert" tabindex="-1" role="dialog" aria-labelledby="stateAlert" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">×</button>
+						<h4 class="modal-title" id="stateAlert">
+                                                                              选择引擎
+                       </h4>
+					</div>
+					<div class="modal-body black-modal-body">
+						<div class="">
+							<img src="//g.369cloud.com/images/dev/app/gantanhao.jpg" />
+						</div>
+						<div class="topMargin15">
+							当前选择引擎版本不是最新版本！
+						</div>
+						<div class="topMargin15">
+							使用旧版本引擎编译！可能会造成未知问题，请慎重选择。
+						</div>
+					</div>
+					<div class="modal-footer black-modal-footer">
+						<button type="button" class="sure-btn" data-dismiss="modal">确定
+						</button>
+						<button type="button" class="close-btn" data-dismiss="modal">取消
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="//g.369cloud.com/js/request.js" defer async="true" data-main="//g.369cloud.com/js/dev/app" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

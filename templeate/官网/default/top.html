@@ -1,0 +1,228 @@
+[@node var="rootNode" nodeid="35"] 
+[@node var="selfnode" nodeid="self"] 
+[@node var="parent" nodeid="parent"]
+<link rel="icon" href="favicon.ico" type="${URL}image/x-icon">
+<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="${URL}css/odometer-theme-car.css" />
+<link rel="stylesheet" type="text/css" href="${URL}css/index_1.css" />
+
+<script type="text/javascript">
+    var phoneBool=true;
+	$(function() { 
+		  [#if selfnode.NODEID==36||selfnode.NODEID==38||selfnode.NODEID==40] 
+		      $(".header").find(".navBg").css({"opacity":0.2,"filter":"alpha(opacity=20);"}); 
+		  [#else]
+		     if($("#addheader").html()==undefined){ 
+			     $(".header").after("<div id='addheader' style='height:74px'></div>");
+			  }  
+			 $(".header").find(".navBg").css({"opacity":0.8,"filter":"alpha(opacity=80);"}); 
+		  [/#if]
+		
+		$.ajax({
+			url: "http://test-passport.369cloud.com/third/loginInfo?loginInfoCallback=?",
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		}); 
+		
+		window.onscroll=function(){
+			var _top = document.documentElement.scrollTop || document.body.scrollTop;
+		    [#if selfnode.NODEID==36]
+			if(phoneBool&&_top >= 3240 && _top <= 3570){
+				$(".ct img").stop().animate({
+						"left": 100
+					}, 500);
+					$(".childMenu").slideDown();
+					var z = 0; 
+					var timestop=null;
+					 timestop = setInterval(function() {
+						$(".addleft_center ul li").css({
+							color: "#fff",
+							background: "#229bdc"
+						});
+						if (z < 10) {
+							$(".addleft_center ul li").each(function(k, l) {
+								$(this).css({
+									color: "#fff",
+									background: "#229bdc"
+								});
+								var url = $(this).find("img").attr("src");
+								$(this).find("img").attr("src", url.replace(/lan/, "bai"));
+							});
+							$(".addleft_center ul li").eq(z).css({
+								color: "#229bdc",
+								background: "#fff"
+							});
+							$(".addleft_center ul li").eq(z).find("img").attr("src", $(".addleft_center ul li").eq(z).find("img").attr("src").replace(/bai/, "lan"));
+						} else {
+							clearInterval(timestop);
+						}
+						z++;
+					}, 300);
+				phoneBool=false; 
+			}
+			 if((!phoneBool)&&_top <= 3240 || _top >= 3570){
+				phoneBool=true; 
+				   $(".ct img").stop().animate({"left": 0}, 500);
+				   $(".childMenu").slideUp();
+			} 
+			[/#if] 
+		};
+		
+			$(".list-btn").click(function() {
+			if ($(".active-nav").css("display") == "none") {
+				$(".active-nav").slideDown();
+			} else {
+				$(".active-nav").slideUp();
+			}
+		});
+	});
+	function loginInfoCallback(data) {
+		var d = data[0];
+		if (d.key == "ret.success") {
+			var account_ = d.data.account.iconSmall;
+			$(".userInfo").show();
+			$(".login").hide();
+			$(".urserhead").find("img").attr("src", (account_ == null || account_ == "" || account_ == "null") ? "${URL}img/user_head.png" : "http://test-www.369cloud.com/ftp"+account_);
+			$(".urserhead").children("a").html(d.data.account.account);
+		} else {
+			$(".userInfo").hide();
+			$(".login").show();
+			$(".urserhead").find("img").attr("src", "${URL}img/user_head.png");
+			$(".urserhead").children("a").html("我的帐户");
+		}
+	}
+	function userLogin() {
+		window.location.href = "http://test-dev.369cloud.com/login";
+	} 
+	function userRegister() {
+		window.location.href = "http://test-passport.369cloud.com/register"
+	}
+	function userExit() {
+		$.ajax({
+			url:"http://test-passport.369cloud.com/third/logout?logoutCallback=?",
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+	} 
+	function logoutCallback(data) {
+		var d = data[0];
+		$.getScript(d.data.URL0, function() {
+			window.location.href = "http://test-www.369cloud.com";
+		});
+	}
+</script>
+
+<div class="loginInfo" id="loginInfo"></div>
+<header class="header"  >
+	<div class="navBg"></div>
+	<div class="list-btn left">
+		 <img src="${root_address}img/list_btn.png" />
+	 </div>
+	<div class="logo left">
+		<a href="${root_address}${rootNode.NODEURL}">
+			<img src="${root_address}img/logo.png" />
+		</a>
+	</div>
+	<nav class="nav left active-nav" >
+		<ul>
+			[#if selfnode.NODEID!="36"&&selfnode.NODEID!="38"&&selfnode.NODEID!="40"&&selfnode.NODEID!="41"]
+			<li class="cur" style="width:0px:height:0px;padding:0">
+				<a></a>
+			</li>
+			[/#if]  
+			
+			[@nodeList nodeid="sub-${rootNode.NODEID}" var="topnav" ignore="43,40"] 
+			[#list topnav as item] 
+			      <!--判断该导航是否属于本站-->
+					[#if item.nodeid=="37" || item.nodeid=="42"] 
+						  [@dataList nodeid="${item.nodeid}" var="childNav" num="1"] 
+								[#list childNav as childItem] 
+									[#if item.nodeid=='42']
+									<li><a href="${childItem.address}" target="_blank">${childItem.name}</a></li>
+									[#else]
+									<li  class="i_hide" ><a href="${childItem.address}">${childItem.name}</a></li>
+									[/#if] 
+								[/#list] 
+							[/@dataList]   
+				    [#else]  
+				    	 <!--云学院和学习中心-->
+						[#if item.nodeid=="41"|| item.nodeid=="62"]
+								[#if item.nodeid=="62"]
+									    <li class="[#if item.nodeid==selfnode.NODEID]cur[/#if]" id="sc" >
+									    	<a>
+										    	<div class="dropdown">
+													<button id="dLabel" type="button">
+														${item.name}
+													</button>
+													<img src="resource/images/u812.png" alt="" class="ul-before">
+													<ul class="dropdown-menu">
+														[@dataList nodeid="${item.nodeid}" var="childNav" num="1" ] 
+														[#list childNav as childItem]
+														<li><a href="online_list.html" class="open-menu">在线学习</a></li>
+														[/#list] 
+							  							[/@dataList] 
+													</ul>
+												</div> 
+											</a>
+									    </li>
+								[#else]
+									[@dataList nodeid="${item.nodeid}" var="childNav" num="1" ] 
+										[#list childNav as childItem]
+										  [#if item.nodeid==selfnode.NODEID]
+										    <li class="cur"><a href="${childItem.address}">${childItem.name}</a></li>
+										  [#else]
+										    <li><a href="${childItem.address}">${childItem.name}</a></li>
+										  [/#if]  
+										[/#list] 
+							  		 [/@dataList]
+								 [/#if]  
+								
+						 [#else]
+						        <!--其他-->
+						        [#if item.nodeid==selfnode.NODEID]
+								<li class="cur"><a href="${root_address}${item.NODEURL}">${item.nodename}</a></li>
+								[#else]
+								<li><a href="${root_address}${item.NODEURL}">${item.nodename}</a></li>
+								[/#if]  
+						 [/#if]  
+						 
+			       [/#if]  
+			[/#list] 
+			[/@nodeList] 
+			
+			
+		</ul>
+		<div class="curBg"></div>
+	</nav>
+	<div class="nav-right right">
+		<div class="loginModle right">
+			<div class="login">
+				<a href="javascript:userLogin()">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="javascript:userRegister()">注册</a>
+			</div>
+			<div class="userInfo" style="display:none;">
+				<div class="urserhead">
+					<img src="${URL}img/user_head.png" style="width:20px;height:20px;" />&nbsp;
+					<a href="javascript:showhide()">我的账户</a>
+					<div class="urserconte" style="display:none;">
+						<div>
+							<a href="http://test-dev.369cloud.com/console/applist">控制台</a>
+						</div>
+						<div>
+							<a href="http://test-dev.369cloud.com/devComp/myshareList">组件管理</a>
+						</div>
+						<div>
+							<a href="http://test-passport.369cloud.com">个人中心</a>
+						</div>
+						<div>
+							<a href="javascript:userExit()">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header> 
+[/@node] [/@node] [/@node]

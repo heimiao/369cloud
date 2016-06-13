@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript">
+	var rs = window.location.search.split('?').slice(1);
+	window.parent.upcallback(rs.toString().split('=').slice(1));
+</script>
+ </head>
+ <body>
+  
+ </body>
+</html>

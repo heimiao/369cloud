@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+		<meta name="Description" content="${_DESCRIPTION}">
+		<title>${_TITLE}</title>
+		<link rel="shortcut icon" href="${URL}img/icon.png" type="image/x-icon"> 
+		<link rel="icon" sizes="any" mask=""  href="${URL}img/icon.png">
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/index.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/odometer-theme-car.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="${URL}bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="${URL}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/main.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="${URL}js/odometer.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="${URL}js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		[#include "/369Cloud/top.html"]
+		<div class="tbody">
+			<div class="banner">
+				<img src="${URL}img/banner.jpg" />
+				<!--<div class="bannerbtm">
+					<ul>
+						<li style="width:240px;height:100%">
+							<div class="bannerTitle">Time</div>
+							<div class="bannerCont">
+								<div class="left zero1" style="display: none;">0</div>
+								<div class="hour left">
+									<div class="odometer"></div>
+								</div>
+								<span class="db_point left"></span>
+								<div class="left zero2" style="display: none;">0</div>
+								<div class="minutes left">
+									<div class="odometer"></div>
+								</div>
+								<span class="point left"></span>
+								<div class="left zero" style="display: none;">
+									0
+								</div>
+								<div class="second left">
+									<div class="odometer"></div>
+								</div>
+							</div>
+						</li>
+						<li class="component">
+							<div class="bannerTitle">Component</div>
+							<div class="odometer"></div>
+						</li>
+						<li class="user">
+							<div class="bannerTitle">The User</div>
+							<div class="odometer"></div>
+						</li>
+					</ul>
+				</div>-->
+			</div>
+			<div class="mui-container">
+				<div class="scene-container">
+					<div class="scene-title">
+						<img src="${URL}img/open.jpg" class="left" />
+						<div class="left">
+							<h4>scene</h4>
+							<h1>场景开放化</h1>
+						</div>
+					</div>
+					<div class="contFont">
+						用户何时何地都可以远程登录，体验简洁快速的注册方式，享受海量组件库的调用，实现程序快速更新,
+					</div>
+					<div class="contFont">甚至在我们的平台组建创业团队,开启创业生涯 。</div>
+					<div class="contFont">开放化，就是这么任性!</div>
+				</div>
+				<div class="phone-container">
+					<div class="phone">
+						<div class="ct">
+							<img src="img/ct1.jpg" />
+						</div>
+					</div>
+					<div class="phone addleft_center">
+						<ul>
+							<li>
+								<span class="phoneLogo">
+
+									 <img src="${URL}img/bai_1.png"
+
+											style="margin:0px;" />
+
+									</span>
+								<span class="phoneContent">USERS</span>
+							</li>
+							<li>
+								<span class="phoneLogo"> <img
+
+											src="${URL}img/bai_2.png"
+
+											style="margin:0px;" />
+
+									</span>
+								<span class="phoneContent">PRIORITY</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_3.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">PRIORITY</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_4.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">COLLECTIONS</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_5.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">ACHIVED</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_6.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_7.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">ACHIVED</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_1.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+							</li>
+							<li><span class="phoneLogo"> <img
+
+										src="${URL}img/bai_3.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">ACHIVED</span>
+							</li>
+						</ul>
+					</div>
+					<div class="phone last_phone">
+						<ul>
+							<li><span class="phoneContent">USERS</span>
+							</li>
+							<li><span class="phoneContent">PRIORITY</span>
+							</li>
+							<li><span class="phoneContent">PRIORITY</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">COLLECTIONS</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">ACHIVED</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">ACHIVED</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">USERS</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">PRIORITY</span>
+							</li>
+							<div class="childMenu">
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+								<li data="img"><span class="phoneLogo"> <img
+
+										src="${URL}img/list_btn.png"
+
+										style="margin:0px;" />
+
+								</span> <span class="phoneContent">TRENDS</span>
+								</li>
+							</div>
+							<li><span class="phoneContent">PRIORITY</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="mui-container" style="background:#2b2f3a;">
+				<div class="mobile-container">
+					<div class="mobile-title">
+						<img src="${URL}img/ue.jpg" class="left" />
+						<div class="left">
+							<h4>Mobile Internet</h4>
+							<h1>拥抱移动互联网</h1>
+						</div>
+					</div>
+					<div class="mobile-cont">
+						通过移动互联平台提升客户服务体验，为客户带来更高效更亲切的服务， 加快企业挖掘潜在用户提升品牌形象。</div>
+					<div style="margin-top:10%">
+						<img src="${URL}img/phone.png" style="width:100%" />
+					</div>
+				</div>
+			</div>
+			<div class="mui-container">
+				<div class="row">
+					<div class="col-md-6" style="padding:0;margin:0;">
+						<img src="${URL}img/xinpian.jpg" style="width:100%;" />
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="dev-title">
+									<img src="${URL}img/integrated.jpg" class="left" />
+									<div class="left">
+										<h4>Development</h4>
+										<h1>开发一体化</h1>
+									</div>
+								</div>
+								<p class="contFont" style="text-align:left;margin:-15px 4% 15px 4%"> 开放高效的研发体系，强大的技术引擎，丰富的开发资源，关注创业团队需求的快速实现，助您的开发一臂之力。</p>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<img src="${URL}img/round.jpg" style="width:70%;+width:30%;" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6">
+								<img src="${URL}img/weitian.jpg" style="width:60%;+width:25%;" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-container scroll_pic" style="background:#f3f3f3;">
+				<div style="padding:30px 0;width:1135px;margin:0 auto;">
+					<!-- 例子 -->
+					<div class="scroll">
+						<!-- 上一页 -->
+						<a class="prev" href="javascript:void(0)"></a>
+						<div class="box">
+							<div style="margin-bottom:20px;">
+								<img src="${URL}img/jdal.jpg" />
+							</div>
+							<div class="scroll_list">
+								<ul>
+									<li>
+										<a href="http://www.mami100.com/" target="_blank">
+											<img src="${URL}uploadImg/mami100.png" height="132" width="333" />
+										</a>
+									</li>
+									<li>
+										<a href="http://www.fanspad.com/" target="_blank">
+											<img src="${URL}uploadImg/fanspad.png" height="132" width="333" />
+										</a>
+									</li>
+									<li>
+										<a href="http://www.hulutek.com/" target="_blank">
+											<img src="${URL}uploadImg/fansphone.png" height="132" width="333" />
+										</a>
+									</li>
+									<li>
+										<a href="http://www.365ime.com/" target="_blank">
+											<img src="${URL}uploadImg/jiaoyu.png" height="132" width="333" />
+										</a>
+									</li>
+									<li>
+										<img src="${URL}uploadImg/liuliangmofang.png" height="132" width="333" />
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 下一页 -->
+						<a class="next" href="javascript:void(0)"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		[#include "/369Cloud/bottom.html"]
+		<style type="text/css">
+			.modal_top {
+				margin-top: 100px;
+				max-width:500px;
+			}
+			.theySay-modal {
+				position: relative;
+				padding: 0;
+			}
+			.module-modal .close-modal {
+				position: absolute;
+				right: -20px;
+				top: -20px;
+				height: 40px;
+				width: 40px;
+				text-align: center;
+				line-height: 18px;
+				background: url(../img/bgAll.png) 45% 35% no-repeat;
+				cursor: pointer;
+			}
+			.firstPage { 
+				padding: 30px;
+				color: #5f5f5f;
+				font-size: 14px;
+			}
+			.firstPage>div {
+				text-align: center;
+			}
+			.firstPage h3 {
+				font-size: 14px;
+				font-size: 14px;
+			}
+			.firstPage p {
+				font-size: 14px;
+				font-size: 14px;
+			}
+		</style>
+		<!--为手机准备的模态框-->
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog modal_top">
+				<div class="modal-content">
+					<div class="modal-body module-modal theySay-modal">
+						<div class="close-modal" data-dismiss="modal"></div>
+						<div class="module-modal-body theySayModal-body">
+							<section class="firstPagecont">
+								<div class="firstPage">
+									<div>
+										<img src="${URL}img/smile.png" />
+									</div>
+									<h3>尊敬的创业者/开发者：</h3>
+									<p>
+										由于本次千人计划首批测试开发者报名人数众多，我们的工作人员正在进行测试者的报名信息审核，69名首批测试开发者及千人计划即将陆续开放，已收到验证码的开发者请您尽快签署友好测试协议，感谢您对369Cloud平台的信任与支持！
+									</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.modal -->
+		<script type="text/javascript">
+			var _str = document.cookie;
+			if (_str == "") {
+				$('#myModal').modal('show');
+			}
+			document.cookie = name + "wei";
+		</script>
+		<script type="text/javascript">
+			/* window.odometerOptions = {
+																format: '(ddd).dd'
+															}; 
+															var flag = true;
+															function test() {
+																 var date = new Date();
+																var hour = date.getHours();
+																var minutes = date.getMinutes();
+																var second = date.getSeconds();
+																if (hour <= 9) {
+																	if (flag) {
+																		$('.hour .odometer').html(hour);
+																	} else {
+																		$('.hour .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html(hour);
+																		$('.hour .odometer-inside .odometer-digit').eq(1).hide();
+																	}
+																	$('.zero1').show();
+																} else {
+																	if (flag) {
+																		$('.hour .odometer').html(hour);
+																	} else {
+																		$('.hour .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html((hour + "").substr(0, 1));
+																		$('.hour .odometer-inside .odometer-digit').eq(1).find(".odometer-value").html((hour + "").substr(1, 1));
+																		$('.hour .odometer-inside .odometer-digit').eq(1).show();
+																	}
+																	$('.zero1').hide();
+																}
+																if (minutes <= 9) {
+																	if (flag) {
+																		$('.minutes .odometer').html(minutes);
+																	} else {
+																		$('.minutes .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html(minutes);
+																		$('.minutes .odometer-inside .odometer-digit').eq(1).hide();
+																	}
+																	$('.zero2').show();
+																} else {
+																	if (flag) {
+																		$('.minutes .odometer').html(minutes);
+																	} else {
+																		$('.minutes .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html((minutes + "").substr(0, 1));
+																		$('.minutes .odometer-inside .odometer-digit').eq(1).find(".odometer-value").html((minutes + "").substr(1, 1));
+																		$('.minutes .odometer-inside .odometer-digit').eq(1).show();
+																	}
+																	$('.zero2').hide();
+																}
+																if (second <= 9) {
+																	if (flag) {
+																		$('.second .odometer').html(second);
+																	} else {
+																		$('.second .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html(second);
+																		$('.second .odometer-inside .odometer-digit').eq(1).hide();
+																	}
+																	$('.zero').show();
+																} else {
+																	if (flag) {
+																		$('.second .odometer').html(second);
+																	} else {
+																		$('.second .odometer-inside .odometer-digit').eq(0).find(".odometer-value").html((second + "").substr(0, 1));
+																		$('.second .odometer-inside .odometer-digit').eq(1).find(".odometer-value").html((second + "").substr(1, 1));
+																		$('.second .odometer-inside .odometer-digit').eq(1).show();
+																	}
+																	$('.zero').hide();
+																}
+																flag = false;
+															}*/
+			 ///setInterval("test()", 1000);  
+			var bool = true;
+			window.onscroll = function() {
+				if (document.body.scrollTop > 1000) {
+					//$(".ct img").animate({left:140});
+					$(".childMenu").slideDown();
+				} else {
+					// $(".ct img").animate({left: 0});
+					$(".childMenu").slideUp();
+				}
+			}
+			$(function() {
+				/*	setTimeout(function() {
+						$('.component .odometer').html(3233);
+						$('.user .odometer').html(3454354);
+						test();
+					}, 1000);*/
+				$(".childMenu").prev().click(function() {
+					$(this).next(".childMenu").slideToggle();
+				});
+				$(".addleft_center ul li").hover(
+					function() {
+						$(this).css({
+							color: "#229bdc",
+							background: "#fff"
+						});
+						var urls = $(this).find("img").attr("src");
+						$(this).find("img").attr("src", urls.replace(/bai/, "lan"));
+					},
+					function() {
+						$(this).css({
+							color: "#fff",
+							background: "#229bdc"
+						});
+						var url = $(this).find("img").attr("src");
+						$(this).find("img").attr("src", url.replace(/lan/, "bai"));
+					});
+				$(".ct").click(function() {
+					if ($(".ct img").position().left > 0) {
+						$(".ct img").animate({
+							left: 0
+						}, 500);
+					} else {
+						$(".ct img").animate({
+							left: 140
+						}, 500);
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>

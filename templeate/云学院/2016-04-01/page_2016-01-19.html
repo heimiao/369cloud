@@ -1,0 +1,168 @@
+<script src="//g.369cloud.com/js/jquery.scrollUp.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="//g.369cloud.com/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".aside-menu nav div ul li").each(function () {
+            if ($(this).attr("class") == "checked") {
+                var _nowMenu = $(this).parent().parent();
+                _nowMenu.show();
+                verdicticon(_nowMenu.find("h3"), "show");
+                _nowMenu.find('ul').show();
+                var _int = 0;
+                var nowNum = _nowMenu.attr("class").split("_")[1];
+                $.each(_nowMenu.prevAll(), function (_m, _n) {
+                    var now_int = $(_n).attr("class").split("_")[1]
+                    if (nowNum >= now_int && nowNum > 1) {
+                        $(_n).show();
+                        if (_int != now_int) {
+                            $(_n).children('ul').show();
+                            _int = now_int;
+                        }
+                    } else {
+                        return false;
+                    }
+                });
+                $.each(_nowMenu.nextAll(), function (_m, _n) {
+                    if (parseInt(nowNum) == $(_n).attr("class").split("_")[1] || parseInt(nowNum) + 1 == $(_n).attr("class").split("_")[1]) {
+                        $(_n).show();
+                    } else {
+                        return false;
+                    }
+                });
+            }
+        })
+        $(".aside-menu").find("h3").click(function () {
+            //等与1是第一级大导航不执行折叠效果
+            if ($(this).parent().attr("class").split("_")[1] != 1) {
+                if ($(this).next("ul").is(":hidden")) {
+                    $(this).next().show();
+                    verdicticon($(this), "show")
+                    showChilMemu($(this).parent());
+                } else {
+                    $(this).next().hide();
+                    verdicticon($(this), "hide")
+                    hideChilMemu($(this).parent());
+                }
+            }
+        });
+        //收起来的时候把子栏目全部收起来
+        //展开的时候只是展开同一级的栏目
+        function showChilMemu(_m) {
+            var num = parseInt(_m.attr("class").split("_")[1]) + 1;
+            $.each(_m.nextAll(), function (f, g) {
+                var _n = $(g).attr("class").split("_")[1];
+                if (num == _n) {
+                    $(g).show();
+                } else {
+                    return false;
+                }
+            })
+        }
+
+        function hideChilMemu(_m) {
+            var num = parseInt(_m.attr("class").split("_")[1]) + 1;
+            $.each(_m.nextAll(), function (f, g) {
+                var _n = $(g).attr("class").split("_")[1];
+                if (num <= _n) {
+                    $(g).hide();
+                } else {
+                    return false;
+                }
+            })
+        }
+
+        function verdicticon(_this, n) {
+            switch (n) {
+                case "hide":
+                    _this.removeClass("show_icon");
+                    _this.addClass("hide_icon");
+                    break;
+                case "show":
+                    _this.removeClass("hide_icon");
+                    _this.addClass("show_icon");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $.scrollUp({
+            scrollName: 'scrollUp', // 元素ID
+            topDistance: '300', // 顶部距离显示元素之前 (px)
+            topSpeed: 300, // 回到顶部的速度 (ms)
+            animation: 'slide', // 动画类型Fade, slide, none
+            animationInSpeed: 200,
+            animationOutSpeed: 200,
+            scrollText: '', // 元素文本
+            activeOverlay: false, // 显示scrollUp的基准线，false为不显示, e.g '#00FFFF'
+        });
+
+        scrollleft();
+        window.onresize = function () {
+            scrollleft()
+        }
+        $('.left_icon').click(function () {
+            if ($(this).parent().position().left == 0) {
+                $(this).removeClass("menuhide");
+                $(this).addClass("menushow");
+                $(this).parent().animate({left: '-228px'}, "fast");
+            } else {
+                $(this).removeClass("menushow");
+                $(this).addClass("menuhide");
+                $(this).parent().animate({left: '0px'}, "fast");
+            }
+        });
+    });
+    function scrollleft() {
+        var scollH=$(".leftAside").height() - 133;
+        var nowdomTopH=$(".aside-menu ul li[class='checked']")[0].offsetTop;
+        var scrollTop=0;
+        $('#scrollDiv').height(scollH);
+        $("#scrollDiv").mCustomScrollbar({ theme: "minimal",scrollInertia:40});
+        if(nowdomTopH>scollH){
+            scrollTop=(nowdomTopH-scollH)+scollH/2;
+        }
+        $("#scrollDiv").mCustomScrollbar("scrollTo",scrollTop);
+    }
+</script>
+
+<div class="mui-container">
+    <div class="leftAside">
+        <div class="left_icon menuhide"></div>
+        <div class="leftSearch">
+            <div class="leftAsideSearch">
+                <form name="fm" class="search-form form-inline" action="{{config.base_url}}/">
+                    <input type="search" name="search" id="" value="" placeholder="搜索"/>
+                    <a onclick="fm.submit();" style="cursor:pointer">&nbsp;</a>
+                </form>
+            </div>
+        </div>
+        <aside class="aside-menu" id="scrollDiv">
+            <nav>
+                {{#pages}}
+                {{^is_index}}
+                <div class="levelMenu_{{level}}">
+                    <h3 class="hide_icon">{{title}}</h3>
+                    <ul>
+                        {{#files}}
+                        {{#display}}
+                        <li class="{{#active}}checked{{/active}}">
+                            <a class="hide_icon" href="{{config.base_url}}/{{slug}}">{{title}}</a>
+                        </li>
+                        {{/display}}
+                        {{/files}}
+                    </ul>
+                </div>
+                {{/is_index}}
+                {{/pages}}
+            </nav>
+        </aside>
+    </div>
+    <div class="rightCont">
+        <div class="content" style="margin:0px;border:0px;">
+            {{#meta.title}}<h1 class="title" style="font-size:30px" >{{meta.title}}</h1>{{/meta.title}}
+            {{{content}}}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

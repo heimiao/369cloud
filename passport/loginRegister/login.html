@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
+		<title>369Cloud登录</title>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/passport/joinus.css" />
+		<!--[if lt IE 9]>
+		   <script src="//g.369cloud.com/bootstrap/js/createTag.js"></script>
+		   <script src="//g.369cloud.com/bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="//g.369cloud.com/js/jquery-1.10.2.min.js"></script>
+		<script src="//g.369cloud.com/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//g.369cloud.com/js/placeholderfriend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//g.369cloud.com/js/passport/js/ckcolor.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/init.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="joinusmain">
+			<div class="cetermodel">
+				<div class="_logo">
+					<img src="//g.369cloud.com/images/passport/img/logo.png" />
+					<span>登录</span>
+				</div>
+				<div class="panel panel-default data-panel">
+					<div class="panel-body">
+						<form class="rdfrm">
+							<div id="">
+								<span class="help-block"><div  class="_error"style="color:#FF6B38;">密码不一致</div> </span>
+							</div>
+							<div class="form-group">
+								<!--<label for="exampleInputEmail1">Email address</label>-->
+								<div class="input-group">
+									<span class="input-group-addon"><img src="//g.369cloud.com/images/passport/img/user-icon-blue.png"/></span>
+									<input type="text" class="form-control" placeholder="用户名" vrequired v-type="vname,vemail,vphone" v-error="请输入有效的用户名">
+								</div>
+								<span class="help-block"><div class="_error">填写密码请填写密码请填写密码请填写密码</div> </span>
+							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><img src="//g.369cloud.com/images/passport/img/password-icon-blue.png" /></span>
+									<input type="password" class="form-control" placeholder="密码" vrequired v-type="vpwd">
+								</div>
+								<span class="help-block"><div class="_error">填写密码请填写密码请填写密码请填写密码</div> </span>
+							</div>
+							<!--
+                            	作者：maweichao90@126.com
+                            	时间：2015-11-06
+                            	描述：三次验证错误就显示一下的验证码 
+                            	
+                            	实现方法自己写 
+                            -->
+							<div class="form-group">
+								<div class="input-group leftblock left">
+									<span class="input-group-addon"><img src="//g.369cloud.com/images/passport/img/verdict-icon-blue.png"/></span>
+									<input type="text" class="form-control" placeholder="验证码" vrequired v-type="valid" valid="ABc">
+								</div>
+								<span class="rightblock right"><img src="//g.369cloud.com/images/passport/img/yanzhengma.png"/> </span>
+								<div class="clear"></div>
+								<span class="help-block"><div class="_error">填写密码请填写密码请填写密码请填写密码</div> </span>
+							</div>
+							<div class="clear"> </div>
+							<div class="form-group ">
+								<div class="registerck left">
+									<input type="checkbox" />
+								</div>
+								<span class="agreement left">自动登录</span>
+								<span class="right agreement"><a href="forgetPwd-1.html";>忘记密码？</a></span>
+								<div class="clear"> </div>
+							</div>
+							<div class="frm-footer">
+								<!--onclick="$('#succeesModal').modal();"-->
+								<button type="button" class="btn btn-primary" onclick="$('.rdfrm').validate()">登录</button>
+								<div class="agreement" style='margin-top:15px;'><a href="register.html" ;>立即注册</a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

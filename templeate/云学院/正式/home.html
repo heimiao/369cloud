@@ -1,0 +1,363 @@
+<style>
+	.placeholder {
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	
+	.mycontainer {
+		max-width: 1200px;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$(".text-center>div .left").hover(function() {
+			$(".text-center>div img").removeClass("img2");
+			$(this).find("img").addClass("img2");
+		})
+		$(".wendang").hover(function() {
+			$(".v_document").show();
+			$(".v_tool").hide();
+			$(".v_process").hide();
+			$(".v_san1").css("visibility", "visible");
+			$(".v_san2").css("visibility", "hidden");
+			$(".v_san3").css("visibility", "hidden");
+		});
+		$(".tool").hover(function() {
+			$(".v_document").hide();
+			$(".v_tool").show();
+			$(".v_process").hide();
+			$(".v_san2").css("visibility", "visible");
+			$(".v_san1").css("visibility", "hidden");
+			$(".v_san3").css("visibility", "hidden");
+		})
+		$(".progress1").hover(function() {
+			$(".v_document").hide();
+			$(".v_tool").hide();
+			$(".v_process").show();
+			$(".v_san3").css("visibility", "visible");
+			$(".v_san1").css("visibility", "hidden");
+			$(".v_san2").css("visibility", "hidden");
+		});
+		 
+		 
+		$.ajax({
+			url: config.devUrl + "/downloadInfo?infoCallback=?",
+			type: "GET",
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+	});
+
+	function infoCallback(data) {
+		//ide
+		$(".js_ide_vsion").html("V" + data[0].ideVersion.ideVersion);
+		$(".js_ide_time").html("更新时间：" + new Date(data[0].ideVersion.ideUpdateDate).format("yyyy-MM-dd"));
+		if (data[0].ideVersion.ideDownUrl) {
+			$(".idedown").attr("href", config.devUrl + "/ideDownloadWin?ideId=" + data[0].ideVersion.ideId);
+		} else {
+			$(".idedown").hide();
+		}
+		if (data[0].ideVersion.ideDownUrlMac) {
+			$(".idedownmac").attr("href", config.devUrl + "/ideDownloadMac?ideId=" + data[0].ideVersion.ideId);
+		} else {
+			$(".idedownmac").hide();
+		}
+		
+		//js sdk
+		$(".js_sdk_vsion").html("V" + data[0].sdkVersion.sdkVersion + "(" + data[0].sdkVersion.sdkSize + "MB)");
+		$(".js_sdk_time").html("更新时间：" + new Date(data[0].sdkVersion.sdkUpdateDate).format("yyyy-MM-dd"));
+		$("#sdkdown").attr("href", config.devUrl + "/sdkdownload?sdkId=" + data[0].sdkVersion.sdkId);
+		//dev
+		$(".com_vsion").html("V" + data[0].devVersion.devVersion + "(" + data[0].devVersion.devSize + "MB)");
+		$(".com_time").html("更新时间：" + new Date(data[0].devVersion.devUpdateDate).format("yyyy-MM-dd"));
+		$("#com_down").attr("href", config.devUrl + "/devdownload?devId=" + data[0].devVersion.devId);
+	}
+	
+	Date.prototype.format = function(format) {
+		var o = {
+			"M+": this.getMonth() + 1, // month
+			"d+": this.getDate(), // day
+			"h+": this.getHours(), // hour
+			"m+": this.getMinutes(), // minute
+			"s+": this.getSeconds(), // second
+			"q+": Math.floor((this.getMonth() + 3) / 3), // quarter
+			"S": this.getMilliseconds() // millisecond
+		}
+		if (/(y+)/.test(format)) {
+			format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		}
+		for (var k in o) {
+			if (new RegExp("(" + k + ")").test(format)) {
+				format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+			}
+		}
+		return format;
+	}
+	
+	
+	function ValidateValue(textbox) {
+		var IllegalString = "\`~@#;,.!#$%^&*()+{}|\\:\"<>?-=/,\'";
+		var textboxvalue = textbox.value;
+		var index = textboxvalue.length - 1;
+		var s = textbox.value.charAt(index);
+		if (IllegalString.indexOf(s) >= 0) {
+			s = textboxvalue.substring(0, index);
+			textbox.value = s;
+		}
+	}
+</script>
+
+<div>
+	<div class="sc-banner1" style="position: relative;">
+		<div class="container mycontainer" style="width:100%;max-width:850px;">
+			<div class="row v_input1" style="position:relative;">
+				<form name="fm" class="search-form form-inline" action="{{config.base_url}}/">
+					<div class="input-group" style="width: 100%">
+						<input type="search" name="search" class="form-control data-control" aria-describedby="basic-addon2" placeholder="请输入文档名称" style="padding-left:40px;" onkeydown="ValidateValue(this)">
+						<a onclick="fm.submit();" style="cursor:pointer;" class="input-group-addon"> <span id="basic-addon2">搜索文档</span></a>
+					</div>
+				</form>
+
+				<div class="v_search_logo1">
+					<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_zoom.png">
+				</div>
+			</div>
+		</div>
+		<div class="container mycontainer text-center" style="padding-bottom:30px;">
+			<div class="row text-center" style="margin-top:50px;">
+				<!--文档-->
+				<div class="left wendang col-md-4 col-sm-4 col-xs-4 col-lg-4">
+					<div class="">
+						<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_89.png" class="img2" style="width: 90px;" />
+					</div>
+					<div class="v_mar-t1 v_t-wh">文档</div>
+				</div>
+				<div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 tool">
+					<div class="" style="position:relative;">
+						<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_90.png" class="" style="width: 90px;" />
+					</div>
+					<div class="v_mar-t1 v_t-wh">开发工具下载</div>
+
+				</div>
+				<div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 progress1">
+					<div class="" style="position:relative;">
+						<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_91.png" class="" style="width: 90px;z-index: 2;" />
+					</div>
+					<div class="v_mar-t1 v_t-wh">应用开发流程</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="background:#fff;">
+		<div class="container mycontainer text-center">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san1">
+					<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_97.png">
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san2">
+					<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_97.png">
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san3">
+					<img src=" //g.369cloud.com/images/static/cloud_school/369cloud-1022_97.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--文档-->
+	<div style="background:#fff;">
+		<div class="container mycontainer v_document">
+			<div class="csMenu">
+				{{#pages}} {{#is_index}} {{#files.length}} {{/files.length}} {{/is_index}} {{^is_index}} {{#homepage}}
+				<ul>
+					<li class="{{class}}">
+						<h3>{{title}}</h3>
+						<span id="">{{annotate}}</span>
+					</li>
+					{{#files}} {{#display}}
+					<li title="{{title}}"><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+					{{/display}} {{/files}}
+				</ul>
+				{{/homepage}} {{/is_index}} {{/pages}}
+			</div>
+		</div>
+	</div>
+</div>
+<!--开发工具下载-->
+<div style="background:#fff;">
+	<div class="container mycontainer v_tool">
+		<div>
+			<!--<div class=" v_mar-tb">
+				<div class="">
+					<div class="v_t-32" style="text-align: center;">
+						IDE
+					</div>
+					<div class="v_t-12 v_mar-t v_hei12">
+						369CloudIDE是为开发人员提供的跨平台开发环境，混合式开发使用HTML5、CSS3和JavaScript前端技术开发App，轻松完成高体验应用效果的开发、调试、跟踪和模拟。
+					</div>
+                    <div class="v_down idedownmac" style="text-align: center; margin:20px 5px;display:inline-block;">
+						 <a >	
+                            <img src="http://g.369cloud.com/images/static/cloud_school/bt_03.png">
+                        </a>
+                    </div>
+                    <div class="v_down idedown" style="text-align: center; margin:20px 5px;display:inline-block;">
+                        <a>
+                            <img src="http://g.369cloud.com/images/static/cloud_school/bt_05.png">
+                        </a>
+                    </div>
+                    <div class=" " style="text-align: center; ">
+                        <div class="v_t-12 js_ide_vsion ">V1.0.0(369M)</div>
+                        <div class="v_t-12 js_ide_time ">更新时间：2015-8-20</div>
+                        <div class="v_t-14 "><a href="http://dev.369cloud.com/ideList ">更多版本&gt;&gt;</a></div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+			<div class="v_mar-tb ">
+                <div class=" ">
+                    <div class="v_t-32 " style="text-align: center; ">
+                        JS SDK
+                    </div>
+                    <div class="v_t-12 v_mar-t v_hei12 ">
+                             为了让开发者的编程更便捷高效，统一封装了移动端的事件，集成了zepto.js及其插件，和常用JQUERY方法的调用，并封装了常用JS UI组件，方便在IDE中模拟功能
+                    </div>
+                    <div class="v_down " style="text-align: center; margin: 20px auto; ">
+                        <a id="sdkdown">
+                             <img src="//g.369cloud.com/images/static/cloud_school/download_icon.png ">
+                        </a>
+                    </div>
+                    <div class=" " style="text-align: center; ">
+                        <div class="v_t-12 js_sdk_vsion ">V1.0.0(169KB)</div>
+                        <div class="v_t-12 js_sdk_time ">更新时间：2016-3-25</div>
+                        <div class="v_t-14 "><a href="http://dev.369cloud.com/sdkList ">更多版本&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+			<div class="v_mar-tb ">
+                <div class=" ">
+                    <div class="v_t-32 " style="text-align: center; ">
+                            	组件开发环境
+                    </div>
+                    <div class="v_t-12 v_mar-t v_hei12 ">
+                        369Cloud引擎通过对操作系统底层能力的封装与扩展，实现了前端开发语言和Java/Objective-C/C/C++等Native开发语言之间的桥接，前端开发者通过JS即可调用移动设备的底层功能。
+                    </div>
+                    <div class="v_down " style="text-align: center; margin: 20px auto; ">
+                        <a id="com_down">	
+                            <img src="//g.369cloud.com/images/static/cloud_school/download_icon.png ">
+                        </a>
+                    </div>
+                    <div class=" " style="text-align: center; ">
+                        <div class="v_t-12 com_vsion ">V1.0.0(369M)</div>
+                        <div class="v_t-12 com_time ">更新时间：2016-3-20</div>
+                        <div class="v_t-14 "><a href="http://dev.369cloud.com/devList ">更多版本&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>-->
+			<div class=" v_mar-tb v_mar-right">
+				<div class="">
+					<div class="v_t-32" style="text-align: center;">
+						IDE
+					</div>
+					<div class="v_t-12 v_mar-t text-left">
+						369CloudIDE是为开发人员提供的跨平台开发环境，混合式开发使用HTML5、CSS3和JavaScript前端技术开发App，轻松完成高体验应用效果的开发、调试、跟踪和模拟
+					</div>
+					<div class="v_down_wrap" style="margin:0;height:104px;">
+						<div class="v_down">
+							<a href="" class="idedownmac"><img src="//g.369cloud.com/images/static/cloud_school/Mac.png"></a>
+						</div>
+						<div class="class_btn v_down">
+							<a href="#" class="idedown" ><img src="//g.369cloud.com/images/static/cloud_school/windows.png"></a>
+						</div>
+					</div>
+					<div class="" style="text-align: center;margin-top:22px;">
+						<div class="v_t-12 js_ide_vsion">V1.0.0(369M)</div>
+						<div class="v_t-12 js_ide_time">更新时间：2015-08-20</div>
+						<div class="v_t-14"><a href="http://dev.369cloud.com/ideList">更多版本>></a></div>
+					</div>
+				</div>
+			</div> 
+			<div class=" v_mar-tb v_mar-right">
+				<div class="">
+					<div class="v_t-32" style="text-align: center;">
+						JS SDK
+					</div>
+					<div class="v_t-12 v_mar-t text-left">
+						为了让开发者的编程更便捷高效，统一封装了移动端的事件，集成了zepto.js及其插件，和常用JQUERY方法的调用，并封装了常用JS UI组件，方便在IDE中模拟功能
+					</div>
+					<div class="v_down_wrap" style="margin:0;height:104px;">
+						<div class="v_down">
+							<a href="#" id="sdkdown">
+								<img src="//g.369cloud.com/images/static/cloud_school/download.png">
+							</a>
+						</div>
+					</div>
+					<div class="" style="text-align: center;margin-top:22px;">
+						<div class="v_t-12 js_sdk_vsion">V1.0.0(0.16M)</div>
+						<div class="v_t-12 js_sdk_time">更新时间：2016-03-25</div>
+						<div class="v_t-14"><a href="http://dev.369cloud.com/sdkList">更多版本>></a></div>
+					</div>
+				</div>
+			</div>
+			<div class=" v_mar-tb v_mar-right">
+				<div class="">
+					<div class="v_t-32" style="text-align: center;">
+						组件开发环境
+					</div>
+					<div class="v_t-12 v_mar-t text-left">
+						369Cloud引擎通过对操作系统底层能力的封装与扩展，实现了前端开发语言和Java/Objective-C/C/C++等Native开发语言之间的桥接，前端开发者通过JS即可调用移动设备的底层功能
+					</div>
+					<div class="v_down_wrap" style="margin:0;height:104px;">
+						<div class="v_down">
+							<a href=""  id="com_down">
+								<img src="//g.369cloud.com/images/static/cloud_school/download.png">
+							</a>
+						</div>
+					</div>
+					<div class="" style="text-align: center;margin-top:22px;">
+						<div class="v_t-12 com_vsion">V0.0.9(1M)</div>
+						<div class="v_t-12 com_time">更新时间：2016-03-05</div>
+						<div class="v_t-14"><a href="http://dev.369cloud.com/devList">更多版本&gt;&gt;</a></div>
+					</div>
+				</div>
+			</div>
+			<div class=" v_mar-tb">
+				<div class="">
+					<div class="v_t-32" style="text-align: center;">
+						实例App
+					</div>
+					<div class="v_t-12 v_mar-t text-left">
+						为369Cloud平台的开发者和爱好者提供更好的入门指导，可以快速了解369Cloud平台，包括组件演示、UI控件演示、文档概览等。借助此App可以快速上手使用369Cloud平台。iOS、Android扫描安装即可
+					</div>
+					<div class="v_down_wrap" style="margin:0;height:104px;">
+						<span class="left">
+										 <img src="http://school.pan.369cloud.com/school/native/iOS.png">
+										 <div class="v_t-12"> iOS  </div>
+									</span>
+						<span class="right">
+										 <img src="http://school.pan.369cloud.com/school/native/Android.png">
+										  <div class="v_t-12">  Android </div>
+									</span>
+					</div>
+					<div class="" style="text-align: center;margin-top:22px;">
+						<div class="v_t-12">V1.0.0</div>
+						<div class="v_t-12">更新时间：2016-05-24</div>
+					</div>
+				</div>
+			</div>
+				
+        </div>
+    </div>
+</div>
+<!--应用开发流程-->
+<div style="background:#fff; ">
+    <div class="container mycontainer v_process text-center " style="width:100%; ">
+        <div class="row v_mar-t1 v_process1 col-md-12 text-center ">
+            <img src="//g.369cloud.com/images/static/cloud_school/369cloud-1022.png ">
+        </div>
+        <div class="row ">
+            <div class="v_phone ">
+                <img src=" //g.369cloud.com/images/static/cloud_school/line-pic.png ">
+            </div>
+        </div>
+    </div>
+</div>

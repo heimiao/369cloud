@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>云学院</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<!--<link rel="stylesheet" type="text/css" href="//g.369cloud.com/css/dcment.css" />-->
+		<link rel="stylesheet" type="text/css" href="//test-www.369cloud.com/ftp/g/css/style.css" />
+
+		<!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
+
+		<script src="//g.369cloud.com/js/jquery-1.10.2.min.js"></script>
+		<script src="//g.369cloud.com/js/placeholderfriend.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--[if lt IE 9]>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/createTag.js"></script>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/respond.min.js"></script>
+		  <link href="http://test-www.369cloud.com/ftp/g/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		  <link href="bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+		  <script src="bootstrap/js/respond.proxy.js"></script>
+	    <![endif] -->
+
+		<script type="text/javascript">
+			$(function() {
+				//$(".head").load("nav_test.html");
+				$.ajax({
+					type:"post",
+					url:"nav_test.html",
+					success:function(data){
+						$(".head").append(data)
+					}
+				});
+			})
+		</script>
+
+		<style>
+			.placeholder {
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			
+			.container {
+				max-width: 1200px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$(".text-center>div .left").hover(function() {
+					$(".text-center>div img").removeClass("img2");
+					$(this).find("img").addClass("img2");
+				})
+				$(".wendang").hover(function() {
+					$(".v_document").show();
+					$(".v_tool").hide();
+					$(".v_process").hide();
+					$(".v_san1").css("visibility", "visible");
+					$(".v_san2").css("visibility", "hidden");
+					$(".v_san3").css("visibility", "hidden");
+				});
+				$(".tool").hover(function() {
+					$(".v_document").hide();
+					$(".v_tool").show();
+					$(".v_process").hide();
+					$(".v_san2").css("visibility", "visible");
+					$(".v_san1").css("visibility", "hidden");
+					$(".v_san3").css("visibility", "hidden");
+				})
+				$(".progress1").hover(function() {
+					$(".v_document").hide();
+					$(".v_tool").hide();
+					$(".v_process").show();
+					$(".v_san3").css("visibility", "visible");
+					$(".v_san1").css("visibility", "hidden");
+					$(".v_san2").css("visibility", "hidden");
+				})
+				$.ajax({
+					url: "http://test-dev.369cloud.com/downloadInfo?infoCallback=?",
+					type: "GET",
+					dataType: "json",
+					contentType: "application/json; charset=utf-8"
+				});
+			})
+
+			function infoCallback(data) {
+				console.log(data);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="head">
+
+		</div>
+		<div class="main" >
+			<div>
+				<div class="sc-banner1" style="position: relative;">
+					<div class="container" style="width:100%;max-width:850px;">
+						<div class="row v_input1" style="position:relative;">
+							<div class="input-group">
+								<input type="text" class="form-control data-control" aria-describedby="basic-addon2" placeholder="请输入文档名称" style="padding-left:40px;">
+								<span class="input-group-addon" id="basic-addon2">搜索文档</span>
+							</div>
+							<div class="v_search_logo1">
+								<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_zoom.png">
+							</div>
+						</div>
+					</div>
+					<div class="container text-center" style="padding-bottom:30px;">
+						<div class="row text-center" style="margin-top:50px;">
+							<!--文档-->
+							<div class="left wendang col-md-4 col-sm-4 col-xs-4 col-lg-4">
+								<div class="">
+									<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_89.png" class="img2" style="width: 90px;" />
+								</div>
+								<div class="v_mar-t1 v_t-wh">文档</div>
+							</div>
+							<div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 tool">
+								<div class="" style="position:relative;">
+									<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_90.png" class="" style="width: 90px;" />
+								</div>
+								<div class="v_mar-t1 v_t-wh">开发工具下载</div>
+
+							</div>
+							<div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 progress1">
+								<div class="" style="position:relative;">
+									<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_91.png" class="" style="width: 90px;z-index: 2;" />
+								</div>
+								<div class="v_mar-t1 v_t-wh">应用开发流程</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="container text-center">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san1">
+								<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san2">
+								<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san3">
+								<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--文档-->
+				<div>
+					<div class="container v_document">
+						<div class="csMenu">
+							<ul>
+								<li class="cloud_icon">
+									<h3>369Cloud</h3>
+									<span id="">
+								      About Platform
+							         </span>
+								</li>
+								<li><a href="cloudSchool_searchList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_searchList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_searchList.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+							<ul>
+								<li class="kfzn_icon">
+									<h3>技术指南</h3>
+									<span id="">
+								Technicla Guide
+							</span>
+								</li>
+								<li><a href="cloudSchool_article.html">alipay正行超出的话就用号代替</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+							<ul>
+								<li class="idekflc_icon">
+									<h3>IDE开发指南</h3>
+									<span>
+									 IDE Development Guide
+								    </span>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_article.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+							<ul>
+								<li class="yyyq_icon">
+									<h3>组建指南</h3>
+									<span>
+								Components Guides
+							</span>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+							<ul>
+								<li class="dsfsdk_icon">
+									<h3>应用引擎</h3>
+									<span>
+								Cloud classroom
+							</span>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+							<ul>
+								<li class="qt_icon">
+									<h3>其他</h3>
+									<span>
+								Other
+							</span>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+								<li><a href="cloudSchool_videoList.html">369Cloud平台概述</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--开发工具下载-->
+			<div>
+				<div class="container v_tool">
+					<div>
+
+						<div class=" v_mar-tb v_mar-right">
+							<div class="">
+								<div class="v_t-32" style="text-align: center;">
+									IDE
+								</div>
+								<div class="v_t-12 v_mar-t text-left">
+									369CloudIDE是为开发人员提供的跨平台开发环境，混合式开发使用HTML5、CSS3和JavaScript前端技术开发App，轻松完成高体验应用效果的开发、调试、跟踪和模拟
+								</div>
+								<div class="v_down_wrap" style="margin:0;height:104px;">
+									<div class="v_down">
+										<a href="" class="idedown"><img src="images/static/cloud_school/Mac.png"></a>
+									</div>
+									<div class="class_btn v_down">
+										<a href="#" class="idedownmac"><img src="images/static/cloud_school/windows.png"></a>
+									</div>
+								</div>
+
+								<div class="" style="text-align: center;margin-top:22px;">
+									<div class="v_t-12 js_ide_vsion">V1.0.0(369M)</div>
+									<div class="v_t-12 js_ide_time">更新时间：2015-08-20</div>
+									<div class="v_t-14"><a href="http://test-dev.369cloud.com/ideList">更多版本>></a></div>
+								</div>
+							</div>
+						</div>
+						<div class=" v_mar-tb v_mar-right">
+							<div class="">
+								<div class="v_t-32" style="text-align: center;">
+									JS SDK
+								</div>
+								<div class="v_t-12 v_mar-t text-left">
+									为了让开发者的编程更便捷高效，统一封装了移动端的事件，集成了zepto.js及其插件，和常用JQUERY方法的调用，并封装了常用JS UI组件，方便在IDE中模拟功能
+								</div>
+								<div class="v_down_wrap" style="margin:0;height:104px;">
+									<div class="v_down">
+										<a href="#" id="sdkdown">
+											<img src="images/static/cloud_school/download.png">
+										</a>
+									</div>
+								</div>
+								<div class="" style="text-align: center;margin-top:22px;">
+									<div class="v_t-12 js_sdk_vsion">V1.0.0(0.16M)</div>
+									<div class="v_t-12 js_sdk_time">更新时间：2016-03-25</div>
+									<div class="v_t-14"><a href="http://test-dev.369cloud.com/sdkList">更多版本>></a></div>
+								</div>
+							</div>
+						</div>
+						<div class=" v_mar-tb v_mar-right">
+							<div class="">
+								<div class="v_t-32" style="text-align: center;">
+									组件开发环境
+								</div>
+								<div class="v_t-12 v_mar-t text-left">
+									369Cloud引擎通过对操作系统底层能力的封装与扩展，实现了前端开发语言和Java/Objective-C/C/C++等Native开发语言之间的桥接，前端开发者通过JS即可调用移动设备的底层功能
+								</div>
+								<div class="v_down_wrap" style="margin:0;height:104px;">
+									<div class="v_down">
+										<a href="" id="com_down">
+											<img src="images/static/cloud_school/download.png">
+										</a>
+									</div>
+								</div>
+								<div class="" style="text-align: center;margin-top:22px;">
+									<div class="v_t-12 com_vsion">V0.0.9(1M)</div>
+									<div class="v_t-12 com_time">更新时间：2016-03-05</div>
+									<div class="v_t-14"><a href="http://test-dev.369cloud.com/devList">更多版本&gt;&gt;</a></div>
+								</div>
+							</div>
+						</div>
+						<div class=" v_mar-tb">
+							<div class="">
+								<div class="v_t-32" style="text-align: center;">
+									实例App
+								</div>
+								<div class="v_t-12 v_mar-t text-left">
+									为369Cloud平台的开发者和爱好者提供更好的入门指导，可以快速了解369Cloud平台，包括组件演示、UI控件演示、文档概览等。借助此App可以快速上手使用369Cloud平台。iOS、Android扫描安装即可
+								</div>
+								<div class="v_down_wrap" style="margin:0;height:104px;">
+									<span class="left">
+										 <img src="images/static/cloud_school/bar_code.png">
+										 <div class="v_t-12"> iOS  </div>
+									</span>
+									<span class="right">
+										 <img src="images/static/cloud_school/bar_code.png">
+										  <div class="v_t-12">  Android </div>
+									</span>
+								</div>
+								<div class="" style="text-align: center;margin-top:22px;">
+									<div class="v_t-12">V1.0.0</div>
+									<div class="v_t-12">更新时间：2016-05-06</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--应用开发流程-->
+			<div>
+				<div class="container v_process text-center" style="width:100%;">
+					<div class="row v_mar-t1 v_process1 col-md-12 text-center">
+						<img src="//g.369cloud.com/images/static/cloud_school/369cloud-云学院1022-应用开发流程a_03.png">
+					</div>
+					<div class="row ">
+						<div class="v_phone">
+							<img src="//g.369cloud.com/images/static/cloud_school/line-pic.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+	</body>
+
+</html>

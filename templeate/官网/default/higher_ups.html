@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+		<meta name="Description" content="${_DESCRIPTION}">
+		<title>${_TITLE}</title>
+		<link rel="shortcut icon" href="${URL}img/icon.png" type="image/x-icon"> 
+		<link rel="icon" sizes="any" mask=""  href="${URL}img/icon.png">
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/odometer-theme-car.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="${URL}bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="${URL}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+			  $(".scrollpic li").hover(
+			   	function(){  
+			   	 if( $(this).find("img").attr("data")=="default"){
+			   	 	 $(this).find("img").attr("src",$(this).find("img").attr("src").replace(/default/img,"checked"));
+			   	 } 
+			   },function(){ 
+			   	 if( $(this).find("img").attr("data")=="default"){
+			     $(this).find("img").attr("src",$(this).find("img").attr("src").replace(/checked/img,"default"));
+			     } 
+			   });  
+			})
+		</script>
+		<style type="text/css">
+			.header .navBg{
+			   background:#34353f;
+			}
+			/*.header nav{
+				background:#34353f;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		[@node var="node40" nodeid="40"] [@node var="selfnode" nodeid="self"] [#include "/369Cloud/top.html"]
+		<div class="main">
+			<!--图片轮播-->
+			<div class="showImages">
+				<ul class="scrollpic pc">
+					[@nodeList nodeid="sub-${node40.NODEID}" var="upsHead" ] [#list upsHead as items] [@dataList nodeid="${items.nodeid}" var="upsName" num="1" ] [#list upsName as item] [#if items.nodeid==selfnode.NODEID]
+					<li><img src="${URL}img/pc_${items_index}_checked.png" data="checked" onclick="location.href='${items.NODEURL}'" /></li>
+					[#else]
+					<li><img src="${URL}img/pc_${items_index}_default.png" data="default" onclick="location.href='${items.NODEURL}'" /></li>
+					[/#if] [/#list] [/@dataList] [/#list] [/@nodeList]
+				</ul>
+				<ul class="scrollpic phone">
+					[@nodeList nodeid="sub-${node40.NODEID}" var="upsHead_phone" ] [#list upsHead_phone as items] [@dataList nodeid="${items.nodeid}" var="upsName" num="1" ] [#list upsName as item] [#if items.nodeid==selfnode.NODEID]
+					<li>
+						<img src="${URL}img/phone_${items_index}_checked.png" onclick="location.href='${items.NODEURL}'" />
+						<div class="ssk" style="display:none">${item.name}</div>
+					</li>
+					[#else]
+					<li>
+						<img src="${URL}img/phone_${items_index}_default.png" />
+						<div class="ssk" onclick="location.href='${items.NODEURL}'">${item.name}</div>
+					</li>
+					[/#if] [/#list] [/@dataList] [/#list] [/@nodeList]
+				</ul>
+
+				[@dataList nodeid="${selfnode.NODEID}" var="upsInfo" num="1" ] [#list upsInfo as item]
+				<div class="clear"></div>
+				<div class="info">
+					<div class="scrCont-emage">
+						<span class="meg-one">${item.name}</span></br>
+						<span class="meg-two">${item.now_job}</span></br>
+						<span class="meg-two">${item.before_job}</span>
+					</div>
+				</div>
+				[/#list] [/@dataList]
+			</div>
+			<div class="project">
+				[@dataList nodeid="${selfnode.NODEID}" var="projectInfo" num="1" ] [#list projectInfo as item]
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${item.project_icon}" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									[#if selfnode.NODEID=="53"]
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>05月</span>
+														</time>
+														<div class="data-line">
+															天天艾米IME——教育行业社交平台项目成立
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>10月</span>
+														</time>
+														<div class="data-line">
+															迎来首批大波新用户
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年中旬</span>
+														</time>
+														<div class="data-line">
+															将突破1.8亿用户，目前估值2亿人民币
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年底</span>
+														</time>
+														<div class="data-line">
+															将突破5亿用户
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									[/#if] [#if selfnode.NODEID=="54"]
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2013</span><span>05月</span>
+														</time>
+														<div class="data-line">
+															FansPhone项目立项，相继推出了面向明星粉丝的庚Phone和面向国安球迷的御Phone
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>年12月</span>
+														</time>
+														<div class="data-line">
+															顺利完成A轮融资，融资金额3050万元,由北京文投基金领投，湾流资本跟投
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年1月</span>
+														</time>
+														<div class="data-line">
+															成立葫芦科技有限公司，项目估值6050万元
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年4月2日</span>
+														</time>
+														<div class="data-line">
+															大唐电信副总裁、葫芦科技CEO杨勇提出一个爆炸性观点：智能手机蓝海时代刚刚开始！
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年4月</span>
+														</time>
+														<div class="data-line">
+															推出情侣系列的主题手机，率先探索智能手机3.0蓝海。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年5月</span>
+														</time>
+														<div class="data-line">
+															在京东项目众筹中脱颖而出，顺利筹集100万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									[/#if] [#if selfnode.NODEID=="55"]
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>9月</span>
+														</time>
+														<div class="data-line">
+															流量魔方正式立项
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年初</span>
+														</time>
+														<div class="data-line">
+															自有APP上线，流量魔方APP中提供优惠券和消费劵商家有4000多家，覆盖北京地区大部分主流餐饮、娱乐商家。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年3月</span>
+														</time>
+														<div class="data-line">
+															截止2015年3月，项目产品已在大众点评、美团网、百度糯米、QQ拍拍商城、天猫商城等渠道上线，充值用户已累计5万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年底</span>
+														</time>
+														<div class="data-line">
+															流量魔方通过O2O营销平台的成功搭建，将发展APP注册用户不低于10万，活跃率10%以上。实现月收入不低于100万元。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									[/#if] [#if selfnode.NODEID=="56"]
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>11月</span>
+														</time>
+														<div class="data-line">
+															与卫生计生委中国妇幼保健协会签订独家合作协议，已试点20多家医院
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>12月12日</span>
+														</time>
+														<div class="data-line">
+															获“2015最具投资价值移动医疗项目
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span> 年初</span>
+														</time>
+														<div class="data-line">
+															用户已达30多万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span> 1月</span>
+														</time>
+														<div class="data-line">
+															和部队体系医院301医院、二炮总医院达成意向，在整个部队医院体系全面推广
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>未</span><span>来计划</span>
+														</time>
+														<div class="data-line">
+															将推动政府把平台作为国家人口发展监督与服务工程，为提高我国人口出生素质发挥积极的作用。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									[/#if] [#if selfnode.NODEID=="61"]
+
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="/img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年1月</span>
+														</time>
+														<div class="data-line">
+															社区1号综合服务平台在大连立项
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="/img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年6月初</span>
+														</time>
+														<div class="data-line">
+															唐信科技正式成立，落户大连
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="/img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年6月底</span>
+														</time>
+														<div class="data-line">
+															推出面向“互联网+社区的”社区1号产品
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="/img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>未</span><span>来发展</span>
+														</time>
+														<div class="data-line">
+															实现创新创业企业的孵化，集互联网产业、企业管理咨询、金融为一体的集团化公司
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									[/#if]
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${item.circle_head}" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro" style="width:100%;">
+								<dl>
+									<dt>${item.now_job}</dt>
+									<dd>${item.name}</dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									${item.say}
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3 style="width:120px">创业源</h3> ${item.createSource}
+				</div>
+				[/#list] [/@dataList]
+			</div>
+		</div>
+
+		[#include "/369Cloud/bottom.html"]
+		<!--<script language="javascript" type="text/javascript">
+			 //图片滚动列表 jb51.net
+			var Speed = 1; //速度(毫秒)
+			var Space = 10; //每次移动(px)
+			var ps = 0;
+			var PageWidth = 230; //翻页宽度
+			var fill = 0; //整体移位
+			var MoveLock = false;
+			var MoveTimeObj;
+			var Comp = 0;
+			$("#list2").html($("#list1").html()); //LY将图片复制到list2中
+			$("#imgdiv").scrollLeft = fill; //Ly图片整体移位0
+			function ISL_GoUp() { //上翻开始
+				if (MoveLock) return;
+				MoveLock = true;
+				MoveTimeObj = setInterval('ISL_ScrUp();', Speed);
+			} 
+			function ISL_ScrUp() { //上翻动作
+				if ($("#imgdiv").scrollLeft() <= 0) {
+					ps = $("#imgdiv").scrollLeft() + $('#list1').width();
+					$("#imgdiv").scrollLeft(ps);
+				}
+				ps -= Space;
+				$("#imgdiv").scrollLeft(ps);
+			}
+
+			function ISL_StopUp() { //上翻停止
+				clearInterval(MoveTimeObj);
+				if ($("#imgdiv").scrollLeft() % PageWidth - fill != 0) {
+					Comp = fill - ($("#imgdiv").scrollLeft() % PageWidth);
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+			}
+
+			function ISL_GoDown() { //下翻
+				clearInterval(MoveTimeObj);
+				if (MoveLock) return;
+				MoveLock = true;
+				ISL_ScrDown();
+				MoveTimeObj = setInterval('ISL_ScrDown()', Speed);
+			}
+
+			function ISL_ScrDown() { //下翻动作
+				if ($("#imgdiv").scrollLeft() >= $('#list1').width()) {
+					ps = $("#imgdiv").scrollLeft() - $('#list1').width();
+					$("#imgdiv").scrollLeft(ps);
+				}
+				ps += Space;
+				$("#imgdiv").scrollLeft(ps);
+				//				$("#imgdiv").scrollLeft += Space ;
+			}
+
+			function ISL_StopDown() { //下翻停止
+				clearInterval(MoveTimeObj);
+				if ($("#imgdiv").scrollLeft() % PageWidth - fill != 0) {
+					Comp = PageWidth - $("#imgdiv").scrollLeft() % PageWidth + fill;
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+			}
+
+			function CompScr() {
+					var num;
+					var p = $("#imgdiv").scrollLeft();
+					if (Comp == 0) {
+						MoveLock = false;
+						return;
+					}
+					if (Comp < 0) { //上翻
+						if (Comp < -Space) {
+							Comp += Space;
+							num = Space;
+						} else {
+							num = -Comp;
+							Comp = 0;
+						}
+						$("#imgdiv").scrollLeft(p - num);
+						setTimeout('CompScr()', Speed);
+					} else { //下翻
+						if (Comp > Space) {
+							Comp -= Space;
+							num = Space;
+						} else {
+							num = Comp;
+							Comp = 0;
+						}
+						$("#imgdiv").scrollLeft(p + num);
+						setTimeout('CompScr()', Speed);
+					}
+				} 
+		</script>-->
+		[/@node] [/@node]
+	</body>
+
+</html>

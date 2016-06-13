@@ -1,0 +1,804 @@
+<!DOCTYPE html>  
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>创业大咖秀</title>
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/odometer-theme-car.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="${URL}bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="${URL}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		[@node var="node53" nodeid="53"]
+			location.href="${node53.NODEURL}";
+		 [/@node]
+			$(function() {
+					$(".synopsis").mousemove(function() { //鼠标滑过事件
+						$(this).children('.megOne').css('display', 'none');
+						$(this).children('.megTwo').css('display', 'block');
+					});
+					$(".synopsis").mouseout(function() { //鼠标离开事件
+						$(this).children('.megOne').css('display', 'block');
+						$(this).children('.megTwo').css('display', 'none');
+					}); 
+				})
+				//浏览器改变大小时执行
+				 function eachObj(){
+						$(".list1").parent().parent().parent().find(".synopsis").removeClass("mui-synopsis");
+						$(arguments[1]).addClass("mui-synopsis"); 
+						var list2Array=$(".ScrCont").find(".synopsis");
+						var data=$(arguments[1]).attr("data"); 
+						$.each(list2Array, function() {
+							if($(this).attr("data")==data){
+								$(this).addClass("mui-synopsis"); 
+							}
+						});   
+					 	$(".main").find(".project").hide();  
+						$(".main").find(".project").eq(arguments[0]).show();
+					 } 
+		</script>
+	</head> 
+	<body>
+		[#include "/369Cloud/top.html"]
+		<div class="main"> 
+			<!--图片轮播-->
+			<div class="scroll-pic">
+				<div class="btn-left" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()">
+					<img src="${URL}img/height-btn02.png">
+				</div>
+				<div class="center">
+					<div class="imgdiv" id="imgdiv">
+						<div class="ScrCont">
+							<div class="list1" id="list1">
+								[@nodeList nodeid="sub-${node40.NODEID}" var="upsHead" ]
+								 [#list upsHead as item] 
+									 [@dataList nodeid="${item.nodeid}" var="childNav" num="1" ]
+									  [#list childNav as childItem]
+										<div class="pic">
+											<a href="${item.NODEURL}" style="text-decoration:none;outline:none;">
+												<div class="synopsis [#if item.nodeid==selfnode.NODEID] mui-synopsis [/#if]" data="${item_index}">
+													<div class="img">
+														<img src="${childItem.square_head}">
+													</div>
+													<div class="name"><span>${childItem.name}</span>
+														</br>${childItem.now_job}</div>
+													<div class="megOne">${childItem.now_job}</br>${childItem.before_job}</div>
+													<div class="megTwo">
+														${childItem.dynamic}
+													</div>
+												</div>
+											</a>
+										</div>
+									[/#list]
+									 [/@dataList]
+								  [/#list] 
+								  [/@nodeList]
+							</div>
+							<div class="list2" id="list2"></div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-right" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()">
+					<img src="${URL}img/height-btn01.png">
+				</div>
+			</div>
+			
+			<div class="project">
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${URL}img/tiantianaimi.png" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>05月</span>
+														</time>
+														<div class="data-line">
+															天天艾米IME——教育行业社交平台项目成立
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>10月</span>
+														</time>
+														<div class="data-line">
+															迎来首批大波新用户
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年中旬</span>
+														</time>
+														<div class="data-line">
+															将突破1.8亿用户，目前估值2亿人民币
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年底</span>
+														</time>
+														<div class="data-line">
+															将突破5亿用户
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${URL}images/gy_bottom_head.png" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro">
+								<dl>
+									<dt>天天艾米副总经理</dt>
+									<dd>高寅 </dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									加入新华瑞德（北京）网络科技有限公司时我还是一个普通测试人员，伴随着天天艾米的成长，我成功转型为天天艾米产品经理，并成为项目核心人员。其实我们每个人都是创业者，为了自己的梦想而努力，创业需要强大的平台支撑，这样成功的几率会更高。
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3>创业源</h3>
+					<p>天天艾米IME——教育行业社交平台项目，与教育部教育管理信息中心合作，以教育体系内部各业务系统支撑平台为依托，逐步向外延伸，纵向建立教育行政人员、教师、家长/学生的强关系链，并立足于每个关系节点，横向发展业务、教师、班级、家长四大圈，构建全国教育行业信息交流和互动的立体生态链，并在此生态链上加载线上线下多种产品线，进而发展成为移动互联网入口级产品。 </P>
+				</div>
+			</div>
+			<div class="project" style="display: none;">
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${URL}img/hulukeji.png" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2013</span><span>05月</span>
+														</time>
+														<div class="data-line">
+															FansPhone项目立项，相继推出了面向明星粉丝的庚Phone和面向国安球迷的御Phone
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>年12月</span>
+														</time>
+														<div class="data-line">
+															顺利完成A轮融资，融资金额3050万元,由北京文投基金领投，湾流资本跟投
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年1月</span>
+														</time>
+														<div class="data-line">
+															成立葫芦科技有限公司，项目估值6050万元
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年4月2日</span>
+														</time>
+														<div class="data-line">
+															大唐电信副总裁、葫芦科技CEO杨勇提出一个爆炸性观点：智能手机蓝海时代刚刚开始！
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年4月</span>
+														</time>
+														<div class="data-line">
+															推出情侣系列的主题手机，率先探索智能手机3.0蓝海。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年5月</span>
+														</time>
+														<div class="data-line">
+															在京东项目众筹中脱颖而出，顺利筹集100万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${URL}images/xgw_bottom_head.png" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro">
+								<dl>
+									<dt>葫芦科技渠道总监</dt>
+									<dd>夏光伟 </dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									用屌丝程序猿来形容初来公司的我一点也不夸张，基于369Cloud平台的强大支撑，葫芦科技也孕育而生，作为葫芦科技平台技术负责人，我感受到369Cloud强大的后台支撑，支持者我的项目团队迈向成功。
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3>创业源</h3>
+					<p>葫芦科技由大唐电信控股子公司新华瑞德与北京文投基金、湾流资本共同成立，葫芦科技团队部分来自大唐电信FansPhone项目创业团队，同时吸引了更多的专业人才对原有团队进行补充。       FansPhone项目于2013年启动，目前已经推出庚phone和御phone。 新手机将延续FansPhone的英文名称，中文名称则统一叫葫芦手机。2015年4月推出情侣手机，这也意味着智能手机蓝海时代刚刚开始！  </p>
+				</div>
+			</div>
+			<div class="project" style="display: none;">
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${URL}img/mofang.png" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>9月</span>
+														</time>
+														<div class="data-line">
+															流量魔方正式立项
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年初</span>
+														</time>
+														<div class="data-line">
+															自有APP上线，流量魔方APP中提供优惠券和消费劵商家有4000多家，覆盖北京地区大部分主流餐饮、娱乐商家。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年3月</span>
+														</time>
+														<div class="data-line">
+															截止2015年3月，项目产品已在大众点评、美团网、百度糯米、QQ拍拍商城、天猫商城等渠道上线，充值用户已累计5万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span>年底</span>
+														</time>
+														<div class="data-line">
+															流量魔方通过O2O营销平台的成功搭建，将发展APP注册用户不低于10万，活跃率10%以上。实现月收入不低于100万元。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${URL}images/lxl_bottom_head.png" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro">
+								<dl>
+									<dt>流量魔方创始人</dt>
+									<dd>李小玲 </dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									在369Cloud强大的云平台支撑下，流量魔方项目一步步成长并强大起来，同时，我也在这个过程中成长起来，期间的付出与艰辛历历在目。感谢曾经的自己，创业者没有退路！369Cloud是一个强大的、百变的开发者创业魔方！
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3>创业源</h3>
+					<p> 瑞德云是新华瑞德（北京）网络科技有限公司打造的国内最大的移动应用开发云平台，是国内混合应用开发的先锋者。</p>
+					<p>瑞德云能够实现从创建应用、选择开发模块、选择服务组件、再到工程包的生成，直至完成源码托管这一系列开发流程的可视化、可配置化操作。</p>
+					<p>瑞德云将带领千万开发者和创业团队快速进入移动、大数据和云时代。</p>
+				</div>
+			</div>
+			<div class="project" style="display: none;">
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${URL}img/mami100_Icon.jpg" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>11月</span>
+														</time>
+														<div class="data-line">
+															与卫生计生委中国妇幼保健协会签订独家合作协议，已试点20多家医院
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>12月12日</span>
+														</time>
+														<div class="data-line">
+															获“2015最具投资价值移动医疗项目
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span> 年初</span>
+														</time>
+														<div class="data-line">
+															户已达30多万
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2015</span><span> 1月</span>
+														</time>
+														<div class="data-line">
+															和部队体系医院301医院、二炮总医院达成意向，在整个部队医院体系全面推广
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>未</span><span>来计划</span>
+														</time>
+														<div class="data-line">
+															将推动政府把平台作为国家人口发展监督与服务工程，为提高我国人口出生素质发挥积极的作用。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li> 
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${URL}images/cln_bottom_head.png" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro">
+								<dl>
+									<dt>妈咪100分的资源总监</dt>
+									<dd>崔丽娜 </dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									进入新华瑞德（北京）网络科技有限公司从一名普通员工到妈咪项目创始人兼CEO，和大家一起见证了妈咪100分的成长，并获得了“2015最具投资价值项目”称号，这一切都在369Cloud云平台上孕育而生，不得不说，这是一个强大的平台。
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3>创业源</h3>
+					<p>妈咪100分致力于搭建妇幼保健领域专业的O2O服务平台，着眼于母婴市场，涵盖孕、婴、童三大群体；打造线上线下紧密结合的垂直类母婴服务平台。 </P>
+					<p>目前，妈咪100分覆盖了110家三甲、综合及专科医院的医生，平台医生免费义诊达10000余次，帮助了超过30万用户解决孕期难题。主治以上医生占到了全部医生的60%。项目构建了一个政府、医院、病患、运营企业共赢的医疗生态，得到广泛认同。 </p>
+					<p>未来，妈咪100分将完成由提供线上咨询服务向提供线上线下服务转变，全面覆盖用户在备孕、怀孕、产后各个阶段以及婴幼儿护理等各项服务需求，加速布局母婴健康领域 O2O，并与多家母婴服务机构进行对接，满足育龄妇女及家庭个性化、多样化生活需求。</p>
+				</div>
+			</div>
+			<div class="project" style="display: none;">
+				<div class="container">
+					<!--路径展示-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="trackModel">
+								<div class="verticalbtn">
+									<img src="${URL}img/yingjia.png" />
+								</div>
+								<div class="verticalLine"></div>
+								<ul>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>9月</span>
+														</time>
+														<div class="data-line">
+															大唐英加成立，并推出了基于AR技术的移动终端产品——手机APP“要加”。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="even">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/solid-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>2014</span><span>年10月</span>
+														</time>
+														<div class="data-line">
+															大唐英加邯郸分公司成立，大唐英加移动科技正式落户邯郸
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="odd">
+										<div>
+											<div class="cricle">
+												<img src="${URL}img/hollow-cricle.png" />
+											</div>
+											<div class="half-width">
+												<div class="tramodle">
+													<div class="describleCont">
+														<time class="trackTime"><span>未</span><span>来发展</span>
+														</time>
+														<div class="data-line">
+															大唐英加利用成熟的营销网络服务到企业和个人终端，预计到2015年可服务客户数50万户以上。
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li> 
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="ceo-head">
+								<div>
+									<img src="${URL}images/wl_bottom_head.png" class="img-circle">
+								</div>
+							</div>
+							<div class="ceo-intro">
+								<dl>
+									<dt>大唐英加产品技术中心总监</dt>
+									<dd>王亮 </dd>
+								</dl>
+							</div>
+							<div class="ceo-decrition">
+								<div class="">
+									 回头看我的创业历程，是不断寻找、不断纠正的过程。希望369Cloud越来越成功！
+								</div>
+								<div class="">
+									&nbsp;
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="poineeringSource">
+					<h3>创业源</h3>
+					<p>天天艾米IME——教育行业社交平台项目，与教育部教育管理信息中心合作，以教育体系内部各业务系统支撑平台为依托，逐步向外延伸，纵向建立教育行政人员、教师、家长/学生的强关系链，并立足于每个关系节点，横向发展业务、教师、班级、家长四大圈，构建全国教育行业信息交流和互动的立体生态链，并在此生态链上加载线上线下多种产品线，进而发展成为移动互联网入口级产品。 </P>
+				</div>
+			</div>
+		</div>
+		[#include "/369Cloud/bottom.html"]
+		<script language="javascript" type="text/javascript">
+			 //图片滚动列表 jb51.net
+			var Speed = 1; //速度(毫秒)
+			var Space = 10; //每次移动(px)
+			var ps = 0;
+			var PageWidth = 230; //翻页宽度
+			var fill = 0; //整体移位
+			var MoveLock = false;
+			var MoveTimeObj;
+			var Comp = 0;
+			$("#list2").html($("#list1").html()); //LY将图片复制到list2中
+			$("#imgdiv").scrollLeft = fill; //Ly图片整体移位0
+			function ISL_GoUp() { //上翻开始
+				if (MoveLock) return;
+				MoveLock = true;
+				MoveTimeObj = setInterval('ISL_ScrUp();', Speed);
+			} 
+			function ISL_ScrUp() { //上翻动作
+				if ($("#imgdiv").scrollLeft() <= 0) {
+					ps = $("#imgdiv").scrollLeft() + $('#list1').width();
+					$("#imgdiv").scrollLeft(ps);
+				}
+				ps -= Space;
+				$("#imgdiv").scrollLeft(ps);
+			}
+
+			function ISL_StopUp() { //上翻停止
+				clearInterval(MoveTimeObj);
+				if ($("#imgdiv").scrollLeft() % PageWidth - fill != 0) {
+					Comp = fill - ($("#imgdiv").scrollLeft() % PageWidth);
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+			}
+
+			function ISL_GoDown() { //下翻
+				clearInterval(MoveTimeObj);
+				if (MoveLock) return;
+				MoveLock = true;
+				ISL_ScrDown();
+				MoveTimeObj = setInterval('ISL_ScrDown()', Speed);
+			}
+
+			function ISL_ScrDown() { //下翻动作
+				if ($("#imgdiv").scrollLeft() >= $('#list1').width()) {
+					ps = $("#imgdiv").scrollLeft() - $('#list1').width();
+					$("#imgdiv").scrollLeft(ps);
+				}
+				ps += Space;
+				$("#imgdiv").scrollLeft(ps);
+				//				$("#imgdiv").scrollLeft += Space ;
+			}
+
+			function ISL_StopDown() { //下翻停止
+				clearInterval(MoveTimeObj);
+				if ($("#imgdiv").scrollLeft() % PageWidth - fill != 0) {
+					Comp = PageWidth - $("#imgdiv").scrollLeft() % PageWidth + fill;
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+			}
+
+			function CompScr() {
+					var num;
+					var p = $("#imgdiv").scrollLeft();
+					if (Comp == 0) {
+						MoveLock = false;
+						return;
+					}
+					if (Comp < 0) { //上翻
+						if (Comp < -Space) {
+							Comp += Space;
+							num = Space;
+						} else {
+							num = -Comp;
+							Comp = 0;
+						}
+						$("#imgdiv").scrollLeft(p - num);
+						setTimeout('CompScr()', Speed);
+					} else { //下翻
+						if (Comp > Space) {
+							Comp -= Space;
+							num = Space;
+						} else {
+							num = Comp;
+							Comp = 0;
+						}
+						$("#imgdiv").scrollLeft(p + num);
+						setTimeout('CompScr()', Speed);
+					}
+				}
+				//--><!]]>
+		</script>
+	</body>
+
+</html>

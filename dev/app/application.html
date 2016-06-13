@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>概述</title>
+		<link rel="icon" href="//g.369cloud.com/images/favicon.ico" type="image/x-icon">
+		<!--<link rel="stylesheet" type="text/css" href="//g.369cloud.com/bootstrap/css/bootstrap.css" />-->
+		<link rel="stylesheet" type="text/css" href="//192.168.171.100:8020/dtcloud/bootstrap/css/bootstrap.min.css" />
+		<!-- 
+        	描述：base是可有可无的样式，是为了兼容以前的页面而添加的样式表
+        -->
+		<link rel="stylesheet" type="text/css" href="//192.168.171.100:8020/dtcloud/css/dev/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dev/app.css" />
+		<!--
+         	 判断ie9的这段js必须放到样式表之下，擅自改动后果自负
+         -->
+		<!--[if lt IE 9]>
+		   <script src="//g.369cloud.com/bootstrap/js/createTag.js"></script>
+		   <script src="//g.369cloud.com/bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body class="demo baseFrame">
+		<div class="dev-main">
+			<div class="leftMenu ">
+				<div class="menuTop">
+					<a href="">
+						<img class="min_logo" src="//192.168.171.100:8020/dtcloud/images/dev/min_logo.png" />
+						<img class="logo" src="//192.168.171.100:8020/dtcloud/images/dev/logo.png" />
+					</a>
+					<div class="sel_wrap">
+						<label></label>
+						<select class="select" name="" id="c_city">
+							<option value="0">app</option>
+							<option value="1">测试环境测试环境测试环境</option>
+						</select>
+					</div>
+				</div>
+				<aside class="menu_info">
+					<div class="scrollmenu" id="scrollmenu">
+						<nav>
+							<div class="menu_title">
+								<h3 class="h3_title">应用开发 </h3>
+								<h3 class="min_h3_title">APP</h3>
+								<img src="" />
+							</div>
+							<ul>
+								<li class="checked">
+									<a href="application.html"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href="set.html"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+							</ul>
+						</nav>
+						<nav>
+							<div class="menu_title">
+								<h3 class="h3_title">Baas </h3>
+								<h3 class="min_h3_title">Baas</h3>
+								<img src="" />
+							</div>
+							<ul>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</aside>
+			</div>
+			<div class="rightCont">
+				<div class="dev_container">
+					<!--  编译头部 -->
+					<div class="app_top_nav">
+						<img src="//192.168.171.100:8020/dtcloud/images/dev/leftMenu_btn.png" />
+						<div class="nav-right right">
+							<div class="loginModle">
+								<div class="login" style="display:none;">
+									<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="">注册</a>
+								</div>
+								<div class="userInfo">
+									<div class="urserhead">
+										<img src="//192.168.171.100:8020/dtcloud/images/dev/userHead.png" />&nbsp;
+										<a href="javascript:showhide()">我的账户</a>
+										<div class="urserconte" style="display:none;">
+											<div class="">
+												<img src="//192.168.171.100:8020/dtcloud/images/dev/userHead.png" />&nbsp;
+												<span>我的账户</span>
+											</div>
+											<div>
+												<a href="applay_index.html">控制台</a>
+											</div>
+											<div>
+												<a href="../myShare/share_store_one.html">我的分享</a>
+											</div>
+											<div>
+												<a href="../userInfo/accountSet_Index.html">账户设置</a>
+											</div>
+											<div>
+												<a href="../userInfo/perCenter_index.html">个人中心</a>
+											</div>
+											<div>
+												<a href="">退出</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right dev_link">
+							<a href="mailto:">文档中心</a>
+							<a href="mailto:">视频培训</a>
+							<a href="mailto:">社区</a>
+						</div>
+					</div>
+
+					<!--
+                    	作者：maweichao@126.com
+                    	时间：2015-12-01
+                    	描述：概述操作部分
+                    -->
+					<div class="smr_container">
+						<div class="col-md-6 cell">
+							<div class="panel lef-panel">
+								<form action="" method="post">
+									<table class="table apply-font">
+										<tr>
+											<td style="border:0px">
+												<div class="left apply-icon">
+													<img src="//192.168.171.100:8020/dtcloud/images/dev/app/cooper_list_icon.jpg">
+												</div>
+												<div class="left apply-info">
+													<input class="applay-title" style="width:80%;border:1px solid #fff" value="スーパーロボット大戦" disabled/>
+													<div>
+														4月21日 9:29
+													</div>
+													<div>
+														应用Id：1233490023
+													</div>
+												</div>
+												<div class="right">
+													<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application6.png"></a>
+													<a href=""><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application7.png"></a>
+													<a href="javascript:void(0)" onclick="edit('applay-title',this)" class="right">
+														<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application8.png">
+													</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="left apply-icon">
+													<h4 class="left">应用KEY：</h4>
+												</div>
+												<div class="left apply-info dev_wang">
+													1230-1223-12aedde-323-43532423-werewe
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="apply-description">
+													<h4 class="left">应用描述:</h4>
+													<a href="javascript:void(0)" onclick="edit('applay-intro',this)" class="right">
+														<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application8.png">
+													</a>
+												</div>
+												<div class="clear"></div>
+												<div class="apply-description apply-dp-minheight">
+													<textarea class="applay-intro" rows="2" disabled>挑选您的卡牌来战个痛快吧！在《炉石传说》这款节奏明快的游戏中，您将扮演一位英雄机智地使用各种策略，《炉石传说》所蕴含的游戏深度。
+													</textarea>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-6 cell">
+							<div class="panel right-panel">
+								<div class="apply-panel-heading">
+									<div class="left">
+										<h4>最新编译版本</h4>
+									</div>
+									<div class="right">
+										<button class="mui-radius-btn">编译 </button>
+									</div>
+								</div>
+								<table class="table apply-v-table" style="text-align: center;">
+									<tr>
+										<td>
+											<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application.png">
+										</td>
+										<td>2015-11-05&nbsp;&nbsp;&nbsp;9:10:18</td>
+										<td></td>
+										<td><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application2.png">&nbsp;&nbsp;&nbsp;HAPPY</td>
+										<td>
+											<a href="#"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application3.png" class="dev_app_marl"></a>
+										</td>
+										<td>
+											<a href="#"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application4.png" class="dev_app_marl"></a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application.png">
+										</td>
+										<td>2015-11-05&nbsp;&nbsp;&nbsp;9:10:18</td>
+										<td></td>
+										<td><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application2.png">&nbsp;&nbsp;&nbsp;HAPPY</td>
+										<td>
+											<a href="#"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application3.png" class="dev_app_marl"></a>
+										</td>
+										<td>
+											<a href="#"><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application4.png" class="dev_app_marl"></a>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="panel right-panel">
+								<div class="apply-panel-heading">
+									<div class="left">
+										<h4>最新增量更新</h4>
+									</div>
+									<div class="right">
+										<button class="mui-radius-btn" onclick="">编译 </button>
+									</div>
+								</div>
+								<table class="table apply-v-table" style="text-align: center;">
+									<tr>
+										<td>
+											<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application.png">
+										</td>
+										<td>2015-11-05&nbsp;&nbsp;&nbsp;9:10:18</td>
+										<td><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application2.png">&nbsp;&nbsp;&nbsp;HAPPY</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application.png">
+										</td>
+										<td>2015-11-05&nbsp;&nbsp;&nbsp;9:10:18</td>
+										<td><img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application2.png">&nbsp;&nbsp;&nbsp;HAPPY</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- 统计数量部分  -->
+					<div class="dev_container" style="width: 98%;margin:10px 0px 10px 9px;">
+						<div class="clear"></div>
+						<div class="dev_application_data">
+							<div class="statistics-show">
+								<ul>
+									<li>
+										<div class="big_num">1359</div>
+										<div class="small_mun">今日新增用户</div>
+									</li>
+									<li>
+										<div class="big_num">1359</div>
+										<div class="small_mun">本周活跃用户</div>
+									</li>
+									<li>
+										<div class="big_num">135911</div>
+										<div class="small_mun">本月推送信息数</div>
+									</li>
+									<li>
+										<img src="//192.168.171.100:8020/dtcloud/images/dev/app/num_line.jpg" />
+									</li>
+									<li class="statistics-li-last">
+										<div class="big_num">135923</div>
+										<div class="small_mun">总启动次数</div>
+									</li>
+									<li>
+										<div class="big_num">135292</div>
+										<div class="small_mun">总用户</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--
+                         	作者： 
+                         	时间：2015-12-03
+                         	描述：云存储使用状态
+                         -->
+						<div class="index-panel">
+							<div class="col-md-6 col-xs-12 left-panel">
+								<div class="pane">
+									<section class="compileLog">
+										<div class="dev_new_version left">
+											<div class="dev_data">
+												<h4 class="left">云存储使用状态</h4>
+											</div>
+											<div class="box">
+												<ul>
+													<li>
+														<canvas id="one" width="95" height="95" class="left stored"></canvas>
+														<h3 class="ie8show left">50%</h3>
+														<div class="data_stored left">
+															<span>数据存储</span>
+															<p>2T</p>
+														</div>
+													</li>
+													<li>
+														<canvas id="two" width="95" height="95" class="left stored"></canvas>
+														<h3 class="ie8show left">50%</h3>
+														<div class="data_stored left">
+															<span>文件存储</span>
+															<p>50G</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+							<!--
+                            	作者： 
+                            	时间：2015-12-03
+                            	描述：用户登陆信息
+                            -->
+							<div class="col-md-6 col-xs-12 right-panel">
+								<div class="pane">
+									<section class="compileLog">
+										<div class="dev_new_version left_application">
+											<div class="left dev_application_user">
+												<div class="">
+													<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application5.png">
+												</div>
+												<div>蓦然回首</div>
+												<div class="dev_application_uf">15:35</div>
+											</div>
+											<div class="left dev_application_user">
+												<div class="">
+													<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application5.png">
+												</div>
+												<div>蓦然回首</div>
+												<div class="dev_application_uf">10-25 15:35</div>
+											</div>
+											<div class="left dev_application_user">
+												<div class="">
+													<img src="//192.168.171.100:8020/dtcloud/images/dev/app/app_application5.png">
+												</div>
+												<div>蓦然回首</div>
+												<div class="dev_application_uf">15:35</div>
+											</div>
+											<div class="left dev_application_user">
+												<br>
+												<br>
+												<br>
+												<br>
+												<div><a href="" class="dev_application_btn">查看更多</a> </div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div class="col-md-12 configflow">
+								<div class="panel unpdpanel">
+									<div class="configfont">
+										<h4>应用开发配置流程</h4>
+										<div>
+											<hr />
+											<dl>
+												初始配置
+												<dt><img src="../../images/dev/app/cspz_icon.png" /></dt>
+											</dl>
+											<dl>
+												证书配置
+												<dt><img src="../../images/dev/app/zspz_ck_icon.png" /></dt>
+											</dl>
+											<dl>组件设置
+												<dt><img src="../../images/dev/app/zjsz_icon.png" /></dt>
+											</dl>
+											<dl>应用编译
+												<dt><img src="../../images/dev/app/yyby_icon.png" /></dt>
+											</dl> 
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+
+							<div class="dev_application_log">
+								<div class="dev_data">
+									<h4 class="left">操作日志</h4>
+									<span class="right"><a href="#">更多</a></span>
+								</div>
+
+								<div class="dev_application_time">
+									<div class="left">
+										时间
+									</div>
+									<div class="left">
+										用户
+									</div>
+									<div class="left">
+										地点
+									</div>
+									<div class="left">
+										IP
+									</div>
+									<div class="left">
+										操作记录
+									</div>
+								</div>
+								<div class="dev_application_record">
+									<div class="dev_application_timer">
+										今天
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_timer">
+										2015-05-25
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+									<div class="dev_application_re">
+										<div class="left">
+											17:05
+										</div>
+										<div class="left">
+											qwqsxcqq.com
+										</div>
+										<div class="left">
+											北京
+										</div>
+										<div class="left">
+											281. 241. * .*
+										</div>
+										<div class="left">
+											登录应用
+										</div>
+									</div>
+									<div class="dev_application_bottom"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 
+                    	描述：defer是解决ie8的异步  async是异步加载js
+                 -->
+				<!--<script src="//192.168.171.100:8020/dtcloud/js/request.js" defer async="true" data-main="//192.168.171.100:8020/dtcloud/js/dev/app" type="text/javascript" charset="utf-8"></script>-->
+				<script src="//192.168.171.100:8020/dtcloud/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="//192.168.171.100:8020/dtcloud/js/placeholderfriend.js" type="text/javascript" charset="utf-8"></script>
+				<script src="//192.168.171.100:8020/dtcloud/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+				<script src="//192.168.171.100:8020/dtcloud/js/dev/dev_userMenu.js" type="text/javascript" charset="utf-8"></script>
+
+				<script type="text/javascript">
+					function edit() {
+						//						if ($("." + arguments[0]).attr("disabled") == "disabled") {
+						//							$("." + arguments[0]).addClass("editinput");
+						//							$("." + arguments[0]).removeAttr("disabled");
+						//							$(arguments[1]).find("img").attr("src", $(arguments[1]).find("img").attr("src").replace(/ap/ag, "app"));
+						//						} else {
+						//							$("." + arguments[0]).removeClass("editinput");
+						//							$("." + arguments[0]).attr("disabled", "disabled");
+						//							$(arguments[1]).find("img").attr("src", $(arguments[1]).find("img").attr("src").replace(/app/ag, "ap"));
+						//							if (arguments[0] == 'applay-title') {
+						//								if ($("." + arguments[0]).val().length > 20) {
+						//									$("." + arguments[0]).val($("." + arguments[0]).val().substr(0, 20) + "...")
+						//								}
+						//							} else {
+						//								if ($("." + arguments[0]).val().length > 70) {
+						//									$("." + arguments[0]).val($("." + arguments[0]).val().substr(0, 64) + "...")
+						//								}
+						//							}
+						//						}
+					}
+					window.onload = function() {
+						function drawCircle(_options) {
+							var options = _options || {}; //获取或定义options对象;
+							options.angle = options.angle || 1;
+							options.color = options.color || '#fff';
+							options.lineWidth = options.lineWidth || 10;
+							options.lineCap = options.lineCap || 'square';
+							var oBoxOne = document.getElementById(options.id);
+							var sCenter = oBoxOne.width / 2;
+							var ctx = oBoxOne.getContext('2d');
+							var nBegin = Math.PI / 2;
+							var nEnd = Math.PI * 2;
+							ctx.textAlign = 'center';
+							//		    ctx.marginTop='20px';
+							ctx.font = 'normal normal bold 20px Arial';
+							ctx.fillText((options.angle * 100) + '%', sCenter, sCenter);
+							ctx.lineCap = options.lineCap;
+							ctx.lineWidth = options.lineWidth;
+							ctx.beginPath();
+							ctx.strokeStyle = '#D8D8D8';
+							ctx.arc(sCenter, sCenter, (sCenter - options.lineWidth), -nBegin, nEnd, false);
+							ctx.stroke();
+							var imd = ctx.getImageData(0, 0, 240, 240);
+
+							function draw(current) {
+								ctx.putImageData(imd, 0, 0);
+								ctx.beginPath();
+								ctx.strokeStyle = options.color == 'grd' ? grd : options.color;
+								ctx.arc(sCenter, sCenter, (sCenter - options.lineWidth), -nBegin, (nEnd * current) - nBegin, false);
+								ctx.stroke();
+							}
+							var t = 0;
+							var timer = null;
+
+							function loadCanvas(angle) {
+								timer = setInterval(function() {
+									if (t > angle) {
+										draw(options.angle);
+										clearInterval(timer);
+									} else {
+										draw(t);
+										t += 0.02;
+									}
+								}, 20);
+							}
+							loadCanvas(options.angle);
+							timer = null;
+						}
+						try {
+							drawCircle({
+								id: 'one',
+								color: '#21a0e8',
+								angle: 0.5,
+								lineWidth: 8
+							});
+							drawCircle({
+								id: 'two',
+								angle: 0.72,
+								color: '#f3ac24',
+								lineWidth: 8
+							});
+						} catch (e) {
+							$(".ie8show").show();
+						}
+					}
+				</script>
+	</body>
+
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+        <meta name="Description" content="${_DESCRIPTION}">
+        <title>${_TITLE}</title>
+        <link rel="shortcut icon" href="${URL}img/icon.png" type="image/x-icon"> 
+		<link rel="icon" sizes="any" mask=""  href="${URL}img/icon.png">
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/style.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/validate.css" />
+		<style type="text/css">
+			body {
+				overflow-x: hidden;
+			}
+			.curBg{
+				left: 310px !important;
+				width: 62px !important;
+			}
+		</style>
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+	    
+		<!--<script src="${URL}bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="${URL}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}bootstrap/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/city.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}bootstrap/js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>-->
+		
+		<script src="${staticUrl}/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/base_event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/top.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/static/city.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/static/create_work.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+		
+			$(function() {
+				
+				$(window).scroll(function() {
+					//导航头部滚动
+					otherScroll();
+				});
+				
+				//自定义选择框
+				$('.projectType>label>input[type="radio"]').change(_radioChecked);
+				//自定义下拉框
+				_select();
+				for (var i = 0; i < area_array.length; i++) {
+					if (area_array[i] != undefined) {
+						$("#city").append("<option value=" + area_array[i] + " data=" + i + ">" + area_array[i] + "</option>");
+					}
+				};
+				
+				$("#city").change(function() {
+					var selectedObj = $("#city option:selected").attr("data");
+					$("#county").find("option").remove();
+					$("#county").prev("label").html("==请选择==");
+					for (var j = 0; j < sub_array[selectedObj].length; j++) {
+						if (sub_array[selectedObj][j] != undefined) {
+							$("#county").append("<option value=" + sub_array[selectedObj][j] + " data=" + i + ">" + sub_array[selectedObj][j] + "</option>");
+						}
+					};
+				});
+				$('input, textarea').placeholder();
+				//$(".form-horizontal").Validform({tiptype:2});
+				$("input").focus(function() {
+					$(this).parent().next().find(".Validform_checktip").html("");
+				});
+				$("select").focus(function() {
+					$(this).parent().parent().next().find(".Validform_checktip").html("");
+				});
+				
+				$("#projectDetails").focus(function() { 
+					$("#projectDetails").parent().next().find(".Validform_checktip").html("");
+				});
+				$.each($("input"), function() {
+					$(this).blur(function() {
+						if ($(this).attr("id") == "email") {
+							if (!/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,5}$/.test($(this).val())) {
+								$(this).parent().next().find(".Validform_checktip").html($(this).attr("errormsg"));
+							}
+						}
+						if ($(this).attr("id") == "contactWay") {
+							if (!/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test($(this).val())) {
+								$(this).parent().next().find(".Validform_checktip").html($(this).attr("errormsg"));
+							}
+						}
+					});
+				});
+			});
+			var imgurl="";
+			function uploadImg() {
+				if (/\.(ppt|PDF|pdf|doc|mpp|docx)$/.test(arguments[0])) {
+					imgurl=$('#upfile').val();   
+					var form = $('#upform');
+					var oldElement = $('#upfile');
+					var newElement = $(oldElement).clone();
+					$(oldElement).before(newElement);
+					$(oldElement).appendTo(form);
+					$(form).submit();
+					$(newElement).before(oldElement);
+					$(newElement).remove();
+				} else {
+					alert("文件类型必须是.ppt,pdf,word中的一种");
+				}
+			}
+			function upcallback(val) {
+				try {
+					var json = eval("([" + decodeURI(val) + "])");
+				     $('#filePath').val(json[0].path);  
+					$('.fileUrl').html(imgurl.substr(imgurl.lastIndexOf("\\")+1));
+				} catch (e) {
+					alert("上传失败！");
+				}
+			} 
+			function submitData() { 
+				if (vertical()) {
+					jQuery.ajax({
+						type: "post",
+						url: "${upost}",
+						dataType: "json",
+						data: {
+							contentType: "application/x-www-form-urlencoded; charset=utf-8",
+							tableId: 4,
+							nodeId: 39,
+							email: $('#email').val(),
+							accessory: $('#filePath').val(), //附件
+							painSpot: $('#painSpot').val(), //创业痛点
+							atStage: $('#atStage').val(), //所处阶段
+							contactWay: $('#contactWay').val(), //联系方式
+							linkmanName: $('#linkmanName').val(), //联系人
+							projectDetails: $('#projectDetails').val(), //项目详情
+							city: $('#city').val() + "_" + $('#county').val(), //所在城市
+							projectName: $('#projectName').val(), //项目名字
+							projectType: $(".projectType input:radio:checked").val() //项目类型  
+						},
+						success: function(data) {}
+					});
+			      	$('#myModal').modal('show');
+				}
+			}
+			function vertical() {
+				var $input = $("input");
+				var $select = $("select");
+				var _flag1 = true,
+					_flag2 = true;
+				$.each($input, function() {
+					if ($(this)[0].hasAttribute("nullmsg")) {
+						if ($(this).val() == "") {
+							$(this).parent().next().find(".Validform_checktip").html($(this).attr("nullmsg"));
+							_flag1 = false;
+						} else {
+							if ($(this).attr("id") == "email") {
+								if (!/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,5}$/.test($(this).val())) {
+									$(this).parent().next().find(".Validform_checktip").html($(this).attr("errormsg"));
+									_flag1 = false;
+								}
+							}
+							if ($(this).attr("id") == "contactWay") {
+								if (!/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test($(this).val())) {
+									$(this).parent().next().find(".Validform_checktip").html($(this).attr("errormsg"));
+									_flag1 = false;
+								}
+							}
+						}
+					}
+				});
+				
+				$.each($select, function() {
+					if ($(this)[0].hasAttribute("nullmsg")) {
+						if ($(this).val() == "" || $(this).val() == "==请选择=="|| $(this).val() ==null) { 
+								$(this).parent().parent().next().find(".Validform_checktip").html($(this).attr("nullmsg"));
+							_flag2 = false;
+						}
+					}
+				});  
+				
+				 if($("#projectDetails").val()==""){
+					$("#projectDetails").parent().next().find(".Validform_checktip").html($("#projectDetails").attr("nullmsg"));
+					_flag1=false;
+				} 
+				return (_flag1 && _flag2) ? true : false;
+			}
+ 			//导航
+			$(window).scroll(function (){
+				var st = $(this).scrollTop(); 
+					if (st>0) { 
+						$("header .nav").stop().animate({  
+						    height:'60px',
+						    lineHeight:'60px'
+						}, 300 );
+						$(".header .navBg").stop().animate({
+						  	opacity:'0.9',
+						    filter: 'alpha(opacity=90)',
+						    height:'60px'
+						},300)
+						$(".header .logo").stop().animate({
+						  	height:'60px',
+						    lineHeight:'60px'
+						},300)
+					}else{
+						$("header .nav").stop().animate({  
+					    height:'74px',
+					    lineHeight:'74px'
+					    }, 300 );
+					    $(".header .navBg").stop().animate({
+					  	opacity:'0.9',
+					    filter: 'alpha(opacity=20)',
+					    height:'74px'
+					    },300)
+					    $(".header .logo").stop().animate({
+					  	height:'74px',
+					    lineHeight:'74px'
+					    },300)
+					};  
+				});   
+		</script>
+	</head> 
+	
+	<body>
+		[#include "/369Cloud/top.html"]
+		<div class="row main">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 tiny-create">
+				<div class="title">创业设计申请表</div>
+				<iframe name="_frm_" width="0" height="0" style="display:none"></iframe>
+				<form style="display:none" id="upform" name="upform" method="post" action="${uapost}/upost/UAPost?type=url&url=${root_address}/upcallback.html" enctype="multipart/form-data" target="_frm_"></form>
+				<form class="form-horizontal" id="frm" role="form" action=" " method="post" enctype="multipart/form-data" name="myForm" target="_frm_" onSubmit="return upload();">
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">项目分类：</label>
+						<div class="col-md-10 col-sm-10 cus-div">
+							<div class="projectType">
+								<label>
+									<input type="radio" name="shareType" value="公益" checked><a class="radioChecked">公益</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="游戏"><a>游戏</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="传媒"><a>传媒</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="教育"><a>教育</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="医疗"><a>医疗</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="社交"><a>社交</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="物流"><a>物流</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="电商"><a>电商</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="便民"><a>便民</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="房产"><a>房产</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="农业"><a>农业</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="科技"><a>科技</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="娱乐"><a>娱乐</a>
+								</label>
+								<label>
+									<input type="radio" name="shareType" value="其他"><a>其他</a>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">项目名称：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<input type="text" class="form-control" id="projectName" placeholder="字数在20字内" maxlength="20" datatype="s" nullmsg="项目名称不能为空" errormsg="">
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">所处阶段：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<div class="sel_wrap sel_wrap-sm">
+								<label></label>
+								<select class="select" name="aaa" id="atStage" datatype="*" nullmsg="请选择所处阶段" errormsg="请选择所处阶段">
+									<option value="">==请选择==</option>
+									<option value="创意阶段">创意阶段</option>
+									<option value="研发阶段">研发阶段</option>
+									<option value="已经运营">已经运营</option>
+									<option value="已经收益">已经收益</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">创业痛点：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<div class="sel_wrap sel_wrap-sm">
+								<label></label>
+								<select class="select" name="" id="painSpot" datatype="*" nullmsg="请选择创业痛点" errormsg="请选择创业痛点">
+									<option value="">==请选择==</option>
+									<option value="缺资金">缺资金</option>
+									<option value="缺场地">缺场地</option>
+									<option value="缺项目">缺项目</option>
+									<option value="缺团队">缺团队</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">所在城市：</label>
+						<div class="col-md-3 col-sm-4 cus-div">
+							<div class="sel_wrap sel_wrap-sm">
+								<label>==请选择==</label>
+								<select class="select" id="city" datatype="*" nullmsg="" errormsg=""></select>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-4 cus-div">
+							<div class="sel_wrap sel_wrap-sm">
+								<label>==请选择==</label>
+								<select class="select" id="county" datatype="*" nullmsg="请选择城市" errormsg=""> </select>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">项目详情：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<textarea type="text" class="form-control" id="projectDetails" rows="5" placeholder="项目基本介绍，让你的项目打动他们！" maxlength="500" style="resize:none;" datatype="s" nullmsg="项目详情不能为空" errormsg=""></textarea>
+						</div>
+						<div class="col-md-4 col-sm-2">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">详细计划：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<div class="" style="width: 100px;float: left;height: 40px">
+								<input type="file" class="custom-inputFile" name="upfile" id="upfile" size="35" onchange="uploadImg(this.value)" data="http://www.baidu.com">
+								<a class="custom-btn01">上传附件</a>
+							</div>
+							<input type="hidden" id="filePath">
+							<span class="fileUrl">支持ppt、PDF、word格式；</span>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">联系人姓名：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<input type="text" class="form-control" id="linkmanName" placeholder="联系人姓名" maxlength="10" datatype="s" nullmsg="联系人不能为空" errormsg="">
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">联系方式：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<input type="text" class="form-control" id="contactWay" placeholder="手机号" datatype="e" maxlength="11" nullmsg="手机号不能为空" errormsg="请填写正确手机号">
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2">邮箱：</label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<input type="text" class="form-control" id="email" placeholder="邮箱" datatype="m" maxlength="30" datatype="e" nullmsg="邮箱不能为空" errormsg="请填写正确邮箱">
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<div class="Validform_checktip"></div>
+						</div>
+					</div>
+					<div class="row cus-form-group">
+						<label class="cus-label col-md-2 col-sm-2"></label>
+						<div class="col-md-6 col-sm-8 cus-div">
+							<input type="button" value="提交" class="tinyUP-btn" onclick="submitData()">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		[#include "/369Cloud/bottom.html"]
+		<!--为手机准备的模态框-->
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog" style="margin-top:200px">
+				<div class="modal-content">
+					<div class="modal-body module-modal theySay-modal">
+						<div class="close-modal" data-dismiss="modal"></div>
+						<div class="module-modal-body theySayModal-body"> 
+							<section class="submitSuccess" >
+								<div class="submitCont">
+									<p> 您的申请已提交，我们会在3个工作日与您核实相关信息，请你保持电话畅通，谢谢！</p> 
+								</div> 
+							   	<div class="submitLink">
+									  <div>
+									  	 	<img src="${URL}img/phone3.png"/> 
+									  </div>
+									  <div>
+									  	<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2230995679&site=qq&menu=yes">	<img src="${URL}img/qq1.png"/></a>
+									  	<a  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3110735994&site=qq&menu=yes">	<img src="${URL}img/qq2.png"/></a>
+									  </div>
+								</div>
+							</section>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- /.modal -->  
+	</body>
+
+</html>

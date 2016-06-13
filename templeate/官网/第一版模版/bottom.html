@@ -1,0 +1,87 @@
+[@node var="selfnode" nodeid="self"] 
+<footer class="container  [#if selfnode.NODEID!=35] bottomContainer [/#if]">
+	
+	[@node var="bottomNavObj" nodeid="43"]
+	<div class="row bottom" style="border:0;margin-top:0;"> 
+		[@nodeList  nodeid="sub-${bottomNavObj.NODEID}" var="bottomNav"]
+		  [#list bottomNav as item] 
+			<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+				<ul>
+					<li>
+						<h3>${item.nodename}</h3>
+					</li>
+					[#if item.nodeid=="45"]
+						 [@dataList nodeid="${item.nodeid}" var="childNav"]
+							 [#list childNav as childItem] 
+									 <li  class="[#if childItem.indexid==7||childItem.indexid==6]i_hide[/#if]"><a href="${childItem.address}" target="_blank">${childItem.name}</a></li>
+							 [/#list]
+						 [/@dataList]
+				     [#else] 
+				         [@nodeList  nodeid="sub-${item.nodeid}" var="childNodeNav"]
+		                 [#list childNodeNav as item1] 
+		                    [#if item1.nodeid=="47"]
+			                    [@dataList nodeid="${item1.nodeid}" var="childListNav"]
+								 [#list childListNav as item2]
+								  <li class="i_hide"><a href="${item2.address}">${item2.name}</a></li>
+								 [/#list]
+								[/@dataList]
+		                    [#else] 
+		                        <li><a href="${root_address}${item1.NODEURL}">${item1.nodename}</a></li> 
+		                    [/#if]   
+				          [/#list]
+	                      [/@nodeList] 
+					 [/#if] 
+				</ul>
+			</div>
+	      [/#list]
+	    [/@nodeList]
+		<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+			<ul>
+				<li>
+					<h3>客户服务</h3>
+				</li>
+				<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2230995679&site=qq&menu=yes">客服1<img src="${root_address}/img/QQ_icon.png"/></a>
+				</li>
+				<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3110735994&site=qq&menu=yes">客服2<img src="${root_address}/img/QQ_icon.png"/></a>
+				</li>
+				<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2917139427&site=qq&menu=yes">客服3<img src="${root_address}/img/QQ_icon.png"/></a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:0">
+			<ul>
+				<li>
+					<h3> 
+					    <img src="${root_address}/img/button_phone.jpg">  
+				    </h3>
+				</li>
+				<li>
+					<div class="erweima">
+						<a href="http://weibo.com/369Cloud"><img src="${root_address}/img/erweima-1.png" class="left" /></a> 
+						<img src="${root_address}/img/erweima-2.png" class="right" />
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	[/@node] 
+	<div class="datang-vs">
+		<!--<div class="netvs">
+			<a href="intro/useclause.html">网站使用条款</a>|<a href="intro/privacyclause.html">隐私条款</a>|<a href="intro/serverclause.html">服务条款</a>
+		</div>-->
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?52e547e437eda47c1b6a2f50d5e924e6";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+
+		<div class="netvs">
+			版权所有：大唐网络有限公司 京ICP备11005848号-14  京公网安备11010802013007号
+		</div>
+	</div>
+</footer>
+[/@node]

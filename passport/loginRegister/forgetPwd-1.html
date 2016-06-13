@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
+		<title>找回密码第一步</title>
+		<link rel="stylesheet" type="text/css" href="//g.369cloud.com/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/passport/joinus.css" />
+		<!--[if lt IE 9]>
+		   <script src="//g.369cloud.com/bootstrap/js/createTag.js"></script>
+		   <script src="//g.369cloud.com/bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="//g.369cloud.com/js/jquery-1.10.2.min.js"></script>
+		<script src="//g.369cloud.com/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//g.369cloud.com/js/placeholderfriend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//g.369cloud.com/js/passport/js/ckcolor.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//g.369cloud.com/js/passport/js/validate.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="//g.369cloud.com/js/passport/js/init.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../../js/passport/js/init.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="joinusmain">
+			<div class="cetermodel">
+				<div class="_logo">
+					<img src="//g.369cloud.com/images/passport/img/logo.png" />
+					<span>找回密码</span>
+				</div>
+				<div class="panel panel-default data-panel">
+					<div class="panel-body">
+						<form class="rdfrm">
+							<div class="form-group data-point">
+								<img src="//g.369cloud.com/images/passport/img/forget_1.png" />
+							</div>
+							<div class="form-group">
+								<!--<label for="exampleInputEmail1">Email address</label>-->
+								<div class="input-group">
+									<span class="input-group-addon"><img src="//g.369cloud.com/images/passport/img/user-icon-blue.png"/></span>
+									<input type="text" class="form-control" placeholder="用户名" vrequired v-type="vname,vemail,vphone" v-error="请输入有效的邮箱">
+								</div>
+								<span class="help-block"><div class="_error">填写密码请填写密码请填写密码请填写密码</div> </span>
+							</div>
+							<div class="form-group">
+								<div class="input-group leftblock left">
+									<span class="input-group-addon"><img src="//g.369cloud.com/images/passport/img/verdict-icon-blue.png"/></span>
+									<input type="text" class="form-control" placeholder="验证码" vrequired v-type="valid" valid="123">
+								</div>
+								<span class="rightblock right"><img src="//g.369cloud.com/images/passport/img/yanzhengma.png"/> </span>
+								<div class="clear"></div>
+								<span class="help-block"><div class="_error">填写密码请填写密码请填写密码请填写密码</div> </span>
+							</div>
+							<div class="frm-footer">
+								<button type="button" class="btn btn-primary" onclick="location.href='forgetPwd-2.html'">下一步</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

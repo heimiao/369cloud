@@ -1,0 +1,250 @@
+<style>
+    .placeholder {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        $(".text-center>div .left").hover(function () {
+            $(".text-center>div img").removeClass("img2");
+            $(this).find("img").addClass("img2");
+        })
+        $(".wendang").hover(function () {
+            $(".v_document").show();
+            $(".v_tool").hide();
+            $(".v_process").hide();
+            $(".v_san1").css("visibility", "visible");
+            $(".v_san2").css("visibility", "hidden");
+            $(".v_san3").css("visibility", "hidden");
+        });
+        $(".tool").hover(function () {
+            $(".v_document").hide();
+            $(".v_tool").show();
+            $(".v_process").hide();
+            $(".v_san2").css("visibility", "visible");
+            $(".v_san1").css("visibility", "hidden");
+            $(".v_san3").css("visibility", "hidden");
+        })
+        $(".progress1").hover(function () {
+            $(".v_document").hide();
+            $(".v_tool").hide();
+            $(".v_process").show();
+            $(".v_san3").css("visibility", "visible");
+            $(".v_san1").css("visibility", "hidden");
+            $(".v_san2").css("visibility", "hidden");
+        });
+
+        $.ajax({
+            url: "http://dev.369cloud.com/ideinfo?ideinfoCallback=?",
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8"
+        });
+    });
+
+    function ideinfoCallback(data) {
+        $(".js_ide_vsion").html("V"+data[0].ideVersion+"("+data[0].ideSize+"MB)");
+        $(".js_ide_time").html("更新时间："+new Date(data[0].ideUpdateDate).format("yyyy-MM-dd"));
+    }
+
+    Date.prototype.format = function(format){
+        var o = {
+            "M+" : this.getMonth()+1, // month
+            "d+" : this.getDate(), // day
+            "h+" : this.getHours(), // hour
+            "m+" : this.getMinutes(), // minute
+            "s+" : this.getSeconds(), // second
+            "q+" : Math.floor((this.getMonth()+3)/3), // quarter
+            "S" : this.getMilliseconds() // millisecond
+        }
+        if(/(y+)/.test(format)) {
+            format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        }
+        for(var k in o) {
+            if(new RegExp("("+ k +")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+            }
+        }
+        return format;
+    }
+
+
+
+
+
+    function ValidateValue(textbox)
+    {
+        var IllegalString = "\`~@#;,.!#$%^&*()+{}|\\:\"<>?-=/,\'";
+        var textboxvalue = textbox.value;
+        var index = textboxvalue.length - 1;
+        var s = textbox.value.charAt(index);
+        if(IllegalString.indexOf(s)>=0)
+        {
+            s = textboxvalue.substring(0,index);
+            textbox.value = s;
+        }
+    }
+</script>
+
+<div>
+    <div class="sc-banner1" style="position: relative;">
+        <div class="container" style="width:100%;max-width:850px;">
+            <div class="row v_input1" style="position:relative;">
+                <form name="fm" class="search-form form-inline" action="{{config.base_url}}/">
+                    <div class="input-group" style="width: 100%">
+                        <input type="search" name="search" class="form-control data-control"
+                               aria-describedby="basic-addon2"
+                               placeholder="请输入文档名称" style="padding-left:40px;" onkeydown="ValidateValue(this)">
+                        <a onclick="fm.submit();" style="cursor:pointer;" class="input-group-addon"> <span
+                                id="basic-addon2">搜索文档</span></a>
+                    </div>
+                </form>
+
+                <div class="v_search_logo1">
+                    <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_zoom.png">
+                </div>
+            </div>
+        </div>
+        <div class="container text-center" style="padding-bottom:30px;">
+            <div class="row text-center" style="margin-top:50px;">
+                <!--文档-->
+                <div class="left wendang col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                    <div class="">
+                        <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_89.png" class="img2"
+                             style="width: 90px;"/>
+                    </div>
+                    <div class="v_mar-t1 v_t-wh">文档</div>
+                </div>
+                <div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 tool">
+                    <div class="" style="position:relative;">
+                        <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_90.png" class=""
+                             style="width: 90px;"/>
+                    </div>
+                    <div class="v_mar-t1 v_t-wh">开发工具下载</div>
+
+                </div>
+                <div class="left col-md-4 col-sm-4 col-xs-4 col-lg-4 progress1">
+                    <div class="" style="position:relative;">
+                        <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_91.png" class=""
+                             style="width: 90px;z-index: 2;"/>
+                    </div>
+                    <div class="v_mar-t1 v_t-wh">应用开发流程</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background:#f5f5f5;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san1">
+                    <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san2">
+                    <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4 v_san3">
+                    <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022_97.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--文档-->
+    <div style="background:#f5f5f5;">
+        <div class="container v_document">
+            <div class="csMenu">
+                {{#pages}}
+                {{#is_index}}
+                {{#files.length}}
+                {{/files.length}}
+                {{/is_index}}
+                {{^is_index}}
+                {{#homepage}}
+                <ul>
+                    <li class="{{class}}">
+                        <h3>{{title}}</h3>
+                        <span id="">{{annotate}}</span>
+                    </li>
+                    {{#files}}
+                    {{#display}}
+                    <li title="{{title}}"><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                    {{/display}}
+                    {{/files}}
+                </ul>
+                {{/homepage}}
+                {{/is_index}}
+                {{/pages}}
+            </div>
+        </div>
+    </div>
+</div>
+<!--开发工具下载-->
+<div style="background:#f5f5f5;">
+    <div class="container v_tool">
+        <div>
+            <div class=" v_mar-tb">
+                <div class="">
+                    <div class="v_t-32" style="text-align: center;">
+                        IDE
+                    </div>
+                    <div class="v_t-12 v_mar-t v_hei12">
+                        369CloudIDE是为开发人员提供的跨平台开发环境，混合式开发使用HTML5、CSS3和JavaScript前端技术开发App，轻松完成高体验应用效果的开发、调试、跟踪和模拟。
+                    </div>
+                    <div class="v_down" style="text-align: center; margin: 20px auto;">
+                        <a href="http://dev.369cloud.com/idedownload">
+                            <img src=" //g.369cloud.com/images/static/cloud_school/csDownloadIcon.png">
+                        </a>
+                    </div>
+                    <div class="" style="text-align: center;">
+                        <div class="v_t-12 js_ide_vsion">V1.0.0(369M)</div>
+                        <div class="v_t-12 js_ide_time">更新时间：2015-8-20</div>
+                        <div class="v_t-14"><a href="http://dev.369cloud.com/ideList">更多版本&gt;&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="v_mar-tb">
+                <div class="">
+                    <div class="v_t-32 v_c-a6c" style="text-align: center;">
+                        other
+                    </div>
+                    <div class="v_t-12 v_mar-t v_hei12" align="center">
+                        <br> 更多开发工具正在努力开发中，敬请期待......
+                    </div>
+                    <div class="v_down1">
+                        努力开发中...
+                    </div>
+                </div>
+            </div>
+            <div class=" v_mar-tb">
+                <div class="">
+                    <div class="v_t-32 v_c-a6c" style="text-align: center;">
+                        other
+                    </div>
+                    <div class="v_t-12 v_mar-t v_hei12" align="center">
+                        <br> 更多开发工具正在努力开发中，敬请期待......
+                    </div>
+                    <div class="v_down1">
+                        努力开发中...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--应用开发流程-->
+<div style="background:#f5f5f5;">
+    <div class="container v_process text-center" style="width:100%;">
+        <div class="row v_mar-t1 v_process1 col-md-12 text-center">
+            <img src=" //g.369cloud.com/images/static/cloud_school/369cloud-云学院1022-应用开发流程a_03.png">
+        </div>
+        <div class="row ">
+            <div class="v_phone">
+                <img src=" //g.369cloud.com/images/static/cloud_school/line-pic.png">
+            </div>
+        </div>
+    </div>
+</div>

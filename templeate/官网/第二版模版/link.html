@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+		<meta name="Description" content="${_DESCRIPTION}">
+		<title>${_TITLE}</title>
+		<link rel="icon" href="${root_address}/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/css/style.css">
+		<!--[if lt IE 9]>
+		   <script src="${staticUrl}/bootstrap/js/createTag.js"></script>
+		   <script src="${staticUrl}/bootstrap/js/respond.min.js"></script>
+		  	<!--跨域文件-->
+		  	<link href="${staticUrl}/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		    <!--当前跨域文件-->
+		  	<link href="bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+			<script src="bootstrap/js/respond.proxy.js"></script>
+	   <![endif]-->
+	</head>
+
+	<body>
+		[@node var="node79" nodeid="79"] 
+		[@node var="selfnode" nodeid="self"]
+		[#include "/369cloud/top.html"] 
+		<div class="container other_page">
+			<aside class="J_aside">
+				<div class="arrow"></div>
+				<ul class="list-group left_menu">
+					[@dataList nodeid="111" var="chidnav111"]
+					 [#list chidnav111 as item]
+					<li class="list-group-item"><a href="${item.url}">${item.title}</a></li>
+					[/#list] [/@dataList]
+					<li class="list-group-item"><a href="${selfnode.NODEURL}" class="active">${selfnode.NODENAME}</a></li>
+				</ul>
+			</aside>
+			<div class="article">
+				<article>
+					<h1>${selfnode.NODENAME}</h1>
+					<hr />
+					<div class="pic">
+						[@dataList nodeid="${selfnode.NODEID}" var="nodeSelf"] [#list nodeSelf as item]
+						<a href="${item.address}"><img src="${item.pic}"/></a>
+						[/#list] [/@dataList]
+					</div>
+				</article>
+			</div>
+		</div>
+
+		 [#include "/369cloud/bottom.html"] [/@node] [/@node]
+		 [#include "/369cloud/js.html"]
+		<script type="text/javascript">
+			$(function() {
+				
+				$(".arrow").click(function() {
+					if ($(".J_aside").position().left < 0) {
+						$(".J_aside").animate({
+							left: "0px"
+						}, 1000);
+						$(".article").animate({
+							marginLeft: "200px"
+						}, 1000);
+					} else {
+						$(".J_aside").animate({
+							left: "-185px"
+						}, 1000);
+						$(".article").animate({
+							marginLeft: "20px"
+						}, 1000);
+					}
+				});
+				window.onresize = function() {
+					if ($("body").width() > 768) {
+						$(".J_aside").css({
+							left: "0px"
+						});
+						$(".article").css({
+							marginLeft: "200px"
+						});
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>组件Store</title>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/passport/loginRegister.css" />
+		<!--[if lt IE 9]>
+		   <script src="../bootstrap/js/createTag.js"></script>
+		   <script src="../bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="../bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap/js/placeholder.js"></script>
+		<style type="text/css">
+			.checked {
+                background-image: url("img/bgAll.png");
+                background-position: 18.2% 1300px;
+                }
+		</style>
+		 <script type="text/javascript" >
+                $(function(){
+                    $('.redcheckbox>label>input[type="checkbox"]').change(_checked);
+                    $("input").placeholder();
+                }) ;
+                function _checked(){
+                    if($(this).is(':checked')==true){
+                        $(this).next('span').addClass('checked');
+                    }else{
+                        $(this).next('span').removeClass('checked');
+                    }
+                }
+            </script>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="navBg"> </div>
+			<div class="list-btn left">
+				<img src="img/list_btn.png" />
+			</div>
+			<div class="logo left">
+				<img src="img/logo.jpg" />
+			</div>
+			<nav class="nav left active-nav">
+				<ul>
+					<li><a href="devServce.html">开发者服务</a>
+					</li>
+					<li><a href="moduleStroe.html">组件Store</a>
+					</li>
+					<li><a href="tinyCreate.html">微创业</a>
+					</li>
+					<li><a href="HigherUps.html">创业大咖秀</a>
+					</li>
+					<li class="cur"><a href="cloudSchool.html">云学院</a>
+					</li>
+					<li><a href="javascript:alert('暂未开放')">社区</a>
+					</li>
+				</ul>
+				<div class="curBg"></div>
+			</nav>
+			<div class="nav-right right">
+				<div class="loginModle right">
+					<div class="login" style="display:none;">
+						<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="">注册</a>
+					</div>
+					<div class="userInfo">
+						<div class="urserhead">
+							<img src="img/user_head.png" />&nbsp;
+							<a href="javascript:showhide()">我的账户</a>
+							<div class="urserconte" style="display:none;">
+								<div>
+									<a href="applyPanel/applay_index.html">控制台</a>
+								</div>
+								<div>
+									<a href="myShare/share_store_one.html">我的分享</a>
+								</div>
+								<div>
+									<a href="userInfo/accountSet_Index.html">账户设置</a>
+								</div>
+								<div>
+									<a href="userInfo/perCenter_index.html">个人中心</a>
+								</div>
+								<div>
+									<a href="">退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row joinInfo">
+				<div class="col-md-12 col-sm-12 join-font">
+					由于资源有限，369Cloud会审核您填写的信息内容，为部分用户定制专属的“技术大咖一对一”帮扶服务，开启您的APP急速开发之旅！ 
+				     <div class="">
+					 	<b>完善信息，申请专属定制化服务</b>
+					 </div>
+				</div> 
+				<div class="col-md-6 col-sm-12 joinFrm">
+					<form>
+						<div class="form-group" >
+							<label for="exampleInputEmail1"><span class="redStar">*</span>姓名：</label>
+							<input type="email" class="form-control input-sm" id=" " placeholder="请输入姓名">
+						    <span  class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+						</div>
+						<div class="form-group" style="margin-top:25px;">
+							<label for="exampleInputPassword1"><span class="redStar">*</span>手机：</label>
+							<input type="password" class="form-control input-sm" id=" " placeholder="请输入手机">
+						</div>
+						<div class="form-group"style="margin-top:25px;">
+							<label for=""><span class="redStar">*</span>身份选择：</label>
+							<div style="margin-top:5px;">
+								<div class="col-md-12">
+									<div class="redcheckbox">
+										<label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												新入手小白
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												前端开发人员
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												项目经理、产品经理
+											</div>
+									   </label>
+										<label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												移动APP爱好者
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												创业者
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												CTO
+											</div>
+									   </label>
+										<label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												Android开发者
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												iOS开发者
+											</div>
+									   </label>
+									   <label>
+											<input type="checkbox" name="" id="" value="" />
+											<span></span>
+											<div >
+												其他
+											</div>
+									   </label>
+									</div> 
+								 </div>
+							</div> 
+						</div>
+						<div class="clear"> </div>
+						<button type="submit" class="btn mui-btn-skyblue">申请</button>
+						<input type="button" name="" id="" value="弹出框" onclick="javascript:$('#myModal').modal('show');"/>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		<footer class="container">
+			<div class="row bottom">
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>订单服务</h3>
+						</li>
+						<li><a href="#">订单服务</a>
+						</li>
+						<li><a href="#">支付方式</a>
+						</li>
+						<li><a href="#">送货政策</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>订单服务</h3>
+						</li>
+						<li><a href="#">售后服务</a>
+						</li>
+						<li><a href="#">常见问题</a>
+						</li>
+						<li><a href="#">领取优惠</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>关于我们</h3>
+						</li>
+						<li><a href="#">公司简介</a>
+						</li>
+						<li><a href="#">联系我们</a>
+						</li>
+						<li><a href="c_submitSuggests.html">意见反馈 </a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>合作伙伴</h3>
+						</li>
+						<li><a href="#">新闻中心</a>
+						</li>
+						<li><a href="#">媒体合作</a>
+						</li>
+						<li><a href="#">渠道合作</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:0">
+					<ul>
+						<li>
+							<h3> 
+							    <a href="#"><img src="img/button_phone.jpg"></a>
+						    </h3>
+						</li>
+						<li>
+							<a>
+								<input type="button" value="在线咨询">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="datang-vs">
+				<div class="netvs">
+					<a href="">网站使用条款</a>|<a href="">隐私条款</a>|<a href="">服务条款</a>
+				</div>
+				<div class="netvs">
+					版权所有：新华瑞德(北京)网络科技有限公司 京ICP备11005848号-3 京公网安备11010802013007号
+				</div>
+			</div>
+		</footer>
+		<script src="js/select.js"></script>
+		<style type="text/css">
+			.modal_top {
+				margin-top:200px;
+				min-width:600px;
+				min-height:400px;
+			}
+			.theySay-modal {
+				position: relative;
+				padding: 0;
+			}
+			.module-modal .close-modal {
+				position: absolute;
+				right: -20px;
+				top: -20px;
+				height: 40px;
+				width: 40px;
+				text-align: center;
+				line-height: 18px;
+				background: url(img/bgAll.png) 45% 35% no-repeat;
+				cursor: pointer;
+			}
+			.firstPage { 
+				padding:50px;
+				color: #5f5f5f;
+				font-size: 16px;
+				line-height:28px;
+			}
+			.firstPage h3 {
+				font-size: 16px;
+				margin:30px auto;
+				color:#202020;
+			} 
+		</style>
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog modal_top">
+				<div class="modal-content">
+					<div class="modal-body module-modal theySay-modal">
+						<div class="close-modal" data-dismiss="modal"></div>
+						<div class="module-modal-body theySayModal-body">
+							<section class="firstPagecont">
+								<div class="firstPage">
+									<div align="center">
+										<img src="img/smile.png" />
+									</div>
+									<h3>尊敬的创业者/开发者:</h3>
+									<p>
+										感谢您申请加入369Cloud“技术大咖1对1帮扶”计划，我们会尽快与您取得联系，详询
+										<img src="img/linshi-phonle.jpg" style="margin-top:-8px;"/>。 
+									</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body> 
+</html>

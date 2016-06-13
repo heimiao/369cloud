@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+		<meta name="Description" content="${_DESCRIPTION}">
+		<title>${_TITLE}</title>
+		<link rel="shortcut icon" href="${URL}img/icon.png" type="image/x-icon">
+		<link rel="icon" sizes="any" mask="" href="${URL}img/icon.png">
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/style.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<!--<script src="${URL}bootstrap/js/jquery-1.10.2.min.js"></script>
+		<script src="${URL}bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
+		
+		<script src="${staticUrl}/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/base_event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/top.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/static/create_work.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			$(function() {
+				$(".theyHead img").click(function() {
+					$(this).parent().parent().find("img").addClass("opacity_img");
+					if (document.body.offsetWidth > 1000) {
+						$(".theySayInfo section").hide();
+						$(".theySayInfo section").eq($(this).parent().index()).show();
+						$(this).removeClass("opacity_img");
+					} else {
+						$(".theySayModal-body section").hide();
+						$(".theySayModal-body section").eq($(this).parent().index()).show();
+						$("#myModal").modal('show');
+						$(this).removeClass("opacity_img");
+					}
+				})
+			})
+			//导航
+			$(window).scroll(function() {
+				otherScroll();
+			});
+			
+		</script>
+	</head>
+
+	<body>
+		[#include "/369Cloud/top.html"]
+		<div class="main">
+			<div class="tinyContainer">
+				<div class="dreamCont">
+					<div class="">
+						<img src="${URL}img/dream-title.png" />
+					</div>
+					<div class="dreamDescribe">
+						<img src="${URL}img/dream-dreamDescribe.png" /> </div>
+				</div>
+			</div>
+			<div class="runContainer">
+				<div class="runCont">
+					<img src="${URL}img/runCont.png" />
+				</div>
+			</div>
+			<div class="mapContainer">
+				<div class="mapCont">
+					<img src="${URL}img/mapCont.png" />
+				</div>
+			</div>
+			<div class="createApplayContainer">
+				<div class="creatapplayCont">
+					<section class="right app-content">
+						<h3>快速创建移动应用的开发者平台</h3>
+						<div class="left app-btn">
+							<img src="${URL}img/createBtn.png" />
+						</div>
+						<div class="left">
+							<p>云与端的快速融合，让移动互联网开发无障碍</p>
+							<p>强大的IDE，让开发者快速创建、编写APP</p>
+							<p>积木拼装式的跨平台开发，创建移动应用轻松实现</p>
+							<p>高可靠、安全的IaaS、BaaS服务，为您的项目保驾护航</p>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="trainContainer">
+				<div class="trainCont">
+					<section class="left train-content">
+						<h3>全方位的培训</h3>
+						<div class="left app-btn">
+							<img src="${URL}img/serverBtn.png" />
+						</div>
+						<div class="left">
+							<p>每月组织的开发者课程及创业指导培训</p>
+							<p>邀请成功创业的创始人/大佬分享创业经验，现场交流</p>
+							<p>全国重点高校创业培训巡讲</p>
+							<p>为全国创业者提供活动、年会、欢聚的机会</p>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="partnerContainer">
+				<div class="partnerCont">
+					<section class="partner-content">
+						<h3>精准匹配的创业合伙人</h3>
+						<div class="left app-btn">
+							<img src="${URL}img/partnerBtn.png" />
+						</div>
+						<div class="left">
+							<p>数千名开发人才，靠谱的项目找靠谱的人</p>
+							<p>十几万创业者在找合伙人，合适的合伙人是创业成功的关键</p>
+							<p>创业团队在这里成功组建</p>
+						</div>
+					</section>
+				</div>
+			</div>
+			<!--<div class="chanceContainer">
+				<div class="chanceCont">
+					<section class="chance-content right">
+						<h3>与创投大佬的合作机会</h3>
+						<div class="left app-btn">
+							<img src="${URL}img/chanceBtn.png"/>
+						</div>
+						<div class="left">
+							<p>如果你的项目够打动他，他们可能成为你的投资人哦！</p>
+						</div>
+					</section>
+					<div class="chance-pic">
+						<div class="arry-pic-1">
+							<img src="${URL}uploadImg/demoPerson.png" />
+							<img src="${URL}uploadImg/demoPerson.png" />
+						</div>
+						<div class="arry-pic-2">
+							<div class="arry-pic-1">
+								<img src="${URL}uploadImg/demoPerson.png" />
+								<img src="${URL}uploadImg/demoPerson.png" />
+							</div>
+							<div class="arry-pic-2">
+								<div class="arry-pic-1">
+									<img src="${URL}uploadImg/demoPerson.png" />
+									<img src="${URL}uploadImg/demoPerson.png" />
+								</div>
+								<div class="arry-pic-2">
+									<div class="arry-pic-1">
+										<img src="${URL}uploadImg/demoPerson.png" />
+										<img src="${URL}uploadImg/demoPerson.png" />
+									</div>
+									<div class="arry-pic-2">
+										<div class="arry-pic-1">
+											<img src="${URL}uploadImg/demoPerson.png" />
+											<img src="${URL}uploadImg/demoPerson.png" />
+										</div>
+										<div class="arry-pic-2">
+											<div class="arry-pic-1">
+												<img src="${URL}uploadImg/demoPerson.png" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<div class="addressContainer">
+				<div class="addressCont">
+					<div class="address-title">
+						<img src="${URL}img/address-title.png" />
+					</div>
+					<div class="address-pic">
+						<img src="${URL}uploadImg/garden1.png" />
+						<img src="${URL}uploadImg/garden2.png" />
+						<img src="${URL}uploadImg/garden3.png" />
+					</div>
+					<p>覆盖北京、大连、西安、广州等地知名的企业孵化器</p>
+					<p><samp>助力</samp>创业发展！</p>
+				</div>
+			</div>
+			<div class="theySayContainer">
+				<div class="theySayCont">
+					<div class="theySay-content row right">
+						<div class="col-md-7">
+							<div class="theyHead">
+								<div class="theyHeadOne">
+									<img src="${URL}uploadImg/xgw_head.png" />
+								</div>
+								<div class="theyHeadTwo">
+									<img src="${URL}uploadImg/gy_head.png" class="opacity_img" />
+								</div>
+								<div class="theyHeadThree">
+									<img src="${URL}uploadImg/lb_head.png" class="opacity_img" />
+								</div>
+								<div class="theyHeadFour">
+									<img src="${URL}uploadImg/lxl_head.png" class="opacity_img" />
+								</div>
+								<div class="theyHeadFive">
+									<img src="${URL}uploadImg/cln_head.png" class="opacity_img" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5 theySayInfo">
+							<section>
+								<h3>夏光伟<small>现葫芦科技渠道总监</small></h3>
+								<article>
+									<p>
+										夏光伟说:用屌丝程序猿来形容初来公司的我一点也不夸张，基于369Cloud平台的强大支撑，葫芦科技也孕育而生，作为葫芦科技渠道总监，我感受到369Cloud强大的后台支撑，支持着我的项目团队迈向成功。
+									</p>
+								</article>
+							</section>
+							<section style="display:none;">
+								<h3>高寅<small>天天艾米副总经理</small></h3>
+								<article>
+									<p>
+										高寅说：加入大唐网络有限公司时我还是一个普通程序猿，伴随着天天艾米的成长，我成为项目核心人员担任副总经理。其实我们每个人都是创业者，为了自己的梦想而努力，创业需要强大的平台支撑，这样成功的几率会更高。
+									</p>
+								</article>
+							</section>
+							<section style="display:none;">
+
+								<h3>廖斌<small>唐信科技首席执行官</small></h3>
+
+								<article>
+									<p>
+										廖斌说：唐信科技成立不久，正是需要一个强大的平台来支撑，我作为唐信科技的CEO，将时刻关注公司的成长，相信369Cloud会满足初创公司和创业团队的需求。
+									</p>
+								</article>
+							</section>
+							<section style="display:none;">
+
+								<h3>李晓玲<small>流量魔方创始人</small></h3>
+
+								<article>
+									<p>
+										李晓玲说：进入大唐网络有限公司3年了，从基础的UI设计师做起，兢兢业业，直到加入了瑞德云项目，激发了我的创意灵感，平时加班到凌晨3点也不感觉累，只想把自己最好的创意运用的项目的设计中，把369Cloud当做自己的事业，也感受到了创业的快乐。
+									</p>
+								</article>
+							</section>
+							<section style="display:none;">
+								<h3>崔丽娜<small>妈咪100分的资源总监</small></h3>
+								<article>
+									<p>
+										崔丽娜说：进入大唐网络有限公司从一名普通员工到妈咪项目创始人兼CEO，和大家一起见证了妈咪100分的成长，并获得了“2015最具投资价值项目”称号，这一切都在369Cloud云平台上孕育而生，不得不说，这是一个强大的平台。
+									</p>
+								</article>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottomBegin">
+				<div class="bottomBeginCont">
+					<div class="left bottom-dream">
+						<div class=" ">
+							创业者的梦，从这里<big>开始</big>！
+						</div>
+						<div class="secondFont">
+							已有 <samp>近千个</samp> 创业团队等待加入...
+						</div>
+					</div>
+					<div class="right bottom-join">
+						<div class="">
+							[@node var="createtinyWork" nodeid="39"]
+							<a href="${createtinyWork.NODEURL}" style="outline: none;">
+								<img src="${URL}img/freeBtn.png" />
+							</a>
+							[/@node]
+						</div>
+						<div class="">
+							<img src="${URL}img/jihua.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		[#include "/369Cloud/bottom.html"]
+		<!--为手机准备的模态框-->
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog" style="margin-top:50px;">
+				<div class="modal-content">
+					<div class="modal-body module-modal theySay-modal">
+						<div class="close-modal" data-dismiss="modal"></div>
+						<div class="module-modal-body theySayModal-body">
+							<section class="theySayIntro">
+								<div class="theySayTitle">
+									<h3>夏光伟<small>现葫芦科技渠道总监</small></h3>
+								</div>
+								<p>
+									夏光伟说:用屌丝程序猿来形容初来公司的我一点也不夸张，基于369Cloud平台的强大支撑，葫芦科技也孕育而生，作为葫芦科技渠道总监，我感受到369Cloud强大的后台支撑，支持着我的项目团队迈向成功。
+								</p>
+							</section>
+							<section class="theySayIntro" style="display:none;">
+								<div class="theySayTitle">
+									<h3>高寅<small>天天艾米副总经理</small></h3>
+								</div>
+								<article>
+									<p>
+										高寅说：加入大唐网络有限公司时我还是一个普通程序猿，伴随着天天艾米的成长，我成为项目核心人员担任副总经理。其实我们每个人都是创业者，为了自己的梦想而努力，创业需要强大的平台支撑，这样成功的几率会更高。
+									</p>
+								</article>
+							</section>
+							<section class="theySayIntro" style="display:none;">
+								<div class="theySayTitle">
+									<h3>廖斌<small>唐信科技首席执行官</small></h3>
+								</div>
+								<article>
+									<p>
+										廖斌说：唐信科技成立不久，正是需要一个强大的平台来支撑，我作为唐信科技的CEO，将时刻关注公司的成长，相信369Cloud会满足初创公司和创业团队的需求。
+									</p>
+								</article>
+							</section>
+							<section class="theySayIntro" style="display:none;">
+								<div class="theySayTitle">
+									<h3>李晓玲<small>流量魔方创始人</small></h3>
+								</div>
+								<article>
+									<p>
+										李晓玲说：进入大唐网络有限公司3年了，从基础的UI设计师做起，兢兢业业，直到加入了瑞德云项目，激发了我的创意灵感，平时加班到凌晨3点也不感觉累，只想把自己最好的创意运用的项目的设计中，把369Cloud当做自己的事业，也感受到了创业的快乐。
+									</p>
+								</article>
+							</section>
+							<section class="theySayIntro" style="display:none;">
+								<div class="theySayTitle">
+									<h3>崔丽娜<small>妈咪100分的资源总监</small></h3>
+								</div>
+								<article>
+									<p>
+										崔丽娜说：进入大唐网络有限公司从一名普通员工到妈咪项目创始人兼CEO，和大家一起见证了妈咪100分的成长，并获得了“2015最具投资价值项目”称号，这一切都在369Cloud云平台上孕育而生，不得不说，这是一个强大的平台。
+									</p>
+								</article>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.modal -->
+	</body>
+
+</html>

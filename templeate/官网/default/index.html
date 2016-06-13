@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<meta name="Keywords" content="${_KEYWORDS}">
+		<meta name="Description" content="${_DESCRIPTION}">
+		<title>${_TITLE}</title>
+		<link rel="icon" href="favicon.ico" type="${URL}image/x-icon">
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/odometer-theme-car.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/index_1.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]--> 
+		<script src="${URL}js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${URL}js/lrtk.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="${URL}js/runLight.js" type="text/javascript" charset="utf-8"></script> 
+		 <script src="js/index1.js" type="text/javascript" charset="utf-8"></script> 
+		 <script type="text/javascript">
+		   [@node var="node36" nodeid="36"] 
+			window.location="${node36.NODEURL}";
+		   [/@node]  
+		</script>
+	</head>
+	<body>
+		[@node var="node35" nodeid="35"] 
+		[@node var="selfnode" nodeid="self"]   
+		 [#include "/369Cloud/top.html"]
+		<div class="">
+			<!--
+            	时间：2015-09-18
+            	描述：banner图片
+            -->
+			<div class="bannerBg">
+				<img class="imgbg" src="img_/banner.jpg" />
+			</div>
+			<!--
+            	时间：2015-09-18
+            	描述：最懂开发者的移动应用孵化平台
+            -->
+			<div class="alipay_section">
+				<div class="alipayLabBg">
+					    <div class="rd-cont"> 
+							<div class="rd-alipayLabTitle">
+								<img src="img_/understand_1.png" class="alipayLabIcon left" />
+								<dl class="left">
+									<dt>Mobile</dt>
+									<dd>
+										<h1>最懂开发者的移动技术研发平台</h1>
+									</dd>
+								</dl>
+								<div class="clear"> </div>
+							</div>
+							<!--<div class="rd-alipayLabDescribe">
+							     我们专注做“移动研发平台”的领航者
+						    </div>-->
+					    </div>
+						<div class="rd-alipayanimation">
+							<div class="c3_container">
+								<div class="rd-dmk">
+									低开发门槛
+								</div>
+								<div class="rd-yzs">
+									一站
+									<br>式互联网解决方案
+								</div>
+								<div class="rd-zqd">
+									极短的研发周期
+								</div>
+								<div class="rd-fwzc">
+									强力的团队服务支持
+								</div>
+								<img src="img_/aplipayLabBg.png" class="sixquerbg"/>
+								<div class="c3rotate"></div>
+								<div class="shield1"></div>
+								<div class="shield2"></div>
+								<div class="shield3"></div>
+								<div class="shield4"></div>
+								<div class="shield5"></div>
+								<div class="shield6"></div>
+							</div>
+						</div>  
+				</div>
+			</div>
+			<!--
+            	时间：2015-09-18
+            	描述：  
+            -->
+            <div class="flexible_section">
+            	<div class="flexibleBg">
+            		<div class="flexibleTitle">
+							<img src="img_/open_2.png" class="alipayLabIcon left" />
+							<dl class="left">
+								<dt>Flexible</dt>
+								<dd>
+									<h1>开放灵活的跨平台开发</h1>
+								</dd>
+							</dl>
+							<div class="clear"> </div>
+					</div>
+					<div class="flexibleDescribe">
+						<dl>
+							<dt><h3 >混合开发引擎</h3></dt>
+							<dd> 内置核心功能组件，完美跨平台支持 </dd>
+						</dl>
+						<dl>
+							<dt><h3>原生组件</h3></dt>
+							<dd>灵活的自定义原生组件扩展机制，配套的组件管理系统，创建独属自己的应用 </dd>
+						</dl>
+					</div>
+					<div class="flexibleAnimation">
+						<div class="outCircle">
+							<img src="img_/outCircle.png" />
+							<div class="circleContainer">
+								<script type="text/javascript">
+									var flag = true,
+										bool = true; 
+									function consoleCircle(_args) {
+										document.write("<div>");
+										for (var i = 0; i < _args; i++) {
+											if (i % 2 > 0) {
+												if (_args == 5 && flag == true) {
+													document.write("<a class='odd' style='border-top:1px solid #fff'></a>")
+												} else {
+													document.write("<a class='odd'></a>")
+												}
+											} else {
+												if (_args == i) {
+													if (_args == 5 && flag == true) {
+														document.write("<a class='even' style='border-top:1px solid #fff;border-right:1px solid #fff'></a>")
+													} else {
+														document.write("<a class='even' style='border-right:1px solid #fff'></a>");
+													}
+												} else {
+													if (_args == 5 && flag == true) {
+														document.write("<a class='even' style='border-top:1px solid #fff'></a>")
+													} else {
+														document.write("<a class='even'></a>");
+													}
+												}
+											}
+										}
+										document.write("</div>");
+									}
+									for (var j = 0; j < 9; j++) {
+										if (j == 0) {
+											consoleCircle(5);
+											flag = false;
+										} else if (j == 1) {
+											consoleCircle(7);
+										} else if (j == 7) {
+											consoleCircle(7);
+										} else if (j == 8) {
+											consoleCircle(5);
+										} else {
+											consoleCircle(9);
+										}
+									}
+								</script>
+							</div>
+						</div>
+					</div>
+            	</div>
+            </div>
+            <div class="shortcut_section">
+				<div class="shortcutBg">
+					<div class="shortcutTitle">
+						<img src="img_/stable_3.png" class="alipayLabIcon left" />
+						<dl class="left">
+							<dt>Stable</dt>
+							<dd>
+								<h1>稳定安全的云端服务</h1>
+							</dd>
+						</dl>
+						<div class="clear"> </div>
+					</div>
+					<div class="shortcutDescribe">
+						<dl>
+							<dt><h3>BaaS</h3></dt>
+							<dd>稳定、高效的数据服务支持，可个性化的推送消息，更全面的大数据统计分析，致力于减少开发者后端 工作量，节约开发成本。 </dd>
+						</dl>
+						<dl>
+							<dt><h3>laaS</h3></dt>
+							<dd>负载均衡、资源监控、容灾备份、一键数据迁移、提供全方位数据安全保障，降低数据泄密风险</dd>
+						</dl>
+					</div>
+					<div class="shortcutAnimation">
+						<div class="shortcutcircle">
+							<img class="inCircle c3_roata" src="img_/quan.png" />
+							<img class="outCircle" src="img_/shield.png" />
+							<div class="marqueecontainer">
+								<script type="text/javascript">
+									document.write("<div class='marquee'><ul>");
+									for (var _a = 0; _a < 12; _a++) {
+										document.write("<li>ss2%8%46%xt$%369cloud.com%46%xt$%#42%3%F%H%5%9ass2%8%46%xt$ss2%xt$ss2%$ss2%xt$s</li>");
+									}
+									document.write("</ul></div>");
+								</script>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			 </div>
+            <div class="phone_section">
+				<div class="phoneBg">
+					<div class="phoneTitle">
+						<img src="img_/efficient_4.png" class="alipayLabIcon left" />
+						<dl class="left">
+							<dt>Quick</dt>
+							<dd>
+								<h1>高效快捷的开发环境</h1>
+							</dd>
+						</dl>
+						<div class="clear"></div>
+					</div>
+					<div class="phoneDescribe">
+							经典模版、本地编译、实时同步调试、断点调试，使得应用开发简单、快捷、高效 支持windows、Mac OSX双系统开发
+					</div>
+					<div class="phoneAnimation">
+						 <div class="phoneContainer">
+							<div class="phone">
+								<div class="ct">
+									<img src="img_/ct2.jpg" />
+								</div>
+							</div>
+							<div class="phone addleft_center">
+								<ul>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_1.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">URSERS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_2.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">PRIORITY</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_3.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">COLLECTIONS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_4.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">ARCHIVED</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_5.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">DELETED</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										  <img src=" img_/bai_6.png"  style="margin:0px;" />
+								        </span>
+										<span class="phoneContent">TRENDS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										 <img src=" img_/bai_7.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">TASKS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_1.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">URSERS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_2.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">PRIORITY</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_3.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">COLLECTIONS</span>
+									</li>
+									<li>
+										<span class="phoneLogo"> 
+										<img src=" img_/bai_3.png"  style="margin:0px;" />
+								       </span>
+										<span class="phoneContent">COLLECTIONS</span>
+									</li>
+								</ul>
+							</div>
+							<div class="phone last_phone">
+								<ul>
+									<li><span class="phoneContent">USERS</span>
+									</li>
+									<li><span class="phoneContent">PRIORITY</span>
+									</li>
+									<li><span class="phoneContent">PRIORITY</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img">
+											<span class="phoneLogo"> 
+											<img src="img/list_btn.png"	style="margin:0px;" />
+								            </span>
+											<span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								        </span>
+											<span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">COLLECTIONS</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">ACHIVED</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">ACHIVED</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">USERS</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">PRIORITY</span>
+									</li>
+									<div class="childMenu" style="display:none;">
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+										<li data="img"><span class="phoneLogo"> <img
+										src="img/list_btn.png"
+										style="margin:0px;" />
+								</span> <span class="phoneContent">TRENDS</span>
+										</li>
+									</div>
+									<li><span class="phoneContent">PRIORITY</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="serverce_section">
+				<div class="serversBg">
+					<div class="serversTitle">
+						 <h1>专业完善的服务体系</h1>
+					</div>
+					<div class="serversDescribe">
+						<dl>
+							<dt><h3>培训服务</h3></dt>
+							<dd>线上分解教学/面授技术实战、全国企业培训服务支持、移动战略指导 </dd>
+						</dl>
+						<div class="serverce">
+							7*24小时技术支持
+						</div>
+					</div>
+					<div class="serversAnimation">
+						<div class="overturn">
+							<ul>
+								<li class="one">
+									<img src="img_/1a.png" />
+									<div>
+										多渠道问题反馈
+									</div>
+								</li>
+								<li class="two">
+									<img src="img_/2a.png" />
+									<div>
+										快速定位问题
+									</div>
+								</li>
+								<li class="three">
+									<img src="img_/3a.png" />
+									<div>
+										及时响应
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li class="four">
+									<img src="img_/4a.png" />
+									<div>
+										指导开发
+									</div>
+								</li>
+								<li class="five">
+									<img src="img_/5a.png" />
+									<div>
+										全方位支持
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="statistics_section">
+				<div class="statisticsBg">
+					<div class="statisticsTitle">
+						<dl>
+							<dt><h1>最懂创业者的移动应用孵化平台</h1></dt>
+						</dl>
+				   </div>
+				   <div class="statisticsDescribe">
+						<div class="serverce">
+							<!--成功孵化数十个创业项目，APP覆盖近<a>亿</a>用户群体-->
+							<img src="img_/cgfh.png" />
+						</div>
+						<dl>
+							<img src="img_/wcyztg.png" />
+							<!--<dt><h3>369Cloud为创业者提供</h3></dt>
+								<dd>技术平台支撑、多资源共享　　　　　　技术团队孵化与招募　　　　　　项目扶持、政策申请　　　　　　一键发布、精准运营 </dd>-->
+						</dl>
+					</div>
+					<div class="statisticsAnimation">
+						<div class="joninus">我们期待你的加入…</div>
+						<div class="register">
+							<div class="btn-bg">
+								<div class="bt-wrapper">
+									<div class="l-c"></div>
+									<div class="r-c"></div>
+									<div class="line-body"></div>
+									<a class="createbtn" href="http://test-passport.369cloud.com/auth/yqm" style="color:#008ee9;text-decoration:none">注册</a>
+								</div>
+							</div>
+						</div>
+						<div class="ul">
+							<a>
+								<img src="img_/a.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										 	天天艾米
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/b.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										 	葫芦科技
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/c.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										     社区一号
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/d.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										 	妈咪100
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/e.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										 	要加
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/f.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										 	安途
+										 </span>
+								</div>
+							</a>
+							<a>
+								<img src="img_/g.png" />
+								<div>
+									<img src="img_/bluebg.png" />
+									<span id="">
+										    流量魔方
+										 </span>
+								</div>
+							</a>
+						</div>
+					</div> 
+				</div> 
+			</div>  
+		</div>  
+		[#include "/369Cloud/bottom.html"]  
+	  [/@node] [/@node] 
+	</body> 
+</html>

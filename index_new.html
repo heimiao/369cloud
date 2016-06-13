@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>369cloud首页</title>
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="//test-www.369cloud.com/ftp/g/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="//test-www.369cloud.com/ftp/g/css/static/index.css" />
+		<link rel="stylesheet" type="text/css" href="//test-www.369cloud.com/ftp/g/css/static/video.css" />
+		<!--跨域文件-->
+	    <link href="http://test-www.369cloud.com/ftp/g/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		
+		<!--[if lt IE 9]>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/createTag.js"></script>
+		   <script src="http://test-www.369cloud.com/ftp/g/bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+	    
+	    <link href="bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+		<script src="bootstrap/js/respond.proxy.js"></script>
+		
+		
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="js/static/video.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/base_event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//window.location.href="http://www.369cloud.com/devservce/index.html"
+			$(function() {
+				$(".zb_content").mCustomScrollbar({
+					set_width: "100%",
+					set_height: false,
+					horizontalScroll: true,
+					scrollInertia: 0,
+					mouseWheel: "auto",
+					autoDraggerLength: true,
+				});
+				
+				$(".prj_desc").mCustomScrollbar({
+					set_width: "100%",
+					set_height: false,
+					horizontalScroll: false,
+					scrollInertia: 0,
+					mouseWheel: "auto",
+					autoDraggerLength: true,
+				});
+				
+				var projectType = {
+					1: "教育",
+					2: "音乐",
+					3: "购物",
+					4: "视频",
+					5: "母婴",
+					6: "健康",
+					7: "体育",
+					8: "金融",
+					9: "儿童",
+					10: "新闻",
+					11: "杂志报刊",
+					12: "摄影",
+					13: "生活",
+					14: "旅游",
+					15: "工具",
+					16: "社交",
+					17: "娱乐",
+					18: "导航",
+					19: "媒体",
+					20: "餐饮",
+					21: "财经",
+					22: "通讯",
+					23: "办公",
+					24: "理财",
+					25: "房产",
+					26: "汽车",
+					27: "其他"
+				}
+				$.ajax({
+					type: 'get',
+					url: 'http://systest-crowd.369cloud.com//devp/dev/squareListJsonP?_=1461905653831',
+					dataType: 'jsonp',
+					async: false,
+					cache: false,
+					jsonp: "jsoncallback",
+					jsonpCallback: "callBackSquareListJsonP",
+					success: function(data) {
+						var compiled_class = _.template($(".J_zbList").html());
+						var ary=data[0].data.list;
+						
+						$.each(ary, function() {  
+							var _this=this;
+						   for(var item in projectType){
+						   	  if(_this.type==item){
+						   			 $.extend(_this,{type:projectType[item]});
+						   		} 
+						   }
+						});
+						var htmlStr = compiled_class({
+							list: data[0].data.list
+						});
+						$(".scrollBox").append(htmlStr);
+					}
+				});
+			})
+		</script>
+		 
+	</head>
+
+	<body class="index_blue">
+		<div class="index_page">
+			<div class="banner">
+				<div class="banner-content">
+					<img src="images/static/img_new/page_bunner.png" class="pc_banner" />
+					<img src="images/static/img_new/mobilebanner.png" class="phone_banner" />
+					<div class="issue-box">
+						<div class="issue-box-son">
+							<p class="app-service">一站式App云服务平台</p>
+							<span class="push-teamwork">推动众包共享创新与合作</span>
+						</div>
+						<ul class="clearFix issue-ul">
+							<li class="appInfo">APP研发平台</li>
+							<li class="appInfo">众包平台</li>
+							<li class="appInfo">Iaas基础服务平台</li>
+							<li>APP后端服务平台</li>
+						</ul>
+					</div>
+					<div class="apply-introduce">
+						<a href="platformIntrod.html" class="aBtn">平台介绍</a>
+						<a href="dev-tool.html" class="aBtn">开发工具</a>
+					</div>
+				</div>
+			</div>
+			<div class="zb">
+				<div class="container m-container">
+					<div class="crowd-title">
+						<p>众包平台</p>
+						<p>平等开放的众包商业化平台，帮助团体或个人更易于创造价值</p>
+					</div>
+					<div class="zb_content">
+
+						<div class="scrollBox">
+							<script class="J_zbList" type="text/template">
+								<%
+								 _.each(list, function(item, i){ 
+								 	if(i<3){
+								%>
+									<div class="scrollLi">
+										<dl class="scare_modal">
+											<dt>
+										<div class="shade"></div>
+									<a href=""><img src="<%=item.imgUrl%>" alt=""><span class="recruit"><%=item.stateName%></span></a>
+									</dt>
+											<dd>
+												<h4><a href=""><%=item.title%></a></h4>
+												<div class="descipt">
+													<span class="money">
+											   	 <%=item.totalMoney%>
+												</span>
+													<span>
+													<a ><%=item.type%></a>&nbsp;|&nbsp;
+													<a><%=new Date(item.deliveryTime).Format("yyyy-MM-dd")%></a>
+												</span>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<%
+									}});
+								%>
+							</script>
+						</div>
+					</div>
+
+					<!--<a class="zb_btn" >
+						众包广场
+					 </a>-->
+					<div class="crowd-square-box textAlign">
+						<a href="javascript:;" class="crowd-square">众包广场</a>
+						<div class="crowd-pos">
+							<div class="crowd-bg"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cloudPlam">
+				<div class="container m-container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a href=""><img src="images/static/img_new/development.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a href="">云开发<small>Cloud development</small></a></h4>
+									<p>通过可视化、可配置化操作，组合成与原生应用相媲美的移动应用，大大缩短开发周期，节约开发成本，颠覆开发周期冗长的传统模式</p>
+									<a class="m_btn i_hide">制作app</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a href=""><img src="images/static/img_new/backend.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a href="">云后端<small>Cloud backend</small></a></h4>
+									<p>为移动应用开发者提供整合的云后端服务，让用户有更多的精力去设计产品，不再为后端开发付出太多精力，使得移动开发变得更轻松、更容易</p>
+									<button class="m_btn i_hide">开启服务</button>
+								</dd>
+							</dl>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a href=""><img src="images/static/img_new/host.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a href="">云主机<small>Cloud host</small></a></h4>
+									<p>为用户提供超强计算、弹性扩展的云主机。我们的云主机服务是核心服务之一，是能面向各类互联网用户提供综合业务能力的服务</p>
+									<button class="m_btn i_hide">创建主机</button>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="classics-case">
+				<div class="crowd-content container case-box">
+					<div class="crowd-title case-title">
+						<p>经典案例</p>
+						<p class="caseStatus">在这您可以快速拥有</p>
+						<span class="caseIntrd">完整的移动App开发生态体系，无论你是在寻找如何更快捷的开发App方式，还是需要多人协助完成的开发工作，这里才是你该去的地方。</span>
+					</div>
+					<ul class="prj-show row-fluid clearFix">
+						<li class="col-xs-12  col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="javascript:;">
+									<img src="images/static/img_new/case1.jpg" alt="">
+								</a>
+								<div class="pos prj_desc">
+									<div class="bg"></div>
+									<div class="content">
+										用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。
+										用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。 用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="col-xs-12 col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="javascript:;">
+									<img src="images/static/img_new/case2.jpg" alt="">
+								</a>
+								<div class="pos">
+									<div class="bg"></div>
+									<p>用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。</p>
+								</div>
+							</div>
+						</li>
+						<li class="col-xs-12  col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="javascript:;">
+									<img src="images/static/img_new/case3.jpg" alt="">
+								</a>
+								<div class="pos">
+									<div class="bg"></div>
+									<p>用户可以在平台上自由定义自己的网络框架，像屋里IDC机房一样，设计自由网络、应用自由路由器，双层防护墙分别对云主机和租户进行防护。</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!--<div class="textAlign row-fluid">
+						<ul class="case-ul clearFix">
+							<li class="col-xs-6 col-md-3 case-list">
+								<span class="case-num">6,040,424</span>
+								<span class="case-number"> / 个</span>
+								<i class="case-introduce" style="display:block;">创建应用</i>
+							</li>
+							<li class="col-xs-6 col-md-3">
+								<span class="case-num">544,032,431</span>
+								<span class="case-number"> / 次</span>
+								<i class="case-introduce" style="display:block;">编辑</i>
+							</li>
+							<li class="col-xs-6 col-md-3 case-list">
+								<span class="case-num">47,510,040,424</span>
+								<span class="case-number"> / 次</span>
+								<i class="case-introduce" style="display:block;">API调用</i>
+							</li>
+							<li class="col-xs-6 col-md-3">
+								<span class="case-num">21,325,042,314</span>
+								<span class="case-number"> / 台</span>
+								<i class="case-introduce" style="display:block;">创建主机</i>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+			<div class="video-box accept-class-name">
+				<img src="images/static/img_new/page_video.jpg" />
+				<div class="video_logo">
+						<img class="one" src="images/static/img_new/video-logo.png"/>
+						<img class="two" src="images/static/img_new/video-play.png"  data-target="#video-box-modal" data-toggle="modal"/>
+						<img class="three" src="images/static/img_new/video-word.png"/>
+				</div>
+				<a href="${passportUrl}/register" class="register_btn J_register">立即注册</a>
+			</div>
+
+			<!--模态框-->
+			<div class="modal fade" id="video-box-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-new">
+					<div class="modal-content ">
+						<div class="modal-header modal-header-new">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						</div>
+						<div class="modal-body modal-body-new">
+							<video id="video-box" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" poster="images/static/img_new/page_video.jpg" width="100%">
+							<!--<source src="" type="video/mp4"></source>-->
+							</video>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal -->
+			</div>
+
+			<script type="text/javascript">
+				videojs.options.flash.swf = "fonts/video-js.swf";
+			</script>
+			<script type="text/javascript">
+				$('#video-box-modal').on('shown.bs.modal', function(e) {
+					resetVideoSize(myPlayer);
+				});
+
+				function resetVideoSize(myPlayer) {
+					var videoJsBoxWidth = $("#video-box").width();
+					var ratio = 1440 / 810;
+					var videoJsBoxHeight = videoJsBoxWidth / ratio;
+					$(myPlayer.el_).height(videoJsBoxHeight);
+				}
+				var myPlayer = videojs("video-box").ready(function() {
+					this.src({
+						type: "video/mp4",
+						src: "demo/myvideo.mp4"
+					});
+					resetVideoSize(this);
+					this.on("ended", function() {
+						//保存当前视频的播放位置
+						_this.lastTime = 0;
+					});
+					//监听播放进度
+					this.on("timeupdate", function(data) {
+						//						_this.lastTime = this.currentTime();
+					});
+					this.on('pause', function() {
+						//						_this.savePlayTime(_this.lastTime);
+					});
+					this.on('abort', function() {});
+					this.on('progress', function() {
+						//_this.lastTime = this.currentTime();
+						//_this.savePlayTime(_this.lastTime);
+					});
+					this.play();
+				});
+				window.onresize = function() {
+					resetVideoSize(myPlayer);
+				}
+			</script>
+			<div class="coopera-partner">
+				<div class="crowd-content container">
+					<div class="crowd-title">
+						<p>合作伙伴</p>
+					</div>
+					<ul class="clearFix partner-list">
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner1.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner2.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner3.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner4.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner5.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner6.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner7.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner8.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner9.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner10.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner11.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner12.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner13.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner14.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner15.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner16.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner17.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner18.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner19.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner20.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner21.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner22.png" alt="">
+							</a>
+						</li>
+						<li class="col-xs-4 col-md-2">
+							<a href="javascript:;" class="parLogo">
+								<img src="images/static/img_new/page_partner23.png" alt="">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

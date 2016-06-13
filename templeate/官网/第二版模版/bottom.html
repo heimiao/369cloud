@@ -1,0 +1,144 @@
+[@node var="selfnode" nodeid="self"] 
+<footer class="container bottomContainer">
+	<div class="row bottom ">
+		<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+			<ul>
+				<li>
+					<h3>一站式开发平台</h3>
+				</li>
+				[@dataList nodeid="95" var="childNav95" num="1"] 
+				[#list childNav95 as item]
+				<li class="i_hide">
+					<a href="${item.address}" [#if item.isphone=='是'] phone-href='${item.phone_address}' pc-href='${item.address}'[/#if]>
+						 ${item.name}
+					</a>
+				</li> 
+				[/#list] 
+				[/@dataList]
+				[@dataList nodeid="97" var="childNav97" num="1"] 
+				[#list childNav97 as item]
+				<li class="i_hide">
+					<a href="${item.address}"  [#if item.isphone=='是'] phone-href='${item.phone_address}' pc-href='${item.address}'[/#if]>
+						 ${item.name}
+					</a>
+				</li> 
+				[/#list] 
+				[/@dataList]
+				[@dataList nodeid="103" var="childNav103" num="1"] 
+				[#list childNav103 as item]
+				<li>
+					<a href="${item.address}">
+						 ${item.name}
+					</a>
+				</li> 
+				[/#list] 
+				[/@dataList]
+			</ul>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+			<ul>
+				<li>
+					<h3>研发支持</h3>
+				</li>
+				[@dataList nodeid="85" var="childNav85"] 
+					[#list childNav85 as item]
+					<li>
+						<a href="${item.address}">
+						 	${item.name}
+						</a>
+					</li> 
+					[/#list] 
+				[/@dataList]
+				[@dataList nodeid="83" var="childNav83"] 
+					[#list childNav83 as item]
+					<li>
+						<a href="${item.address}">
+						 	${item.name}
+						</a>
+					</li> 
+					[/#list] 
+				[/@dataList]
+				
+				<li class="i_hide">
+					[@content var="c" indexid="6"  nodeid="113" page="true"]<a href="${c.address}">学习中心</a>[/@content] 
+				</li>
+				
+				[@dataList nodeid="87" var="childNav87"] 
+					[#list childNav87 as item]
+					<li>
+						<a href="${item.address}">
+						 	技术社区
+						</a>
+					</li> 
+					[/#list] 
+				[/@dataList]
+			</ul>
+		</div>
+		<div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 bdnone">
+			<ul>
+				<li>
+					<h3>关于我们</h3>
+				</li> 
+				<li>
+				 [@content var="m" indexid="10"  nodeid="111" page="true"]<a href="${root_address}/${m.url}">${m.title}</a>[/@content] 
+				</li>
+				<li>
+				[@node var="node117" nodeid="117"]<a href="${root_address}${node117.NODEURL}">${node117.NODENAME}</a>[/@node]
+				</li>
+				<li>
+				[@content var="n" indexid="11"  nodeid="111" page="true"]<a href="${root_address}/${n.url}">${n.title}</a>[/@content] 
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="border:0">
+			<ul>
+				<li>
+					<img src="${staticUrl}/images/static/img_new/number.png" alt="">
+				</li>
+				<li class="pcShow">
+					<div class="erweima">
+						<a>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_microblog.png" class="smallImg"/>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_hover_microblog.png" class="hoverImg" />
+							<img src="${staticUrl}/images/static/img_new/weibo.png" class="erwm_code"/>
+						</a>
+						<a>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_wechat.png" class="smallImg"/>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_hover_wechat.png" class="hoverImg"/>
+							<img src="${staticUrl}/images/static/img_new/weixin.png" class="erwm_code"/></a>
+						<a>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_qq.png" class="smallImg"/>
+							<img src="${staticUrl}/images/static/img_new/navigation_icon_hover_qq.png" class="hoverImg"/>
+							<img src="${staticUrl}/images/static/img_new/QQ.png" class="erwm_code"/>
+						</a>
+					</div>
+				</li>
+				<li class="phone">
+					<div class="erweima">
+						<a href="http://weibo.com/369Cloud"><img src="${staticUrl}/images/static/img_new/weibo.png" />
+							<p>新浪微博</p>
+						</a>
+						<a href="http://weibo.com/369Cloud"><img src="${staticUrl}/images/static/img_new/weixin.png" />
+							<p>微信</p>
+						</a>
+						<a href="http://weibo.com/369Cloud"><img src="${staticUrl}/images/static/img_new/QQ.png" />
+							<p>QQ</p>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="datang-vs">
+		<div class="netvs">
+			<!--[@content var="g" indexid="12"  nodeid="111" page="true"]<a href="${c.url}">使用条款</a>[/@content]--> 
+		</div>
+		<div class="netvs pcShow">
+			版权所有：大唐网络有限公司 京ICP备11005848号-3 京公网安备11010802013007号
+		</div>
+		<div class="netvs phone">
+			版权所有：大唐网络有限公司<br/> 京ICP备11005848号-3 京公网安备11010802013007号
+		</div>
+	</div>
+</footer>
+[/@node]

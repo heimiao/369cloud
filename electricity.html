@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>组件Store</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/dcment.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<!--[if lt IE 9]>
+		   <script src="bootstrap/js/createTag.js"></script>
+		   <script src="bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/holder.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".aside-menu nav h5").click(function() {
+					$(this).parent().next("ul").slideToggle();
+				})
+			})
+		</script>
+		<script>
+	    	$(function(){
+	    		$(" .e_navBg li").hover(function(){
+	    			$(".e_navBg li").removeClass("active");
+	    			$(this).addClass("active");
+	    		})
+	    	})
+	    </script>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="navBg"> </div> 
+			<div class="list-btn left">
+				<img src="images/static/img/list_btn.png" />
+			</div>
+			<div class="logo left">
+				<img src="images/static/img/logo.jpg" />
+			</div>
+			<nav class="nav left active-nav">
+				<ul>
+					<li><a href="devServce.html">开发者服务</a>
+					</li>
+					<li><a href="moduleStroe.html">组件Store</a>
+					</li>
+					<li><a href="tinyCreate.html">微创业</a>
+					</li>
+					<li><a href="HigherUps.html">创业大咖秀</a>
+					</li>
+					<li class="cur"><a href="cloudSchool.html">云学院</a>
+					</li>
+					<li><a href="javascript:alert('暂未开放')">社区</a>
+					</li>
+				</ul>
+				<div class="curBg"></div>
+			</nav>
+			<div class="nav-right right">
+				<div class="loginModle right">
+					<div class="login" style="display:none;">
+						<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="">注册</a>
+					</div>
+					<div class="userInfo">
+						<div class="urserhead">
+							<img src="images/static/img/user_head.png" />&nbsp;
+							<a href="javascript:showhide()">我的账户</a>
+							<div class="urserconte" style="display:none;">
+								<div>
+									<a href="applyPanel/applay_index.html">控制台</a>
+								</div>
+								<div>
+									<a href="myShare/share_store_one.html">我的分享</a>
+								</div>
+								<div>
+									<a href="userInfo/accountSet_Index.html">账户设置</a>
+								</div>
+								<div>
+									<a href="userInfo/perCenter_index.html">个人中心</a>
+								</div>
+								<div>
+									<a href="">退出</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="">
+			<div class="e_navBg">
+				<ul>
+					<li class="active">
+						<a href=".html">电商</a>
+					</li>
+					<li class="">
+						<a href=".html">社交</a>
+					</li>
+					<li class="">
+						<a href=".html">O2O</a>
+					</li>
+					<li class="">
+						<a href=".html">生活</a>
+					</li>
+					<li class="">
+						<a href=".html">旅游</a>
+					</li>
+					<li class="">
+						<a href=".html">新闻</a>
+					</li>
+					<li class="">
+						<a href=".html">教育</a>
+					</li>
+					<li class="">
+						<a href=".html">工具</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--第一行-->
+		<div class="container">
+			<div class="row logo_fristDiv1 col-md-10 col-md-offset-1">
+				<div class="col-md-4 col-xs-12 left_con">
+					<div class="media media-left col-sm-4 col-md-12">
+						  <div class="media-left">
+						    <a href="#">
+						      <img class="media-object e_img-radius10" src="images/static/img/com_detail_logo.jpg" alt="83x83">
+						    </a>
+						  </div>
+						  <div class="media-body">
+						    <div class="e_title" title="小主衣柜">小主衣柜</div>
+						    <div class="e_baseFontS e_padd-t1" title="版本：1.00.01">版本：1.00.01</div>
+						    <div class="e_baseFontS e_padd-t1" title="开发者：admin">开发者：admin</div>
+						  </div>
+					</div>
+					<div class="col-md-12 col-sm-8">
+						<div class="e_t-7f e_mar-t2">
+							简介：微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站
+						</div>
+						<div class="e_btn e_mar-t1">
+					  		<button class="e_IOSBtn">IOS</button>
+					  		<button class="e_androidBtn">Android</button>
+					  	</div>
+				  	</div>
+				</div>
+		  		<div class="col-md-8 col-xs-12 e_add_margin e_right_con">
+		  				<div class="row e_mar-t2">
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7">
+								<img src="images/static/img/com_log1.jpg"/>
+							</div>
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7">
+								<img src="images/static/img/com_log2.jpg"/>
+							</div>
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7" id="e_img">
+								<img src="images/static/img/com_log3.jpg"/>
+							</div>
+						</div>
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+		<!--第二行-->
+		<div class="container">
+			<div class="row logo_fristDiv1 col-md-10 col-md-offset-1">
+				<div class="col-md-4 col-xs-12 left_con">
+					<div class="media media-left col-sm-4 col-md-12">
+						  <div class="media-left">
+						    <a href="#">
+						      <img class="media-object e_img-radius10" src="images/static/img/com_detail_logo.jpg" alt="83x83">
+						    </a>
+						  </div>
+						  <div class="media-body">
+						    <div class="e_title" title="小主衣柜">小主衣柜</div>
+						    <div class="e_baseFontS e_padd-t1" title="版本：1.00.01">版本：1.00.01</div>
+						    <div class="com_baseFontS e_padd-t1-t1" title="开发者：admin">开发者：admin</div>
+						  </div>
+					</div>
+					<div class="col-md-12 col-sm-8">
+						<div class="e_t-7f e_mar-t2">
+							简介：微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站微乎微电商网站
+						</div>
+						<div class="e_btn e_mar-t1">
+					  		<button class="e_IOSBtn e_IOSBtn_add">IOS</button>
+					  		<button class="e_androidBtn">Android</button>
+					  	</div>
+				  	</div>
+				</div>
+		  		<div class="col-md-8 col-xs-12 e_add_margin e_right_con">
+		  				<div class="row e_mar-t2">
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7">
+								<img src="images/static/img/com_log1.jpg"/>
+							</div>
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7">
+								<img src="images/static/img/com_log2.jpg"/>
+							</div>
+							<div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-5 e_picM e_mar-l7" id="e_img">
+								<img src="images/static/img/com_log3.jpg"/>
+							</div>
+						</div>
+		  			</div>
+		  		</div>
+			</div>
+		</div>
+		<footer class="container">
+			<div class="row bottom ">
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>订单服务</h3>
+						</li>
+						<li><a href="#">订单服务</a>
+						</li>
+						<li><a href="#">支付方式</a>
+						</li>
+						<li><a href="#">送货政策</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>订单服务</h3>
+						</li>
+						<li><a href="#">售后服务</a>
+						</li>
+						<li><a href="#">常见问题</a>
+						</li>
+						<li><a href="#">领取优惠</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>关于我们</h3>
+						</li>
+						<li><a href="#">公司简介</a>
+						</li>
+						<li><a href="#">联系我们</a>
+						</li>
+						<li><a href="c_submitSuggests.html">意见反馈 </a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+					<ul>
+						<li>
+							<h3>合作伙伴</h3>
+						</li>
+						<li><a href="#">新闻中心</a>
+						</li>
+						<li><a href="#">媒体合作</a>
+						</li>
+						<li><a href="#">渠道合作</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="border:0">
+					<ul>
+						<li>
+							<h3> 
+							    <a href="#"><img src="img/button_phone.jpg"></a>
+						    </h3>
+						</li>
+						<li>
+							<a>
+								<input type="button" value="在线咨询">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="datang-vs">
+				<div class="netvs">
+					<a href="">网站使用条款</a>|<a href="">隐私条款</a>|<a href="">服务条款</a>
+				</div>
+				<div class="netvs">
+					版权所有：新华瑞德(北京)网络科技有限公司 京ICP备11005848号-3 京公网安备11010802013007号
+				</div>
+			</div>
+		</footer>
+	</body>
+	
+</html>

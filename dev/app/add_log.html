@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>操作日志</title>
+		<link rel="icon" href="//g.369cloud.com/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="//g.369cloud.com/bootstrap/css/bootstrap.css" />
+		<!--<link rel="stylesheet" type="text/css" href="//g.369cloud.com/css/dcment.css" />-->
+		<link rel="stylesheet" type="text/css" href="../../css/dev/app.css" />
+		<!--
+         	 判断ie9的这段js必须放到样式表之下，擅自改动后果自负
+         -->
+		<!--[if lt IE 9]>
+		   <script src="//g.369cloud.com/bootstrap/js/createTag.js"></script>
+		   <script src="//g.369cloud.com/bootstrap/js/respond.min.js"></script>
+	    <![endif]-->
+		<!-- 
+        	描述：defer是解决ie8的异步  async是异步加载js
+        -->
+		<script src="../../js/request.js" defer async="true" data-main="../../js/dev/app" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../js/jquery-1.10.2.min.js" ></script>
+		<script type="text/javascript">
+		$(function(){
+			$("#updateLogBtn").click(function(){
+				$(this).addClass("active1");
+				$("#operationLogBtn").removeClass("active1");
+			})
+			$("#operationLogBtn").click(function(){
+				$(this).addClass("active1");
+				$("#updateLogBtn").removeClass("active1");
+			})
+		})
+		</script>
+	</head>
+	<body class="add_log baseFrame">
+		<div class="dev-main">
+			<div class="leftMenu">
+				<div class="menuTop">
+					<a href="">
+						<img class="min_logo" src="../../images/dev/min_logo.png"/>
+						<img class="logo" src="../../images/dev/logo.png"/>
+					</a>
+					<div class="sel_wrap">
+						<label></label>
+						<select class="select" name="" id="c_city">
+							<option value="0">app</option>
+							<option value="1">测试环境测试环境测试环境</option>
+						</select>
+					</div>
+				</div>
+				<aside class="menu_info">
+					<div class="scrollmenu" id="scrollmenu">
+						<nav>
+							<div class="menu_title">
+								<h3 class="h3_title">应用开发 </h3>
+								<h3 class="min_h3_title">APP</h3>
+								<img src="" />
+							</div>
+							<ul>
+								<li class="checked">
+									<a href=""><img src="../../images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+							</ul>
+						</nav>
+						<nav>
+							<div class="menu_title">
+								<h3 class="h3_title">Baas </h3>
+								<h3 class="min_h3_title">Baas</h3>
+								<img src="" />
+							</div>
+							<ul>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_gs.png" /><span>概述</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_sz.png" /><span>设置</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zs.png" /><span>证书</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_zj.png" /><span>组件</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_cs.png" /><span>测试</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_bb.png" /><span>版本</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_gx.png" /><span>更新</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_hz.png" /><span>合作</span></a>
+								</li>
+								<li>
+									<a href=""><img src="../../images/dev/app/app_rz.png" /><span>日志</span></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</aside>
+			</div>
+			<div class="rightCont">
+				<div class="dev_container">
+					<!--
+                    	 编译头部
+                    -->
+					<div class="app_top_nav">
+						<img src="../../images/dev/leftMenu_btn.png" />
+						<div class="nav-right right">
+							<div class="loginModle">
+								<div class="login" style="display:none;">
+									<a href="">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+									<a href="">注册</a>
+								</div>
+								<div class="userInfo">
+									<div class="urserhead">
+										<img src="../../images/dev/userHead.png" />&nbsp;
+										<a href="javascript:showhide()">我的账户</a>
+										<div class="urserconte" style="display:none;">
+											<div class="">
+												<img src="../../images/dev/userHead.png" />&nbsp;
+												<span>我的账户</span>
+											</div>
+											<div>
+												<a href="applay_index.html">控制台</a>
+											</div>
+											<div>
+												<a href="../myShare/share_store_one.html">我的分享</a>
+											</div>
+											<div>
+												<a href="../userInfo/accountSet_Index.html">账户设置</a>
+											</div>
+											<div>
+												<a href="../userInfo/perCenter_index.html">个人中心</a>
+											</div>
+											<div>
+												<a href="">退出</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right dev_link">
+							<a href="mailto:">文档中心</a>
+							<a href="mailto:">视频培训</a>
+							<a href="mailto:">社区</a>
+						</div>
+					</div>
+					<div class="log-main">
+				        <div class="">
+				            <div class="col-md-11 col-sm-10 log-top">
+				                <div class="btn-group" data-toggle="buttons">
+				                    <label class="btn log-top-btn active1" id="operationLogBtn">
+			                        	代码更新日志
+				                    </label>
+				                    <label class="btn log-top-btn" id="updateLogBtn">
+				                     	 操作日志
+				                    </label>
+				                </div>
+				            </div>
+				            <div class="col-md-1 col-sm-2 remove-log" >
+				               <a href="javascript:void(0)">清空日志</a>
+				            </div>
+				        </div>
+				
+				        <div class="log-table" id="operationLog">
+				            <div class="thead-color"></div>
+				            <div class="table-div">
+				                <table class="custom-table">
+				                    <thead>
+				                        <tr>
+				                            <th>时间</th>
+				                            <th>用户</th>
+				                            <th>地点</th>
+				                            <th>IP</th>
+				                            <th>操作记录</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody>
+				                    </tbody>
+				                </table>
+				                <div class="log-noDataBox">
+				            		当前还没有任何操作记录
+				            	</div>
+				            </div>
+				        </div>
+				        <div class="log-table" id="updateLog" style="display: none;">
+				            <div class="thead-color"></div>
+				            <div class="table-div">
+				                <table class="custom-table">
+				                    <thead style="margin-top: 30px;">
+				                        <th width="15%">时间</th>
+				                        <th>作者</th>
+				                        <th width="20%">操作</th>
+				                    </thead>
+				                    <tbody>
+				                    </tbody>
+				                </table>
+				                 <div class="log-noDataBox">
+				            		当前还没有任何操作记录
+				            	</div>
+				            </div>
+				            <!--<div class="page" style="position: relative;top:-40px;">
+				                <ul>
+				                    <li class="pre"><a href="javascript:void(0)" class="page-checked">&lt;</a>
+				                    </li>
+				                    <li><a href="javascript:void(0)" class="page-unchecked">02</a>
+				                    </li>
+				                    <li><a href="javascript:void(0)" class="page-checked">03</a>
+				                    </li>
+				                    <li><a href="javascript:void(0)" class="page-unchecked">04</a>
+				                    </li>
+				                    <li class="next"><a href="javascript:void(0)" class="page-unchecked">&gt;</a>
+				                    </li>
+				                </ul>
+				            </div>-->
+				        </div>
+				    </div>
+	</body>
+</html>

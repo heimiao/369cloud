@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	[@node var="selfNode" nodeid="self"]
+	<head> 
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+        <meta name="Description" content="${_DESCRIPTION}">
+        <title>${_TITLE}</title>
+        <link rel="icon" href="${root_address}/favicon.ico" type="image/x-icon">  
+		 
+		<link rel="stylesheet" type="text/css" href="${URL}bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${URL}css/style.css" />
+		<!--[if lt IE 9]>
+		   <script src="${URL}bootstrap/js/createTag.js"></script>
+		   <script src="${URL}bootstrap/js/respond.min.js"></script>
+	    <![endif]--> 
+	    
+	    
+		<script src="${staticUrl}/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/base_event.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${staticUrl}/js/top.js?v=1.0" type="text/javascript" charset="utf-8"></script>
+		
+		
+		<script> 
+			function changeUlCss(obj){
+				$("[id^='list_']").removeClass("incloudDiv_red").addClass("incloudDiv_black");
+				$("[id^='li_']").removeClass("li_red").addClass("li_grey");
+				$("[class^='redArro_'] img").css("display","none");
+				$('".redArro_" + obj > img').css("display","block");
+				$("#list_" + obj).addClass("incloudDiv_red");
+				$("#li_" + obj).addClass("li_red");
+			}
+			
+			$(function(){
+				
+				$(window).scroll(function() {
+				otherScroll();
+				});
+				
+				$("#abl").click(function(){
+					if($("#leftGuideCont").position().left<0){
+						$("#leftGuideCont")[0].style.left="0px";
+						$("#abl img").attr("src",$("#abl img").attr("src").replace(/left/ig,"right"));
+					}else{
+						$("#leftGuideCont")[0].style.left="-175px";
+						$("#abl img").attr("src",$("#abl img").attr("src").replace(/right/ig,"left"));
+					}
+				});
+			});
+		</script>
+	</head> 
+	<body>
+		 [#include "/369Cloud/top.html"] 
+			<div class="container">
+				<div class="row row_fone">
+					
+					<div class="col-md-2 col-sm-3 left_guideCont" id="leftGuideCont" style="padding: 0px;">
+						<!--左侧导航栏-->
+						<div class="left_guide">
+							<div class="arrowBoxL" id="abl">	
+								<img src="${URL}img/left_btn.png" class="left_btn"/>
+							</div>
+							<ul>
+						        [@nodeList nodeid="sub-43" var="leftNav" ignore="45"] 
+								[#list leftNav as item]  
+								    [@nodeList  nodeid="sub-${item.nodeid}" var="childNodeNav" ignore="47"] 
+		                            [#list childNodeNav as item1]  
+		                                        
+		                                       [#if selfNode.NODEID==item1.nodeid]
+		                                         <div id="list_1" class="incloudDiv_red" onclick="changeUlCss('${item1.nodename}');">
+														<a href="${item1.NODEURL}" class="clearA">
+															<li id="li_${item1.nodename}" class="li_red">
+																  ${item1.nodename}
+																<span class="redArro_${item1.nodename}">
+																	 <img src="${URL}img/red_arr.png" class="red_ml"/>
+															    </span>
+															</li>
+														</a>
+													</div>
+													<div class="lineDiv"></div>
+		                                       [#else] 
+		                                          <div id="list_1" class="incloudDiv_black" onclick="changeUlCss('${item1.nodename}');">
+														<a href="${item1.NODEURL}" class="clearA">
+															<li id="li_${item1.nodename}" class="li_grey">
+																${item1.nodename}
+																<span class="redArro_${item1.nodename}"></span>
+															</li>
+														</a>
+													</div>
+													<div class="lineDiv"></div>
+		                                       [/#if] 
+								    [/#list]
+	                                [/@nodeList]     
+								[/#list] 
+								[/@nodeList]
+						</ul>
+					      </div>
+						</div>
+						<div class="col-md-10 col-sm-9 col-xs-12 col_rightDiv" id="rightGuideCont">
+							<!--右侧内容--> 
+							<div class="right_cont" id="rCont">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="aboutDiv">
+											<div class="con_usc">${selfNode.NODENAME}</div>
+											<div class="con_usE"></div>
+										</div>
+									</div>
+								</div>  
+								[#if selfNode.NODEID=="51"||selfNode.NODEID=="52"]	
+											[#if selfNode.NODEID=="51"]
+											    <div class="row text-center linkBox">
+											    [@dataList nodeid="${selfNode.NODEID}" var="childNav"] 
+											    [#list childNav as childItem] 
+												 <div class="col-xs-4 col-md-2 link_Font"><a href="${childItem.address}">${childItem.title}</a></div>
+											    [/#list] 
+												[/@dataList] 
+											    </div>
+										    [#else]
+										    <div class="row"> 
+								             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top:30px">
+										        [@dataList nodeid="${selfNode.NODEID}" var="childNav"] 
+											    [#list childNav as childItem]
+														 <div class="coopCont">
+														 	<a href="${childItem.address}"><img src="${childItem.pic}" class="partnerPic"/></a>
+														</div>
+											    [/#list] 
+												[/@dataList] 
+										  </div>
+										  </div>
+											[/#if] 
+								[#else]
+									<div class="row">
+										<div class="col-md-12">
+											 [@dataList nodeid="${selfNode.NODEID}" var="childNav" num="1"] 
+											    [#list childNav as childItem]
+														 ${childItem.content}
+											    [/#list] 
+												[/@dataList] 
+										</div>
+									</div> 
+								[/#if]  
+							</div> 
+						</div> 
+			        </div>
+			</div> 
+		 [#include "/369Cloud/bottom.html"] 
+	</body> 
+	[/@node]
+</html>

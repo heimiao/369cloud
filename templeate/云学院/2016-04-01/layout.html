@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<title>大唐网络369Cloud 文档中心---layout  </title>
+ <meta name="description" content="369Cloud文档中心为开发者创业者提供系统性培训文档，帮助开发者迅速完成APP开发"> 
+<meta name="keywords" content="文档中心,大唐网络369Cloud,APP开发,创业融资,项目孵化,移动技术支持,移动平台 ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="{{config.base_url}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{config.base_url}}/bower_components/highlightjs/styles/solarized_light.css">
+  <link rel="stylesheet" href="{{config.base_url}}/styles/raneto.css">
+  <link rel="stylesheet" href="{{config.base_url}}/styles/ghostdown.css"> 
+  <link rel="stylesheet" type="text/css" href="//test-www.369cloud.com/ftp/g/css/style.css" />
+	<!--[if lt IE 9]>
+	<script src="//g.369cloud.com/bootstrap/js/createTag.js"></script>
+	<script src="//g.369cloud.com/bootstrap/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="http://g.369cloud.com/js/jquery-1.10.2.min.js"></script>
+	<script src="http://g.369cloud.com/js/top.js"></script>
+
+  {{{config.analytics}}}
+
+</head>
+<body class="{{body_class}}">
+  <!-- Header -->
+  {{{header}}
+  <!-- Main -->
+  <div class="main">
+    {{{yield}}}
+  </div>
+
+  <!-- Footer -->
+<div style="clear:both"></div>
+  {{{footer}}}
+  <!-- JavaScript -->
+  <script src="{{config.base_url}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="{{config.base_url}}/bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="{{config.base_url}}/bower_components/fitvids/jquery.fitvids.js"></script>
+  <script src="{{config.base_url}}/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+  <script src="{{config.base_url}}/scripts/ghostdown.js"></script>
+  <script src="{{config.base_url}}/bootstrap/js/placeholder.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+     $(window).scroll(function (){
+            var st = $(this).scrollTop(); 
+            if (st>0) { 
+                $("header .nav").stop().animate({  
+                   height:'60px',
+                   lineHeight:'60px'
+                }, 300);
+                $(".header .navBg").stop().animate({
+                   opacity:'0.9',
+                   filter: 'alpha(opacity=90)',
+                   height:'60px'
+                },300)
+                $(".header").stop().animate({
+                  height:'60px'
+                },300)
+                $(".header .logo").stop().animate({
+                  height:'60px',
+                  lineHeight:'60px'
+                },300)
+                $(".leftAside").stop().animate({
+                  top:'60px', 
+                },300) 
+                $(".loginModle").stop().animate({
+                  marginTop:'24px' 
+                },300)
+              }else{
+                $("header .nav").stop().animate({  
+                   height:'74px',
+                   lineHeight:'74px'
+                }, 300);
+                $(".header .navBg").stop().animate({
+                   opacity:'0.9',
+                   filter: 'alpha(opacity=20)',
+                   height:'74px'
+                },300)
+                 $(".header").stop().animate({
+                  height:'74px'
+                },300)
+                 $(".header .logo").stop().animate({
+                  height:'74px',
+                  lineHeight:'74px'
+                },300)
+                  $(".leftAside").stop().animate({
+                  top:'74px', 
+                },300) 
+                  $(".loginModle").stop().animate({
+                  marginTop:'27px'
+                },300)
+            };  
+        });
+  </script>
+</body>
+</html>

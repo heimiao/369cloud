@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="0"> 
+		<title>369cloud首页</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/css/static/index.css" />
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/css/static/video.css" />
+		<!--[if lt IE 9]>
+		   <script src="${staticUrl}/bootstrap/js/createTag.js"></script>
+		   <script src="${staticUrl}/bootstrap/js/respond.min.js"></script>
+		  	<!--跨域文件-->
+		  	<link href="${staticUrl}/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		    <!--当前跨域文件-->
+		  	<link href="bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+			<script src="bootstrap/js/respond.proxy.js"></script>
+	    <![endif]-->
+	</head>
+	<body class="index_blue">
+		[@node var="node79" nodeid="79"] 
+		[@node var="selfnode" nodeid="self"] 
+		[#include "/369cloud/top.html"]
+		<div class="index_page">
+			<div class="banner">
+				<div class="banner-content">
+					<img src="${staticUrl}/images/static/img_new/page_bunner.png" class="pc_banner" />
+					<img src="${staticUrl}/images/static/img_new/mobilebanner.png" class="phone_banner" />
+					<div class="issue-box">
+						<div class="issue-box-son">
+							<p class="app-service">一站式App云服务平台</p>
+							<span class="push-teamwork">推动众包共享创新与合作</span>
+						</div>
+						<ul class="clearFix issue-ul">
+							<!--<li class="appInfo">APP研发平台</li>
+							<li class="appInfo">众包平台</li>
+							<li class="appInfo">Iaas基础服务平台</li>
+							<li>APP后端服务平台</li>-->
+							<li class="appInfo">开发平台</li>
+							<li class="appInfo">后端服务</li>
+							<li class="appInfo">云主机</li>
+							<li class="appInfo">众包</li>
+						</ul>
+					</div>
+					<div class="apply-introduce">
+						<a href="platformIntrod.html" class="aBtn">平台介绍</a>
+						<a href="dev-tool.html" class="aBtn">开发工具</a>
+					</div>
+				</div>
+			</div>
+			<div class="zb">
+				<div class="container m-container">
+					<div class="crowd-title" style="margin-left:35px">
+						<p>众包平台</p>
+						<p>平等开放的众包商业化平台，帮助团体或个人更易于创造价值</p>
+					</div>
+					<div class="zb_content">
+						<div class="scrollBox">
+							<script class="J_zbList" type="text/template">
+								<%
+								 _.each(list, function(item, i){ 
+								 	if(i<3){
+								%>
+									<div class="scrollLi">
+										<dl class="scare_modal">
+											<dt>
+										<div class="shade"></div>
+									<a href=""><img src="<%=item.imgUrl%>" alt=""><span class="recruit"><%=item.stateName%></span></a>
+									</dt>
+											<dd>
+												<h4><a href=""><%=item.title%></a></h4>
+												<div class="descipt">
+													<span class="money">
+											   	 <%=item.totalMoney%>
+												</span>
+												<span class="right">
+													<a ><%=item.type%></a>&nbsp;|&nbsp;
+													<a><%=new Date(item.deliveryTime).Format("yyyy-MM-dd")%></a>
+													&nbsp;&nbsp;&nbsp;
+												</span>
+												</div>
+											</dd>
+										</dl>
+									</div>
+									<%
+									}});
+								%>
+							</script> 
+						</div>
+					</div>
+					<!--<a class="zb_btn" >
+						众包广场
+					 </a>-->
+					<!--<div class="crowd-square-box textAlign">
+						<a href="javascript:;" class="crowd-square">众包广场</a>
+						<div class="crowd-pos">
+							<div class="crowd-bg"></div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+
+			<div class="cloudPlam">
+				<div class="container m-container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a><img src="${staticUrl}/images/static/img_new/development.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a>云开发<small>Cloud development</small></a></h4>
+									<p>通过可视化、可配置化操作，组合成与原生应用相媲美的移动应用，大大缩短开发周期，节约开发成本，颠覆开发周期冗长的传统模式</p>
+									<a href="${devUrl}/console/applist" class="m_btn i_hide">制作App</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a><img src="${staticUrl}/images/static/img_new/backend.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a>云后端<small>Cloud backend</small></a></h4>
+									<p>为移动应用开发者提供整合的云后端服务，让用户有更多的精力去设计产品，不再为后端开发付出太多精力，使得移动开发变得更轻松、更容易</p>
+									<a href="${devUrl}/console/applist" class="m_btn i_hide">开启服务</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<dl class="cloud_modal">
+								<dt>
+									<a ><img src="${staticUrl}/images/static/img_new/host.png" alt=""></a>
+								</dt>
+								<dd>
+									<h4><a>云主机<small>Cloud host</small></a></h4>
+									<p>为用户提供超强计算、弹性扩展的云主机。我们的云主机服务是核心服务之一，是能面向各类互联网用户提供综合业务能力的服务</p>
+									<a href="${iassUrl}" class="m_btn i_hide">创建主机</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="classics-case">
+				<div class="crowd-content container case-box">
+					<div class="crowd-title row">
+						<p>经典案例</p>
+						<p class="caseStatus">在这您可以快速拥有</p>
+						<span class="caseIntrd">完整的移动App开发生态体系，无论你是在寻找如何更快捷的开发App方式，还是需要多人协助完成的开发工作，这里才是你该去的地方</span>
+					</div>
+					<ul class="prj-show row-fluid clearFix">
+						<li class="col-xs-12  col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="https://appsto.re/cn/9U5W3.i" class="phone-nolink">
+									<img src="${staticUrl}/images/static/img_new/case1.jpg" alt="">
+									<div class="pos i_hide prj_desc">
+										<div class="bg"></div>
+										<div class="content">
+											 作为专注教育领域的即时通讯产品，艾教育支持文本、图片、语音聊天，同时集成消息接收、文件共享、通讯录、教育资讯等多个应用程序，为用户提供即时通讯服务，提高用户间的沟通效率
+										</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="col-xs-12 col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="https://appsto.re/cn/vvPO8.i" class="phone-nolink">
+									<img src="${staticUrl}/images/static/img_new/case2.jpg" alt="">
+								
+								<div class="pos i_hide prj_desc">
+									<div class="bg"></div>
+									<div class="content">
+										社区1号围绕社区服务和社区管理，为各级政府部门、物业、居民及时解决社区物业和居民日常生活问题，将打通物业和社区家庭的各个环节，从线下到线上，实现社区生活圈的O2O服务
+									</div>
+								</div>
+								</a>
+							</div>
+						</li>
+						<li class="col-xs-12  col-sm-6 col-md-4 prj-show-li">
+							<div class="prj-con-div posBox case_posBox">
+								<a href="javascript:;">
+									<img src="${staticUrl}/images/static/img_new/case3.jpg" alt="">
+								</a>
+								<div class="pos i_hide prj_desc">
+									<div class="bg"></div>
+									<div class="content">
+										藏Phone为藏区人民和藏文化爱好者定制多项服务，可以做到快速传播准确的资讯、宣传优秀的藏文化。藏Phone支持藏文、中文、英文三种语言及其相互翻译，特别打造的藏文输入法和藏文环境为藏区人民提供更便捷的民生服务
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<!--<div class="textAlign row-fluid">
+						<ul class="case-ul clearFix">
+							<li class="col-xs-6 col-md-3 case-list">
+								<span class="case-num">6,040,424</span>
+								<span class="case-number"> / 个</span>
+								<i class="case-introduce" style="display:block;">创建应用</i>
+							</li>
+							<li class="col-xs-6 col-md-3">
+								<span class="case-num">544,032,431</span>
+								<span class="case-number"> / 次</span>
+								<i class="case-introduce" style="display:block;">编辑</i>
+							</li>
+							<li class="col-xs-6 col-md-3 case-list">
+								<span class="case-num">47,510,040,424</span>
+								<span class="case-number"> / 次</span>
+								<i class="case-introduce" style="display:block;">API调用</i>
+							</li>
+							<li class="col-xs-6 col-md-3">
+								<span class="case-num">21,325,042,314</span>
+								<span class="case-number"> / 台</span>
+								<i class="case-introduce" style="display:block;">创建主机</i>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+			<!--<div class="video-box accept-class-name" >
+				<img src="${staticUrl}/images/static/img_new/page_video.jpg" />
+				<div class="video_logo">
+						<img class="one" src="${staticUrl}/images/static/img_new/video-logo.png"/>
+						<img class="two" src="${staticUrl}/images/static/img_new/video-play.png"  data-target="#video-box-modal" data-toggle="modal"/>
+						<img class="three" src="${staticUrl}/images/static/img_new/video-word.png"/>
+				</div>
+				<a href="${passportUrl}/register" class="register_btn J_register">立即注册</a>
+			</div>-->
+				
+			<!--模态框-->
+			<div class="modal fade" id="video-box-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-new">
+					<div class="modal-content ">
+						<div class="modal-header modal-header-new">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						</div>
+						<div class="modal-body modal-body-new">
+							<video id="video-box" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" poster="${staticUrl}/images/static/img_new/page_video.jpg" width="100%"></video>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal -->
+			</div>
+			<div class="coopera-partner">
+				<div class="crowd-content container">
+					<div class="crowd-title">
+						<p>合作伙伴</p>
+					</div>
+					<ul class="clearFix partner-list row">
+						[@dataList nodeid="117" var="childNav"] 
+					    [#list childNav as childItem] 
+						   <li class="col-xs-4 col-md-2">
+								<a href="${childItem.address}" class="parLogo" target="_blank">
+									<img src="${childItem.pic}" alt="">
+								</a>
+							</li>
+					    [/#list] 
+						[/@dataList]  
+					</ul>
+				</div>
+			</div>
+		</div>
+		[#include "/369cloud/bottom.html"] 
+		[#include "/369cloud/js.html"] 
+		[/@node] 
+		[/@node]
+		<script src="${staticUrl}/js/static/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

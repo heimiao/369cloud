@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<!-- 3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Keywords" content="${_KEYWORDS}">
+        <meta name="Description" content="${_DESCRIPTION}">
+        <title>${_TITLE}</title>
+        <link rel="icon" href="${root_address}/favicon.ico" type="image/x-icon">  
+		 
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="${staticUrl}/css/style.css">
+		<!--[if lt IE 9]>
+		   <script src="${staticUrl}/bootstrap/js/createTag.js"></script>
+		   <script src="${staticUrl}/bootstrap/js/respond.min.js"></script>
+		  	<!--跨域文件-->
+		  	<link href="${staticUrl}/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		    <!--当前跨域文件-->
+		  	<link href="bootstrap/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+			<script src="bootstrap/js/respond.proxy.js"></script>
+	    <![endif]-->
+	</head> 
+	<body>
+		@node var="node79" nodeid="79"] 
+		[@node var="selfnode" nodeid="self"] 
+		[@content indexid="selfconte" var="c"]
+		[#include "/369cloud/top.html"]
+			<div class="container">
+				<div class="row row_fone">
+					
+					<div class="col-md-2 col-sm-3 left_guideCont" id="leftGuideCont" style="padding: 0px;">
+						<!--左侧导航栏-->
+						<div class="left_guide">
+							<div class="arrowBoxL" id="abl">	
+								<img src="${URL}img/left_btn.png" class="left_btn"/>
+							</div>
+							<ul>
+			    [@nodeList  nodeid="117" var="childNodeNav"] 
+	                [#list childNodeNav as item1]   
+	                         <!--<div id="list_1" class="incloudDiv_red" onclick="changeUlCss('${item1.nodename}');">
+									<a href="${item1.NODEURL}" class="clearA">
+										<li id="li_${item1.nodename}" class="li_red">
+											  ${item1.nodename}
+											<span class="redArro_${item1.nodename}">
+												 <img src="${URL}img/red_arr.png" class="red_ml"/>
+										    </span>
+										</li>
+									</a>
+								</div>
+								<div class="lineDiv"></div>-->
+	                          	<div id="list_1" class="incloudDiv_black" onclick="changeUlCss('${item1.nodename}');">
+									<a href="${item1.NODEURL}" class="clearA">
+										<li id="li_${item1.nodename}" class="li_grey">
+											${item1.nodename}
+											<span class="redArro_${item1.nodename}"></span>
+										</li>
+									</a>
+								</div>
+								<div class="lineDiv"></div>
+				    [/#list]
+                [/@nodeList]
+                
+                [@dataList nodeid="111" var="chidnav111"] 
+					[#list chidnav111 as item]
+					 		<!--<div   class="incloudDiv_red" onclick="changeUlCss('${item.title}');">
+								<a href="${item.url}" class="clearA">
+									<li id="li_${item.title}" class="li_red">
+										  ${item.title}
+										<span class="redArro_${item.title}">
+											 <img src="${URL}img/red_arr.png" class="red_ml"/>
+									    </span>
+									</li>
+								</a>
+							</div>-->
+							<div class="lineDiv"></div> 
+							<div   class="incloudDiv_black" onclick="changeUlCss('${item.title}');">
+								<a href="${item.url}" class="clearA">
+									<li id="li_${item.title}" class="li_grey">
+										${item.title}
+										<span class="redArro_${item.title}"></span>
+									</li>
+								</a>
+							</div>
+							<div class="lineDiv"></div>
+				[/#list] 
+				[/@dataList]
+								 
+						</ul>
+					      </div>
+						</div>
+						<div class="col-md-10 col-sm-9 col-xs-12 col_rightDiv" id="rightGuideCont">
+							<!--右侧内容--> 
+							<div class="right_cont" id="rCont">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="aboutDiv">
+											<div class="con_usc">${selfNode.NODENAME}</div>
+											<div class="con_usE"></div>
+										</div>
+									</div>
+								</div>  
+								[#if selfNode.NODEID=="117"]	 
+									    <div class="row"> 
+								             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top:30px">
+									    [@dataList nodeid="${selfNode.NODEID}" var="childNav"] 
+									    [#list childNav as childItem] 
+										 <div class="coopCont">
+										 	<a href="${childItem.address}" style="font-size:12px;">
+										 		<img src="${childItem.pic}" class="partnerPic"/> 
+										 		</a>
+										 </div>
+									    [/#list] 
+										[/@dataList] 
+									    </div>
+										  </div>
+								[#else]
+									<div class="row">
+										<div class="col-md-12">
+											 [@dataList nodeid="${selfNode.NODEID}" var="childNav" num="1"] 
+											    [#list childNav as childItem]
+														 ${childItem.content}
+											    [/#list] 
+												[/@dataList] 
+										</div>
+									</div> 
+									
+								[/#if]  
+							</div> 
+						</div> 
+			        </div>
+			</div> 
+		[#include "/369cloud/bottom.html"]
+		[/@content]
+		[/@node] 
+		[/@node]
+		 [#include "/369cloud/js.html"] 
+		<script type="text/javascript">
+			function changeUlCss(obj){
+				$("[id^='list_']").removeClass("incloudDiv_red").addClass("incloudDiv_black");
+				$("[id^='li_']").removeClass("li_red").addClass("li_grey");
+				$("[class^='redArro_'] img").css("display","none");
+				$('".redArro_" + obj > img').css("display","block");
+				$("#list_" + obj).addClass("incloudDiv_red");
+				$("#li_" + obj).addClass("li_red");
+			}
+			
+			$(function(){
+				
+				$(window).scroll(function() {
+				otherScroll();
+				});
+				
+				$("#abl").click(function(){
+					if($("#leftGuideCont").position().left<0){
+						$("#leftGuideCont")[0].style.left="0px";
+						$("#abl img").attr("src",$("#abl img").attr("src").replace(/left/ig,"right"));
+					}else{
+						$("#leftGuideCont")[0].style.left="-175px";
+						$("#abl img").attr("src",$("#abl img").attr("src").replace(/right/ig,"left"));
+					}
+				});
+			});
+		</script>
+	</body> 
+</html>
